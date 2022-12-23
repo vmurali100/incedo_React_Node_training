@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="fname">First Name :</label>
+    </form>
+    <script>
+        function getUser(){
+            var newPerson =captureUser();
+            console.log(newPerson)
+            var postInfo =new XMLHttpRequest();
+            postinfor.onreadystatechange=function(){
+                if(postInfo.readyState==4 && getInfo.status ==200){
+                    console.log(getInfo.response)
+                }
+            }
+        }
+        function captureUser(){
+            var person={
+                fname:"",
+                lname:""
+            }
+            for(a in person){
+                person[a]=document.getElementById
+            }
+        }
+    </script>
+</body>
+</html>
