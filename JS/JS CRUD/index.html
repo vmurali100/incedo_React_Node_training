@@ -99,21 +99,8 @@
       async function deleteUser(i) {
 
         let deleteUser = await fetch("http://localhost:3000/users/"+users[i].id,{method:"DELETE"})
-        getAllUsersFromServer()
-        
-        // console.log(users[i])
-        // fetch("http://localhost:3000/users/"+users[i].id,{
-        //     method:"DELETE"
-        // }).then((res)=>{
-        //     return res.json()
-        // }).then(()=>{
-        //     getAllUsersFromServer()
-        // })
+        getAllUsersFromServer();
       }
-
-      // 2. Read A User
-      // 3. Update A User
-      // 4. Delete A User
     </script>
   </body>
 </html>
