@@ -1,11 +1,11 @@
 # incedo_React_Node_training
 
-# To start mock server
+## To start mock server
 
-# cd js/js_crud/local_rest_api
+#### cd js/js_crud/local_rest_api
 
-# npm install
+#### npm install
 
-# json-server --watch db.json
+#### json-server --watch db.json
 
-# To launch page open the html file
+## To launch page open the html file
