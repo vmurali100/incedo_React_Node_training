@@ -1,0 +1,52 @@
+.body-container{
+    display:block;
+    align-items: center;
+    background-color:#f2f1f1;
+    font-family: sans-serif;
+}
+
+.body-container h1{
+    font-family: sans-serif;
+    font-size: 28px;
+}
+.body-container label{
+    padding-left:20px;
+    font-weight:bold;
+    font-weight: 600;
+}
+
+.body-container .firstname{
+    padding-right:50px;
+}
+
+.body-container .lastname{
+    padding-right:51px;
+}
+
+.body-container .dateofbirth{
+    padding-right:32px;
+}
+
+.body-container .email{
+    padding-right:88px;
+}
+
+.body-container .mobileno{
+    padding-right:15px;
+}
+
+.body-container input{
+    padding:3px 0px;
+    border-radius: 5px;
+    background-color:#c7c4c4;
+    border:0px;
+}
+
+.body-container button{
+    padding:10px 20px;
+    border-radius: 10px;
+    border:0px;
+    background-color: #c7c4c4;
+    margin-left:20px;
+    font-weight: bold;
+}

@@ -1,0 +1,14 @@
+{
+  "name": "local_rest_api",
+  "version": "1.0.0",
+  "description": "this project is about building an restful application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "segu.naveen",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.17.1"
+  }
+}

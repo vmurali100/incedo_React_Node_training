@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index2.css" />
+    <title>Register Form</title>
+</head>
+<body>
+    <div class="form-container">
+    <div class="formblock">
+    <h3>Bootstrap 4 Form Validation Demo </h3>
+    <form class="formblock">
+    <label>Name:</label><br/>
+    <input type="text" name="name" id="name" placeholder="Name"/><br/>
+    <label>UserName:</label><br/>
+    <input type="text" name="username" id="username" placeholder="Username"/><br/>
+    <label>Email:</label><br/>
+    <input type="text" name="email" id="email" placeholder="Email"/><br/>
+    <label>Password:</label><br/>
+    <input type="password" name="password" id="password" placeholder="Password"/><br/>
+    <label>Confirm Password:</label><br/>
+    <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Confirm"/><br/>
+    <label>Message</label><br/>
+    <textarea type="text" name="message" id="message" placeholder="Message" class="messageplaceholder"></textarea><br/><br/>
+    <button type="button" onclick="saveuser()">save User</button><br/><br/>
+    <button type="button" onclick="getUserFromServer()">GetUser</button><br/><br/>
+    <button type="button" onclick="updateTheUser()" disabled="true" id="updateUser">Update</button>
+    <div id="successmessage" class="green"></div>
+    </form>
+  </div>
+  </div>
+    <hr/>
+      <hr/>
+      <hr/>
+      <hr/>
+      <!-- displaying the user input in tabler form -->
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>UserName</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Message</th>
+            <th>Id</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    <script>
+     //1.create a User
+     function saveuser()
+     {
+        console.log("inside save user");
+        const newPersonDetails = captureDetails();
+        for(a in newPersonDetails)
+        {
+           if(newPersonDetails[a] == '')
+           {
+             window.alert("User details "+a+" can not be empty");
+             return;
+           }
+        }
+        const postInfo = new XMLHttpRequest();
+        postInfo.onreadystatechange = function()
+        {
+           if(postInfo.readyState == 4 && postInfo.status == 201)
+           {
+              console.log("data saved successfully");
+              document.getElementById("successmessage").innerHTML = "User Added Successfully"; 
+              getUserFromServer();
+              for(a in newPersonDetails)
+              {
+                 if(a !== "id")
+                 {
+                    console.log(a);
+                    document.getElementById(a).value = "";
+                 }
+              }
+              document.getElementById("confirmpassword").value = "";
+           }
+        }
+        postInfo.open("POST","http://localhost:3000/details");
+        postInfo.setRequestHeader("Content-Type","application/json");
+        postInfo.send(JSON.stringify(newPersonDetails));
+     }
+     //function to return entered user details
+     function captureDetails()
+     {
+        console.log("Inside capture details");
+        var personDetails = {
+            "name":"",
+            "username":"",
+            "email":"",
+            "password":"",
+            "message":""
+        };
+        for(a in personDetails)
+        {
+            personDetails[a] = document.getElementById(a).value;
+        }
+        return personDetails;
+     }
+     var usersDetails = [];
+     var selectedId = '';
+     //2.Get user details from server
+     function getUserFromServer()
+     {
+        console.log("inside getUsers");
+        const getInfo = new XMLHttpRequest();
+        getInfo.onreadystatechange = function()
+        {
+            if(getInfo.readyState == 4 && getInfo.status == 200)
+            {
+                usersDetails = JSON.parse(getInfo.response);
+                displayUsersDetails(JSON.parse(getInfo.response));
+            }
+        }
+        getInfo.open("GET","http://localhost:3000/details");
+        getInfo.send();
+     } 
+     //function to display the user details
+     function displayUsersDetails(users)
+     {
+        console.log(users);
+        if(document.querySelector("tbody").children.length !== 0)
+        {
+          document.querySelector("tbody").innerHTML="";
+        }
+        users.forEach((user,i)=>{
+              var myTr = document.createElement("tr");
+              for(a in user)
+              {
+                var myTd = document.createElement("td");
+                myTd.innerHTML = user[a];
+                myTr.appendChild(myTd);
+              }
+              var editTd = document.createElement("td");
+              var editBtn = document.createElement("button");
+              editBtn.innerHTML = "Edit";
+              editTd.appendChild(editBtn);
+              editBtn.setAttribute("onclick","getUserDetails("+i+")");
+              var deleteTd = document.createElement("td");
+              var deleteBtn = document.createElement("button");
+              deleteBtn.innerHTML = "Delete";
+              deleteBtn.setAttribute("onclick","deleteUser("+i+")");
+              deleteTd.appendChild(deleteBtn);
+              myTr.appendChild(editTd);
+              myTr.appendChild(deleteTd);
+              document.querySelector("tbody").appendChild(myTr);
+          });
+        }
+        //4.Delete a User
+        async function deleteUser(i)
+        {
+          console.log("inside delete user");
+          await fetch("http://localhost:3000/details/"+usersDetails[i].id,{
+            method:"DELETE"
+          }) 
+          getUserFromServer();
+        }
+
+        //function to put details in form input elements for editing
+        function getUserDetails(i)
+        {
+            selectedId = i;
+            for(a in usersDetails[i])
+            {
+                if(a !== "id")
+                {
+                    document.getElementById(a).value = usersDetails[i][a];
+                    console.log(document.getElementById(a).value+" "+a);
+                }
+            }
+            document.getElementById("confirmpassword").value = usersDetails[i].password;
+            document.getElementById("updateUser").disabled = false;
+
+        }
+
+        //3.Update the userdetails
+        async function updateTheUser()
+        {
+            console.log("inside update User");
+            var personDetails = captureDetails();
+            personDetails.id = selectedId;
+            console.log(personDetails);
+            await fetch("http://localhost:3000/details/"+usersDetails[selectedId].id,{
+                method:"PUT",
+                headers:{'Content-type':'application/json'},
+                body:JSON.stringify(personDetails)
+
+            })
+            getUserFromServer();
+            document.getElementById("updateUser").disabled = true;
+            var refreshPerson = captureDetails();
+            for(a in refreshPerson)
+            {
+              if(a != "id")
+              {
+                document.getElementById(a).value = "";
+              }
+            }
+            document.getElementById("confirmpassword").value = "";
+        }
+    </script>
+</body>
+</html>

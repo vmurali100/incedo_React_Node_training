@@ -1,0 +1,147 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+       <meta charset="UTF-8" />
+       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+       <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+       <link rel="stylesheet" href="index.css">
+       <title>Crud Operations</title>
+    </head>
+    <body class="body-container">
+      <h1>HTML Form</h1>
+      <!-- creating the form for user input -->
+      <form id="form1">
+        <label for="fname" class="firstname">First Name:</label>
+        <input type="text" name="fname" id="fname"/><br/><br/>
+        <label for="lname" class="lastname">Last Name:</label>
+        <input type="text" name="lname" id="lname"/><br/><br/>
+        <label for="dob" class="dateofbirth">Date Of Birth:</label>
+        <input type="text" name="dob" id="dob" /><br/><br/>
+        <label for="email" class="email">Email:</label>
+        <input type="email" name="email" id="email" /><br/><br/>
+        <label for="mobileno" class="mobileno">Mobile Number:</label>
+        <input type="text" name="mobileno" id="mobileno" /><br/><br/><br/><br/>
+        <button type="button" onclick="getUser()">SUBMIT</button>
+        <button type="button" onclick="refreshForm()">RESET</button>
+        <button type="button" onclick="getAllUsersFromServer()">GET ALL USERS</button>
+      </form>
+      <hr/>
+      <hr/>
+      <!-- displaying the user input in tabler form -->
+      <table border="1">
+        <thead>
+          <tr>
+            <th>FirstName</th>
+            <th>SecondName</th>
+            <th>Date Of Birth</th>
+            <th>Email</th>
+            <th>MobileNo</th>
+            <th>Id</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <script>
+        //1.Create a User
+        function getUser()
+        {
+          const newPerson = capturePerson();
+          for(a in newPerson)
+          {
+            if(newPerson[a] == '')
+            {
+               window.alert("user details can not be empty : "+a);
+               return;
+            }
+          }
+          const postInfo = new XMLHttpRequest();
+          postInfo.onreadystatechange = function ()
+          {
+            if(postInfo.readyState == 4 && postInfo.status == 201)
+            {
+              console.log(postInfo.response);
+              getAllUsersFromServer();
+            }
+          }
+          postInfo.open("POST","http://localhost:3000/users");
+          postInfo.setRequestHeader("Content-Type","application/json");
+          postInfo.send(JSON.stringify(newPerson));
+        }
+        function capturePerson()
+        {
+          var person = {
+            "fname":"",
+            "lname":"",
+            "dob":"",
+            "email":"",
+            "mobileno":""
+          };
+          for(a in person)
+          {
+            person[a] = document.getElementById(a).value;
+          }
+          return person;
+        }
+        var users = [];
+        function getAllUsersFromServer()
+        {
+          console.log("inside get all users from server");
+          const getInfo = new XMLHttpRequest();
+          getInfo.onreadystatechange = function()
+          {
+            if(getInfo.readyState == 4 && getInfo.status == 200)
+            {
+              console.log(getInfo.response);
+              users = JSON.parse(getInfo.response);
+              displayUsers(JSON.parse(getInfo.response));
+            }
+          };
+          getInfo.open("GET","http://localhost:3000/users");
+          getInfo.send();
+        }
+        getAllUsersFromServer();
+        function displayUsers(users)
+        {
+          console.log(users);
+          users.forEach((user,i)=>{
+              var myTr = document.createElement("tr");
+              for(a in user)
+              {
+                var myTd = document.createElement("td");
+                myTd.innerHTML = user[a];
+                myTr.appendChild(myTd);
+              }
+              var editTd = document.createElement("td");
+              var editBtn = document.createElement("button");
+              editBtn.innerHTML = "Edit";
+              editTd.appendChild(editBtn);
+              var deleteTd = document.createElement("td");
+              var deleteBtn = document.createElement("button");
+              deleteBtn.innerHTML = "Delete";
+              deleteBtn.setAttribute("onclick","deleteUser("+i+")");
+              deleteTd.appendChild(deleteBtn);
+              myTr.appendChild(editTd);
+              myTr.appendChild(deleteTd);
+              document.querySelector("tbody").appendChild(myTr);
+          });
+        }
+        function refreshForm()
+        {
+          document.getElementById("form1").reset();
+        }
+        async function deleteUser(i)
+        {
+          console.log("inside delete user");
+          await fetch("http://localhost:3000/users/"+users[i].id,{
+            method:"DELETE"
+          }) 
+          // instaed of reload try to remove the rows of table.
+          location.reload();
+          getAllUsersFromServer();
+        }
+      </script>
+    </body>
+
+</html>

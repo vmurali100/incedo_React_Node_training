@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "fname": "segu",
+      "lname": "Naveen",
+      "dob": "29-10-2000",
+      "email": "segu.naveen@incedoinc.com",
+      "mobileno": "8978717487",
+      "id": 1
+    }
+  ],
+  "details": [
+    {
+      "name": "segu.naveen",
+      "username": "naveen",
+      "email": "segu.naveen@incedoinc.com",
+      "password": "Naveen@2910",
+      "message": "This is naveens data",
+      "id": 1
+    },
+    {
+      "name": "segu.dinesh",
+      "username": "dinesh",
+      "email": "dinesh@incedoinc.com",
+      "password": "Dinesh@12",
+      "message": "Dinesh details",
+      "id": 2
+    },
+    {
+      "name": "Rohan",
+      "username": "Chris",
+      "email": "chris@incedoinc.com",
+      "password": "Chris@12",
+      "message": "Chris Rohan details",
+      "id": 3
+    },
+    {
+      "name": "PoornaChandraRao",
+      "username": "Poorna",
+      "email": "poorna@incedoinc.com",
+      "password": "Poorna@12",
+      "message": "Poorna details",
+      "id": 4
+    },
+    {
+      "name": "JaiSaiDeep.Gangavarapu",
+      "username": "Jai",
+      "email": "gangavarapu@incedoinc.com",
+      "password": "JaiSaiDeep@12",
+      "message": "Jai Sai Deep Details",
+      "id": 5
+    }
+  ],
+  "user": [
+    {
+      "name": "Naveen",
+      "username": "segu.naveen@incedoinc.com",
+      "email": "segu.naveen@incedoinc.com",
+      "message": "ok",
+      "pass": "Naveen@2910",
+      "id": 1
+    }
+  ]
+}
