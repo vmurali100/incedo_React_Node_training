@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+    </head>
+  </head>
+  <body>
+    <form>
+      <h1>Bootstrap 4 Form Validation Demo</h1>
+      <label for="fname">Name : </label><br />
+      <input type="text" name="" id="name" placeholder="Name" /> <br />
+      <br />
+      <label for="lname">Username : </label><br />
+      <input type="text" name="" id="username" placeholder="Username" /> <br />
+      <br />
+      <label for="dateofbirth">Email : </label><br />
+      <input type="text" name="" id="email" placeholder="Email" /> <br />
+      <br />
+      <label for="emailid">Password : </label><br />
+      <input type="text" name="" id="password" placeholder="Password" /> <br />
+      <br />
+      <label for="mobileno">Confirm Password : </label><br />
+      <input type="text" name="" id="conformPassword" placeholder="Confirm" />
+      <br />
+      <br />
+      <label for="mobileno">Message : </label><br />
+      <input type="text" name="" id="message" placeholder="Message" /> <br />
+      <br />
+      <button type="button" onclick="submit1()"><b>Send</b></button>
+      <br /><br />
+    </form>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>User Name</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th>Conform Password</th>
+          <th>Message</th>
+          <th>Id</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+      var selectedRow = null;
+      function submit1() {
+        var formData = readFormData();
+        if (selectedRow == null) {
+          var newPerson = createuser();
+          var post = new XMLHttpRequest();
+          post.onreadystatechange = function () {
+            if (post.readyState == 4 && post.status == 201) {
+              getAllUsersFromServer();
+            }
+          };
+          post.open("POST", "http://localhost:3000/users");
+          post.setRequestHeader("Content-Type", "application/json");
+          post.send(JSON.stringify(newPerson));
+        } else {
+          updateRecord(formData);
+        }
+      }
+      function readFormData() {
+        var formData = {};
+        formData["name"] = document.getElementById("name").value;
+        formData["username"] = document.getElementById("username").value;
+        formData["email"] = document.getElementById("email").value;
+        formData["password"] = document.getElementById("password").value;
+        formData["conformPassword"] =
+          document.getElementById("conformPassword").value;
+        formData["message"] = document.getElementById("message").value;
+        return formData;
+      }
+      function getAllUsersFromServer() {
+        var getInfo = new XMLHttpRequest();
+        getInfo.onreadystatechange = function () {
+          if (getInfo.readyState == 4 && getInfo.status == 200) {
+            users = JSON.parse(getInfo.response);
+            displayUsers(JSON.parse(getInfo.response));
+          }
+        };
+        getInfo.open("GET", "http://localhost:3000/users");
+        getInfo.send();
+      }
+      getAllUsersFromServer();
+      function displayUsers(users) {
+        console.log(users);
+        users.forEach((user, i) => {
+          var myTr = document.createElement("tr");
+          for (a in user) {
+            var myTd = document.createElement("td");
+            myTd.innerHTML = user[a];
+            myTr.appendChild(myTd);
+          }
+          var editTd = document.createElement("td");
+          var deleteTd = document.createElement("td");
+
+          var editBtn = document.createElement("button");
+          editBtn.setAttribute("onclick", "editUser(this)");
+          editBtn.innerHTML = "EDIT";
+          editTd.appendChild(editBtn);
+          var deleteBtn = document.createElement("button");
+          deleteBtn.setAttribute("onclick", "deleteUser(" + i + ")");
+          deleteBtn.innerHTML = "DELETE";
+          deleteTd.appendChild(deleteBtn);
+
+          myTr.appendChild(editTd);
+          myTr.appendChild(deleteTd);
+          document.querySelector("tbody").appendChild(myTr);
+        });
+      }
+      function createuser() {
+        var person = {
+          name: "",
+          username: "",
+          email: "",
+          password: "",
+          conformPassword: "",
+          message: "",
+        };
+        for (a in person) {
+          person[a] = document.getElementById(a).value;
+        }
+        return person;
+      }
+      async function deleteUser(i) {
+        let deletUser = await fetch(
+          "http://localhost:3000/users/" + users[i].id,
+          { method: "DELETE" }
+        );
+        getAllUsersFromServer();
+      }
+
+      function editUser(td) {
+        selectedRow = td.parentElement.parentElement;
+        document.getElementById("name").value = selectedRow.cells[0].innerHTML;
+        document.getElementById("username").value =
+          selectedRow.cells[1].innerHTML;
+        document.getElementById("email").value = selectedRow.cells[2].innerHTML;
+        document.getElementById("password").value =
+          selectedRow.cells[3].innerHTML;
+        document.getElementById("conformPassword").value =
+          selectedRow.cells[4].innerHTML;
+        document.getElementById("message").value =
+          selectedRow.cells[5].innerHTML;
+      }
+      function updateRecord(formData) {
+        selectedRow.cells[0].innerHTML = formData.name;
+        selectedRow.cells[1].innerHTML = formData.username;
+        selectedRow.cells[2].innerHTML = formData.email;
+        selectedRow.cells[3].innerHTML = formData.password;
+        selectedRow.cells[4].innerHTML = formData.conformPassword;
+        selectedRow.cells[5].innerHTML = formData.message;
+      }
+    </script>
+  </body>
+</html>

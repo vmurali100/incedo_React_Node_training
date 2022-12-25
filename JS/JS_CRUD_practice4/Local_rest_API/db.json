@@ -1,0 +1,43 @@
+{
+  "users": [
+    {
+      "university": "SASTRA",
+      "institute": "SASTRA",
+      "branch": "ECE",
+      "degree": "B.Tech",
+      "pursuing": "pursuing",
+      "completed": "",
+      "grade": 8,
+      "sem": 5,
+      "experience": 3,
+      "website": "www.sastra.edu",
+      "id": 1
+    },
+    {
+      "university": "SRC",
+      "institute": "SRC",
+      "branch": "CSE",
+      "degree": "B.com",
+      "pursuing": "on",
+      "completed": "on",
+      "grade": "6",
+      "sem": "1",
+      "experience": "5",
+      "website": "",
+      "id": 2
+    },
+    {
+      "university": "",
+      "institute": "",
+      "branch": "",
+      "degree": "",
+      "pursuing": "",
+      "completed": "completed",
+      "grade": "",
+      "sem": "",
+      "experience": "",
+      "website": "",
+      "id": 3
+    }
+  ]
+}

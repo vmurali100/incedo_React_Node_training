@@ -1,0 +1,13 @@
+{
+  "users": [
+    {
+      "name": "Deepu",
+      "username": "Muppala",
+      "email": "deepu@gmail.com",
+      "password": "123",
+      "conformPassword": "123",
+      "message": "s",
+      "id": 2
+    }
+  ]
+}

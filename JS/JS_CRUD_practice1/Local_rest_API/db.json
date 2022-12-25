@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "fname": "suchi",
+      "lname": "muppala",
+      "dateofbirth": "20-03-1999",
+      "emailid": "suchi@gmail.com",
+      "mobileno": "9182842519",
+      "id": 1
+    },
+    {
+      "fname": "deepu",
+      "lname": "muppala",
+      "dateofbirth": "20-03-1999",
+      "emailid": "deepu@gmail.com",
+      "mobileno": "9786442489",
+      "id": 2
+    },
+    {
+      "fname": "Sony",
+      "lname": "YSS",
+      "dateofbirth": "06-05-2001",
+      "emailid": "sony@gmail.com",
+      "mobileno": "9381347929",
+      "id": 3
+    }
+  ]
+}

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+    </head>
+  </head>
+  <body>
+    <form>
+      <h1>Bootstrap 4 Form Validation Demo</h1>
+      <label for="username">Username </label><br />
+      <input type="text" name="" id="username" placeholder="Username" /> <br />
+      <br />
+      <label for="emailid">Password </label><br />
+      <input type="text" name="" id="password" placeholder="Password" /> <br />
+      <br />
+      <label for="dateofbirth">Email address </label><br />
+      <input type="text" name="" id="emailAddress" placeholder="Email" />
+      <br /><br />
+      <select id="text1" name="">
+        <option>I am a man</option>
+      </select>
+      <br />
+      <br />
+      <select id="text2" name="">
+        <option>I want to find women</option>
+      </select>
+      <br />
+      <br />
+      <label for="dateofbirth">Date of birth </label><br />
+      <span>
+        <select id="year" name="year">
+          <option>1999</option>
+          <option>2000</option>
+          <option>2001</option>
+          <option>2002</option>
+          <option>2003</option>
+          <option>2004</option>
+          <option>2005</option>
+          <option>2006</option>
+          <option>2007</option>
+        </select>
+      </span>
+      <span>
+        <select id="month" name="month">
+          <option selected>month</option>
+          <option>January</option>
+          <option>February</option>
+          <option>March</option>
+          <option>April</option>
+          <option>May</option>
+          <option>June</option>
+          <option>July</option>
+          <option>August</option>
+          <option>September</option>
+          <option>October</option>
+          <option>November</option>
+          <option>December</option>
+        </select>
+      </span>
+      <input
+        type="number"
+        min="1"
+        max="31"
+        id="day"
+        name=""
+        placeholder="day"
+      />
+      <br /><br />
+      <label for="height/weight">Height/weight </label><br />
+      <input
+        type="number"
+        min="1"
+        max="6"
+        id="height"
+        name=""
+        placeholder="Height"
+      />
+      <input
+        type="number"
+        min="2"
+        max="100"
+        id="weight"
+        name=""
+        placeholder="Weight"
+      />
+      <button type="button" onclick="submit1()"><b>Send</b></button>
+      <br /><br />
+    </form>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>User Name</th>
+          <th>Password</th>
+          <th>Email Address</th>
+          <th>text-1</th>
+          <th>text-2</th>
+          <th>year</th>
+          <th>month</th>
+          <th>day</th>
+          <th>Height</th>
+          <th>weight</th>
+          <th>Id</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+      var selectedRow = null;
+      function submit1() {
+        var formData = readFormData();
+        if (selectedRow == null) {
+          var newPerson = createuser();
+          var post = new XMLHttpRequest();
+          post.onreadystatechange = function () {
+            if (post.readyState == 4 && post.status == 201) {
+              getAllUsersFromServer();
+            }
+          };
+          post.open("POST", "http://localhost:3000/users");
+          post.setRequestHeader("Content-Type", "application/json");
+          post.send(JSON.stringify(newPerson));
+        } else {
+          updateRecord(formData);
+        }
+      }
+      function readFormData() {
+        var formData = {};
+        formData["username"] = document.getElementById("username").value;
+        formData["password"] = document.getElementById("password").value;
+        formData["emailAddress"] =
+          document.getElementById("emailAddress").value;
+        formData["text1"] = document.getElementById("text1").value;
+        formData["text2"] = document.getElementById("text2").value;
+        formData["year"] = document.getElementById("year").value;
+        formData["month"] = document.getElementById("month").value;
+        formData["day"] = document.getElementById("day").value;
+        formData["height"] = document.getElementById("height").value;
+        formData["weight"] = document.getElementById("weight").value;
+
+        return formData;
+      }
+      function getAllUsersFromServer() {
+        var getInfo = new XMLHttpRequest();
+        getInfo.onreadystatechange = function () {
+          if (getInfo.readyState == 4 && getInfo.status == 200) {
+            users = JSON.parse(getInfo.response);
+            displayUsers(JSON.parse(getInfo.response));
+          }
+        };
+        getInfo.open("GET", "http://localhost:3000/users");
+        getInfo.send();
+      }
+      getAllUsersFromServer();
+      function displayUsers(users) {
+        console.log(users);
+        users.forEach((user, i) => {
+          var myTr = document.createElement("tr");
+          for (a in user) {
+            var myTd = document.createElement("td");
+            myTd.innerHTML = user[a];
+            myTr.appendChild(myTd);
+          }
+          var editTd = document.createElement("td");
+          var deleteTd = document.createElement("td");
+
+          var editBtn = document.createElement("button");
+          editBtn.setAttribute("onclick", "editUser(this)");
+          editBtn.innerHTML = "EDIT";
+          editTd.appendChild(editBtn);
+          var deleteBtn = document.createElement("button");
+          deleteBtn.setAttribute("onclick", "deleteUser(" + i + ")");
+          deleteBtn.innerHTML = "DELETE";
+          deleteTd.appendChild(deleteBtn);
+
+          myTr.appendChild(editTd);
+          myTr.appendChild(deleteTd);
+          document.querySelector("tbody").appendChild(myTr);
+        });
+      }
+      function createuser() {
+        var person = {
+          username: "",
+          password: "",
+          emailAddress: "",
+          text1: "",
+          text2: "",
+          year: "",
+          month: "",
+          day: "",
+          height: "",
+          weight: "",
+        };
+        for (a in person) {
+          person[a] = document.getElementById(a).value;
+        }
+        return person;
+      }
+      async function deleteUser(i) {
+        let deletUser = await fetch(
+          "http://localhost:3000/users/" + users[i].id,
+          { method: "DELETE" }
+        );
+        getAllUsersFromServer();
+      }
+
+      function editUser(td) {
+        selectedRow = td.parentElement.parentElement;
+        document.getElementById("username").value =
+          selectedRow.cells[0].innerHTML;
+        document.getElementById("emailAddress").value =
+          selectedRow.cells[2].innerHTML;
+        document.getElementById("password").value =
+          selectedRow.cells[1].innerHTML;
+        document.getElementById("text1").value = selectedRow.cells[3].innerHTML;
+        document.getElementById("text2").value = selectedRow.cells[4].innerHTML;
+        document.getElementById("year").value = selectedRow.cells[5].innerHTML;
+        document.getElementById("month").value = selectedRow.cells[6].innerHTML;
+        document.getElementById("day").value = selectedRow.cells[7].innerHTML;
+        document.getElementById("height").value =
+          selectedRow.cells[8].innerHTML;
+        document.getElementById("weight").value =
+          selectedRow.cells[9].innerHTML;
+      }
+      function updateRecord(formData) {
+        selectedRow.cells[0].innerHTML = formData.username;
+        selectedRow.cells[1].innerHTML = formData.password;
+        selectedRow.cells[2].innerHTML = formData.emailAddress;
+        selectedRow.cells[3].innerHTML = formData.text1;
+        selectedRow.cells[4].innerHTML = formData.text2;
+        selectedRow.cells[5].innerHTML = formData.year;
+        selectedRow.cells[6].innerHTML = formData.month;
+        selectedRow.cells[7].innerHTML = formData.day;
+        selectedRow.cells[8].innerHTML = formData.height;
+        selectedRow.cells[9].innerHTML = formData.weight;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+    </head>
+  </head>
+  <body>
+    <form>
+      <h1>Registration details</h1>
+      <label for="university">University: </label>
+      <input type="text" name="" id="university" /> <br />
+      <br />
+      <label for="institute">Institute:</label>
+      <input type="text" name="" id="institute" /> <br />
+      <br />
+      <label for="branch">Branch :</label>
+      <select id="branch" name="">
+        <option selected></option>
+        <option>CSE</option>
+        <option>ECE</option>
+        <option>EEE</option>
+        <option>Mech</option>
+      </select>
+      <br />
+      <br />
+      <label for="Degree">Branch :</label>
+      <select id="degree" name="">
+        <option selected></option>
+        <option>B.Tech</option>
+        <option>B.com</option>
+      </select>
+      <input
+        type="radio"
+        id="pursuing"
+        name="currentDegree"
+        value="pursuing"
+        checked
+      />
+      <label for="pursuing">Pursuing</label>
+      <input
+        type="radio"
+        id="completed"
+        name="currentDegree"
+        value="completed"
+      />
+      <label for="completed">Completed</label>
+      <br />
+      <br />
+      <label for="AverageCPI">Average CPI</label><br />
+      <span>
+        <select id="grade" name="">
+          <option selected></option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+        </select>
+      </span>
+      <label id="grade">Upto</label>
+      <span>
+        <select id="sem" name="">
+          <option selected></option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+        </select>
+      </span>
+      <label id="sem">Th Semester</label><br /><br />
+      <label for="experience">Experience</label>
+      <input type="number" min="0" max="40" id="experience" name="" />
+      <label for="experience">Years</label>
+      <br /><br />
+      <label for="website">Your Website Or Blog : </label><br />
+      <input type="text" id="website" name="" placeholder="http://" />
+      <button type="button" onclick="submit1()"><b>Send</b></button>
+      <br /><br />
+    </form>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>University</th>
+          <th>Institute</th>
+          <th>Branch</th>
+          <th>Degree</th>
+          <th>Pursuing</th>
+          <th>Completed</th>
+          <th>Grade</th>
+          <th>Semester</th>
+          <th>Experience</th>
+          <th>Website</th>
+          <th>Id</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+      var selectedRow = null;
+      function submit1() {
+        var formData = readFormData();
+        if (selectedRow == null) {
+          var newPerson = createuser();
+          console.log(newPerson, "newPerson");
+          var post = new XMLHttpRequest();
+          post.onreadystatechange = function () {
+            if (post.readyState == 4 && post.status == 201) {
+              getAllUsersFromServer();
+            }
+          };
+          post.open("POST", "http://localhost:3000/users");
+          post.setRequestHeader("Content-Type", "application/json");
+          post.send(JSON.stringify(newPerson));
+        } else {
+          updateRecord(formData);
+        }
+      }
+      function readFormData() {
+        var formData = {};
+        formData["university"] = document.getElementById("university").value;
+        formData["institute"] = document.getElementById("institute").value;
+        formData["branch"] = document.getElementById("branch").value;
+        formData["degree"] = document.getElementById("degree").value;
+        formData["pursuing"] = document.getElementById("pursuing").value;
+        formData["completed"] = document.getElementById("completed").value;
+        formData["grade"] = document.getElementById("grade").value;
+        formData["sem"] = document.getElementById("sem").value;
+        formData["experience"] = document.getElementById("experience").value;
+        formData["website"] = document.getElementById("website").value;
+
+        return formData;
+      }
+      function getAllUsersFromServer() {
+        var getInfo = new XMLHttpRequest();
+        getInfo.onreadystatechange = function () {
+          if (getInfo.readyState == 4 && getInfo.status == 200) {
+            users = JSON.parse(getInfo.response);
+            displayUsers(JSON.parse(getInfo.response));
+          }
+        };
+        getInfo.open("GET", "http://localhost:3000/users");
+        getInfo.send();
+      }
+      getAllUsersFromServer();
+      function displayUsers(users) {
+        console.log(users);
+        users.forEach((user, i) => {
+          var myTr = document.createElement("tr");
+          for (a in user) {
+            var myTd = document.createElement("td");
+            myTd.innerHTML = user[a];
+            myTr.appendChild(myTd);
+          }
+          var editTd = document.createElement("td");
+          var deleteTd = document.createElement("td");
+
+          var editBtn = document.createElement("button");
+          editBtn.setAttribute("onclick", "editUser(this)");
+          editBtn.innerHTML = "EDIT";
+          editTd.appendChild(editBtn);
+          var deleteBtn = document.createElement("button");
+          deleteBtn.setAttribute("onclick", "deleteUser(" + i + ")");
+          deleteBtn.innerHTML = "DELETE";
+          deleteTd.appendChild(deleteBtn);
+
+          myTr.appendChild(editTd);
+          myTr.appendChild(deleteTd);
+          document.querySelector("tbody").appendChild(myTr);
+        });
+      }
+      function createuser() {
+        var person = {
+          university: "",
+          institute: "",
+          branch: "",
+          degree: "",
+          pursuing: "",
+          completed: "",
+          grade: "",
+          sem: "",
+          experience: "",
+          website: "",
+        };
+        for (a in person) {
+          person[a] = document.getElementById(a).value;
+        }
+        return person;
+      }
+      async function deleteUser(i) {
+        let deletUser = await fetch(
+          "http://localhost:3000/users/" + users[i].id,
+          { method: "DELETE" }
+        );
+        getAllUsersFromServer();
+      }
+
+      function editUser(td) {
+        selectedRow = td.parentElement.parentElement;
+        document.getElementById("university").value =
+          selectedRow.cells[0].innerHTML;
+        document.getElementById("institute").value =
+          selectedRow.cells[1].innerHTML;
+        document.getElementById("branch").value =
+          selectedRow.cells[2].innerHTML;
+        document.getElementById("degree").value =
+          selectedRow.cells[3].innerHTML;
+        document.getElementById("pursuing").value =
+          selectedRow.cells[4].innerHTML;
+        document.getElementById("completed").value =
+          selectedRow.cells[5].innerHTML;
+        document.getElementById("grade").value = selectedRow.cells[6].innerHTML;
+        document.getElementById("sem").value = selectedRow.cells[7].innerHTML;
+        document.getElementById("experience").value =
+          selectedRow.cells[8].innerHTML;
+        document.getElementById("website").value =
+          selectedRow.cells[9].innerHTML;
+      }
+      function updateRecord(formData) {
+        selectedRow.cells[0].innerHTML = formData.university;
+        selectedRow.cells[1].innerHTML = formData.institute;
+        selectedRow.cells[2].innerHTML = formData.branch;
+        selectedRow.cells[3].innerHTML = formData.degree;
+        selectedRow.cells[4].innerHTML = formData.pursuing;
+        selectedRow.cells[5].innerHTML = formData.completed;
+        selectedRow.cells[6].innerHTML = formData.grade;
+        selectedRow.cells[7].innerHTML = formData.sem;
+        selectedRow.cells[8].innerHTML = formData.experience;
+        selectedRow.cells[9].innerHTML = formData.website;
+      }
+    </script>
+  </body>
+</html>

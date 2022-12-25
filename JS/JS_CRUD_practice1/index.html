@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+    </head>
+  </head>
+  <body>
+    <form>
+      <h1>HTML Form</h1>
+      <label for="fname">First Name : </label>
+      <input type="text" name="" id="fname" /> <br />
+      <br />
+      <label for="lname">Last Name : </label>
+      <input type="text" name="" id="lname" /> <br />
+      <br />
+      <label for="dateofbirth">Date of Birth : </label>
+      <input type="text" name="" id="dateofbirth" /> <br />
+      <br />
+      <label for="emailid">Email id : </label>
+      <input type="text" name="" id="emailid" /> <br />
+      <br />
+      <label for="mobileno">Mobile Number : </label>
+      <input type="text" name="" id="mobileno" /> <br />
+      <br />
+      <button type="button" onclick="submit1()"><b>SUBMIT</b></button>
+      <button type="button" onclick="reset()"><b>RESET</b></button>
+      <br /><br />
+    </form>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Date of Birth</th>
+          <th>Email ID</th>
+          <th>Mobile Number</th>
+          <th>Id</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+      var selectedRow = null;
+      function submit1() {
+        var formData = readFormData();
+        if (selectedRow == null) {
+          var newPerson = createuser();
+          var post = new XMLHttpRequest();
+          post.onreadystatechange = function () {
+            if (post.readyState == 4 && post.status == 201) {
+              getAllUsersFromServer();
+            }
+          };
+          post.open("POST", "http://localhost:3000/users");
+          post.setRequestHeader("Content-Type", "application/json");
+          post.send(JSON.stringify(newPerson));
+        } else {
+          updateRecord(formData);
+        }
+      }
+      function readFormData() {
+        var formData = {};
+        formData["fname"] = document.getElementById("fname").value;
+        formData["lname"] = document.getElementById("lname").value;
+        formData["dateofbirth"] = document.getElementById("dateofbirth").value;
+        formData["emailid"] = document.getElementById("emailid").value;
+        formData["mobileno"] = document.getElementById("mobileno").value;
+        return formData;
+      }
+      function getAllUsersFromServer() {
+        var getInfo = new XMLHttpRequest();
+        getInfo.onreadystatechange = function () {
+          if (getInfo.readyState == 4 && getInfo.status == 200) {
+            users = JSON.parse(getInfo.response);
+            displayUsers(JSON.parse(getInfo.response));
+          }
+        };
+        getInfo.open("GET", "http://localhost:3000/users");
+        getInfo.send();
+      }
+      getAllUsersFromServer();
+      function displayUsers(users) {
+        console.log(users);
+        users.forEach((user, i) => {
+          var myTr = document.createElement("tr");
+          for (a in user) {
+            var myTd = document.createElement("td");
+            myTd.innerHTML = user[a];
+            myTr.appendChild(myTd);
+          }
+          var editTd = document.createElement("td");
+          var deleteTd = document.createElement("td");
+
+          var editBtn = document.createElement("button");
+          editBtn.setAttribute("onclick", "editUser(this)");
+          editBtn.innerHTML = "EDIT";
+          editTd.appendChild(editBtn);
+          var deleteBtn = document.createElement("button");
+          deleteBtn.setAttribute("onclick", "deleteUser(" + i + ")");
+          deleteBtn.innerHTML = "DELETE";
+          deleteTd.appendChild(deleteBtn);
+
+          myTr.appendChild(editTd);
+          myTr.appendChild(deleteTd);
+          document.querySelector("tbody").appendChild(myTr);
+        });
+      }
+      function createuser() {
+        var person = {
+          fname: "",
+          lname: "",
+          dateofbirth: "",
+          emailid: "",
+          mobileno: "",
+        };
+        for (a in person) {
+          person[a] = document.getElementById(a).value;
+        }
+        return person;
+      }
+      async function deleteUser(i) {
+        let deletUser = await fetch(
+          "http://localhost:3000/users/" + users[i].id,
+          { method: "DELETE" }
+        );
+        getAllUsersFromServer();
+      }
+
+      function editUser(td) {
+        selectedRow = td.parentElement.parentElement;
+        document.getElementById("fname").value = selectedRow.cells[0].innerHTML;
+        document.getElementById("lname").value = selectedRow.cells[1].innerHTML;
+        document.getElementById("dateofbirth").value =
+          selectedRow.cells[2].innerHTML;
+        document.getElementById("emailid").value =
+          selectedRow.cells[3].innerHTML;
+        document.getElementById("mobileno").value =
+          selectedRow.cells[4].innerHTML;
+      }
+      function updateRecord(formData) {
+        selectedRow.cells[0].innerHTML = formData.fname;
+        selectedRow.cells[1].innerHTML = formData.lname;
+        selectedRow.cells[2].innerHTML = formData.dateofbirth;
+        selectedRow.cells[3].innerHTML = formData.emailid;
+        selectedRow.cells[4].innerHTML = formData.mobileno;
+      }
+    </script>
+  </body>
+</html>

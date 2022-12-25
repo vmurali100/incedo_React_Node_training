@@ -1,0 +1,30 @@
+{
+  "users": [
+    {
+      "username": "Muppala",
+      "password": "123",
+      "emailAddress": "deepu@gmail.com",
+      "text1": "I am a man",
+      "text2": "I want to find women",
+      "year": 2001,
+      "month": "January",
+      "day": 23,
+      "height": 3,
+      "weight": 56,
+      "id": 1
+    },
+    {
+      "username": "suchi",
+      "password": "123",
+      "emailAddress": "suchi@gmail.com",
+      "text1": "I am man",
+      "text2": "I want to find women",
+      "year": "1999",
+      "month": "February",
+      "day": "23",
+      "height": "4",
+      "weight": "43",
+      "id": 2
+    }
+  ]
+}
