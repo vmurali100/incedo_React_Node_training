@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "fname": "Bhargav",
+      "lname": "Bhavirisetty",
+      "dob": "8-12-2000",
+      "email": "b.bhargav@incedoinc.com",
+      "mobileno": "9381200815",
+      "id": 1
+    },
+    {
+      "fname": "Bhargav",
+      "lname": "Bhavirisett",
+      "dob": "8-12-2000",
+      "email": "b.bhargav@incedoinc.com",
+      "mobileno": "9381200",
+      "id": 2
+    },
+    {
+      "fname": "Bhargav",
+      "lname": "Bhavirisett",
+      "dob": "8-12-2000",
+      "email": "b.bhargav@incedoinc.com",
+      "mobileno": "9381200815",
+      "id": 3
+    }
+  ]
+}

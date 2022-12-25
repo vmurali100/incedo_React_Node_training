@@ -1,0 +1,22 @@
+{
+  "name": "incedo_react_node_training-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vmurali100/incedo_React_Node_training.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vmurali100/incedo_React_Node_training/issues"
+  },
+  "homepage": "https://github.com/vmurali100/incedo_React_Node_training#readme",
+  "dependencies": {
+    "json-server": "^0.17.1"
+  }
+}
