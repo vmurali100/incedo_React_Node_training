@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 45px;
+        background-color: rgb(234, 227, 219);
+      }
+      table {
+        margin: 21px;
+      }
+      #exp
+      {
+        width: 40%;
+      }
+      td{
+        padding: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>University </h1>
+    <form>
+      <label for="university">University : </label>
+      <input type="text" name="" id="university" /> <br />
+      <br />
+      <label for="institute">Institute:</label>
+      <input type="text" name="" id="institute" /> <br />
+      <br />
+      <label for="branch">Branch :</label>
+      <select name="branch" id="branch">
+        <option value="CSE">CSE</option>
+        <option value="ECE">ECE</option>
+        <option value="ICT" disabled>ICT</option>
+        <option value="MECH" selected>MECH</option>
+      </select><br />
+      <br />
+      <label for="degree">Degree:</label>
+      <select name="degree" id="degree">
+        <option value="BTech">BTech</option>
+        <option value="MTech">MTech</option>
+      </select><br />
+      <br />
+      <label for="cpi">Average CPI :</label>
+      <input type="number" name="" id="cpi" /> 
+      <label for="sem">Upto Semester :</label>
+      <input type="number" name="" id="sem" /> 
+      <br />
+      <br />
+      <label for="exp">Experience:</label>
+      <input type="text" name="" id="exp" /> <br />
+      <br />
+      <label for="website">Website Or Blog:</label>
+      <input type="test" name="" id="website" /> <br />
+      <br />
+      <button type="button" onclick="getUser()">Create</button>
+      <button type="button" id="btn" onclick="updateUser()" disabled="true">
+        Update
+      </button>
+    </form>
+    <hr />
+    <table border="1">
+      <thead>
+        <tr>
+          <th>University</th>
+          <th>Institute</th>
+          <th>Branch</th>
+          <th>Degree</th>
+          <th>Average CPI</th>
+          <th>Upto Semester</th>
+          <th>Experience</th>
+          <th>Website Or Blog</th>
+          <th>Id</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+      // 1. Create A User
+      function getUser() {
+        var newPerson = captureuser();
+        var postInfo = new XMLHttpRequest();
+        postInfo.onreadystatechange = function () {
+          if (postInfo.readyState == 4 && postInfo.status == 201) {
+            getAllUsersFromServer();
+          }
+        };
+        postInfo.open("POST", "http://localhost:3000/university");
+        postInfo.setRequestHeader("Content-Type", "application/json");
+        postInfo.send(JSON.stringify(newPerson));
+      }
+
+      function captureuser() {
+        var person = {
+            university:"",
+            institute:"",
+            branch:"",
+            degree:"",
+            cpi:"",
+            sem:"",
+            website:"",
+            exp:"",
+        };
+        for (a in person) {
+          person[a] = document.getElementById(a).value;
+          document.getElementById(a).value = "";
+        }
+
+        return person;
+      }
+      var users = [];
+      // 2. Read A User
+      function getAllUsersFromServer() {
+        var getInfo = new XMLHttpRequest();
+        getInfo.onreadystatechange = function () {
+          if (getInfo.readyState == 4 && getInfo.status == 200) {
+            users = JSON.parse(getInfo.response);
+            console.log("Testing ", getInfo.response);
+            displayUsers(JSON.parse(getInfo.response));
+          }
+        };
+        getInfo.open("GET", "http://localhost:3000/university");
+        getInfo.send();
+      }
+
+      getAllUsersFromServer();
+      function displayUsers(users) {
+        console.log(document.querySelector("tbody").children.length);
+        if (document.querySelector("tbody").children.length != 0) {
+          document.querySelector("tbody").innerHTML = "";
+        }
+
+        console.log(document.querySelector("tbody").children.length);
+        console.log("testing users", users);
+        users.forEach((user, i) => {
+          var myTr = document.createElement("tr");
+          for (a in user) {
+            if (a != "pass") {
+              var myTd = document.createElement("td");
+              myTd.innerHTML = user[a];
+              myTr.appendChild(myTd);
+            }
+          }
+          var editTd = document.createElement("td");
+          var deleteTd = document.createElement("td");
+
+          var editBtn = document.createElement("button");
+          editBtn.setAttribute("onclick", "editUser(" + i + ")");
+          editBtn.innerHTML = "EDIT";
+          editTd.appendChild(editBtn);
+          var deleteBtn = document.createElement("button");
+          deleteBtn.setAttribute("onclick", "deleteUser(" + i + ")");
+          deleteBtn.innerHTML = "DELETE";
+          deleteTd.appendChild(deleteBtn);
+
+          myTr.appendChild(editTd);
+          myTr.appendChild(deleteTd);
+          document.querySelector("tbody").appendChild(myTr);
+        });
+      }
+      // 4. Delete A User
+      async function deleteUser(i) {
+        let deleteUser = await fetch(
+          "http://localhost:3000/university/" + users[i].id,
+          { method: "DELETE" }
+        );
+        getAllUsersFromServer();
+      }
+      var selectedId;
+      function editUser(i) {
+        for (a in users[i]) {
+          if (a != "id") document.getElementById(a).value = users[i][a];
+        }
+        document.getElementById("btn").disabled = false;
+        selectedId = i;
+      }
+      // 3. Update A User
+      async function updateUser() {
+        // console.log("Capture", captureuser());
+        let deleteUser = await fetch(
+          "http://localhost:3000/university/" + users[selectedId].id,
+          {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              ...captureuser(),
+              id: users[selectedId].id,
+            }),
+          }
+        );
+
+        document.getElementById("btn").disabled = true;
+        getAllUsersFromServer();
+      }
+    </script>
+  </body>
+</html>

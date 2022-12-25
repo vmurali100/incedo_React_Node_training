@@ -1,4 +1,17 @@
 {
   "user": [],
-  "details": []
+  "details": [],
+  "university": [
+    {
+      "university": "Sastra University",
+      "institute": "Saranathan",
+      "branch": "ECE",
+      "degree": "MTech",
+      "cpi": "8.5",
+      "sem": "7",
+      "website": "www.testings.com",
+      "exp": "Testing Experince",
+      "id": 1
+    }
+  ]
 }
