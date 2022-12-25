@@ -9,13 +9,22 @@
     <style>
         body {
           text-align: center;
-          background-color: rgb(234, 255, 98);
+          background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
         }
     
         form {
           display: inline-block;
           text-align: left;
+          background: white;
+          padding-left: 5%;
+          padding-right: 5%;
+          margin-bottom: 2%;
+          padding-bottom: 2%;
+
+          
         }
+        
+
     
         div {
           margin-bottom: 10px;
@@ -38,36 +47,40 @@
       </style>
 </head>
 <body>
-    <h3>Bootstrapm 5 Validation Demo</h3>
+     
+    
+    <div class="amar">
     <form>
-        <div class="mb-2">
+      <h4>Bootstrap 5 Validation Demo</h4>
+        <div class="mb-1">
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control" id="name" >
         </div>
-        <div class="mb-2">
+        <div class="mb-1">
             <label for="username" class="form-label">Username</label>
             <input type="text" class="form-control" id="username" >
         </div>
-        <div class="mb-2">
+        <div class="mb-1">
             <label for="email" class="form-label">Email address</label>
             <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
-        <div class="mb-2">
+        <div class="mb-1">
             <label for="pwd" class="form-label">Password</label>
             <input type="password" class="form-control" id="pwd">
         </div>
-        <div class="mb-2">
+        <div class="mb-1">
             <label for="cpwd" class="form-label">Confirm Password</label>
             <input type="password" class="form-control" id="cpwd">
         </div>
-        <div class="mb-2">
+        <div class="mb-1">
             <label for="msg" class="form-label">Message</label>
-            <textarea class="form-control" id="msg" rows="3"></textarea>
+            <textarea class="form-control" id="msg" rows="2"></textarea>
         </div>
         <button type = "submit" onclick="getUser()" class=" btn btn-primary">Submit</button>
        
       </form>
+    </div>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
       <script>
       function getUser() {
