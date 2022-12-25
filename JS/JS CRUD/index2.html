@@ -1,104 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    form {
+      display: inline-block;
+    }
+
+    div {
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: inline-block;
+      width: 150px;
+      text-align: right;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+  </style>
 </head>
+
 <body>
-    <h1>HTML FORM</h1>
-    <form>
-        <label for="fname">First Name : </label>
-        <input type="text" name="" id="fname" /> <br />
-        <br />
-        <label for="lname">Last Name : </label>
-        <input type="text" name="" id="lname" /> <br />
-        <br />
-        <label for="dob">Date of Birth : </label>
-        <input type="text" name="" id="dob" /> <br />
-        <br />
-        <label for="email">Email Id : </label>
-        <input type="email" name="" id="email" /> <br />
-        <br />
-        <label for="mob">Mobile Number : </label>
-        <input type="number" name="" id="mob" /> <br />
-        <br />
-        <button type="submit" onclick="getUser()">Submit</button>
-       
-        <button type="reset" >Reset</button>
-      </form>
-      <table border="1">
-        <thead>
-          <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Date of Birth</th>
-            <th>Email</th>
-            <th>Mobile</th>
-            <th>Id</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-      
-    <script>
-        function getUser() {
-        var newPerson = captureuser();
-        console.log(newPerson);
-        var postInfo = new XMLHttpRequest();
-        postInfo.onreadystatechange = function () {
-          if (postInfo.readyState == 4 && postInfo.status == 201) {
-            getAllUsersFromServer();
-          }
-        };
-        postInfo.open("POST", "http://localhost:3000/details");
-        postInfo.setRequestHeader("Content-Type", "application/json");
-        postInfo.send(JSON.stringify(newPerson));
-      }
+  <h1>HTML FORM</h1>
+  <form>
+    <label for="fname">First Name : </label>
+    <input type="text" name="" id="fname" /> <br />
+    <br />
+    <label for="lname">Last Name : </label>
+    <input type="text" name="" id="lname" /> <br />
+    <br />
+    <label for="dob">Date of Birth : </label>
+    <input type="text" name="" id="dob" /> <br />
+    <br />
+    <label for="email">Email Id : </label>
+    <input type="email" name="" id="email" /> <br />
+    <br />
+    <label for="mob">Mobile Number : </label>
+    <input type="number" name="" id="mob" /> <br />
+    <br />
+    <button type="submit" onclick="getUser()">Submit</button>
 
-      function captureuser() {
-        var person = {
-          fname: "",
-          lname: "",
-          dob:"",
-          email:"",
-          mob:""
-        };
-        for (a in person) {
-          person[a] = document.getElementById(a).value;
+    <button type="reset">Reset</button>
+  </form>
+  <hr/>
+  <table border="1" className="center">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Date of Birth</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Id</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    function getUser() {
+      var newPerson = captureuser();
+      console.log(newPerson);
+      var postInfo = new XMLHttpRequest();
+      postInfo.onreadystatechange = function () {
+        if (postInfo.readyState == 4 && postInfo.status == 201) {
+          getAllUsersFromServer();
         }
+      };
+      postInfo.open("POST", "http://localhost:3000/details");
+      postInfo.setRequestHeader("Content-Type", "application/json");
+      postInfo.send(JSON.stringify(newPerson));
+    }
 
-        return person;
+    function captureuser() {
+      var person = {
+        fname: "",
+        lname: "",
+        dob: "",
+        email: "",
+        mob: ""
+      };
+      for (a in person) {
+        person[a] = document.getElementById(a).value;
       }
 
-      var users = [];
+      return person;
+    }
 
-      function getAllUsersFromServer() {
-        var getInfo = new XMLHttpRequest();
-        getInfo.onreadystatechange = function () {
-          if (getInfo.readyState == 4 && getInfo.status == 200) {
-            users = JSON.parse(getInfo.response);
-            displayUsers(JSON.parse(getInfo.response));
-          }
-        };
-        getInfo.open("GET", "http://localhost:3000/details");
-        getInfo.send();
-      }
+    var users = [];
 
-      getAllUsersFromServer();
-      function displayUsers(users) {
-        console.log(users);
-        users.forEach((user, i) => {
-          var myTr = document.createElement("tr");
-          for (a in user) {
-            var myTd = document.createElement("td");
-            myTd.innerHTML = user[a];
-            myTr.appendChild(myTd);
-          }
-          document.querySelector("tbody").appendChild(myTr);
-        });
-      }
-    </script>
+    function getAllUsersFromServer() {
+      var getInfo = new XMLHttpRequest();
+      getInfo.onreadystatechange = function () {
+        if (getInfo.readyState == 4 && getInfo.status == 200) {
+          users = JSON.parse(getInfo.response);
+          displayUsers(JSON.parse(getInfo.response));
+        }
+      };
+      getInfo.open("GET", "http://localhost:3000/details");
+      getInfo.send();
+    }
+
+    getAllUsersFromServer();
+    function displayUsers(users) {
+      console.log(users);
+      users.forEach((user, i) => {
+        var myTr = document.createElement("tr");
+        for (a in user) {
+          var myTd = document.createElement("td");
+          myTd.innerHTML = user[a];
+          myTr.appendChild(myTd);
+        }
+        document.querySelector("tbody").appendChild(myTr);
+      });
+    }
+  </script>
 </body>
+
 </html>

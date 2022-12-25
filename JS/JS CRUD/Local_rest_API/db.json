@@ -50,6 +50,14 @@
       "email": "c.amarendra@incedoinc.com",
       "mob": "9",
       "id": 3
+    },
+    {
+      "fname": "Mullapudi",
+      "lname": "Sri Ganesh",
+      "dob": "09-08-2000",
+      "email": "m.sriganesh@incedoinc.com",
+      "mob": "68757689",
+      "id": 4
     }
   ]
 }
