@@ -1,0 +1,12 @@
+{
+  "userDetails": [
+    {
+      "firstName": "Hari",
+      "lastName": "B",
+      "email": "hariharan@incedoinc.com",
+      "DateOfBirth": "2022-12-08",
+      "mobileNum": "1234",
+      "id": 2
+    }
+  ]
+}

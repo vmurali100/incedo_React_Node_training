@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 1</title>
+  </head>
+  <body>
+    <div>
+      <h1>HTML form</h1>
+      <form class="inputForm" onsubmit="createUser()" method="post">
+        <div><label>First Name:</label>
+        <input id="fName" type="text"></input></div>
+        <div><label>Last Name:</label>
+            <input id="lName" type="text"></input></div>
+        <div><label>Date of birth:</label>
+            <input id="dob" type="date"></input></div>
+        <div><label>Email Id:</label>
+            <input id="email" type="email"></input></div>
+        <div><label>Mobile number :</label>
+            <input id="mobNum" type="text"></input></div>
+
+            <div id="buttonDiv">
+
+                <button id='submitBtn'>Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+      </form>
+      <table border="1">
+            <thead>
+
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email ID</th>
+                    <th> Date of Birth</th>
+                    <th>Mobile  Number</th>
+                    <th> Edit </th>
+                    <th>  Delete </th>
+                </tr>
+
+                
+            </thead>
+            
+            <tbody>      
+            </tbody>
+  
+      </table>
+    </div>
+  </body>
+  <script>
+
+var users = [];
+
+    //load data when page is loaded
+    window.addEventListener("load" , ()=> {
+
+      getAllUsers();
+    })
+
+    //create a user
+ 
+    async function createUser(){
+        event.preventDefault();
+        var firstName = event.target.elements.fName.value;
+        var lastName = event.target.elements.lName.value;
+        var email = event.target.elements.email.value;
+        var dob = event.target.elements.dob.value;
+        var mobNum = event.target.elements.mobNum.value;
+        
+        const userObject = {
+            
+            firstName : firstName,
+            lastName : lastName,
+            email : email,
+            DateOfBirth : dob,
+            mobileNum : mobNum 
+        }
+        
+        
+
+        const res = await fetch('http://localhost:3000/userDetails' , {
+            method: 'POST',
+            body : JSON.stringify(userObject),
+            headers: { 'Content-Type': 'application/json; charset=UTF-8' }
+        });
+
+        if(res.status==201)
+        { 
+            console.log('User created');
+            location.reload();
+        }
+                     
+
+    }
+ 
+    //get All users 
+     function getAllUsers()
+    {
+        var requestObj = new XMLHttpRequest();
+        requestObj.open('GET','http://localhost:3000/userDetails');
+        requestObj.send(); 
+
+        requestObj.onreadystatechange = function()
+        {
+            if(requestObj.readyState == 4 && requestObj.status == 200)
+            {
+                users = JSON.parse(requestObj.response);
+                  displayUsers( JSON.parse(requestObj.response) );
+            }
+        }
+
+        
+    }
+    //display users in table.
+
+    function displayUsers(userObj) {
+    
+         event.preventDefault();
+          userObj.map( ( user , index ) => {
+
+                 var row = document.createElement('tr');
+
+                 for( u in user)
+                 {
+                    if(u==='id') continue;
+                    var td = document.createElement('td');
+                    td.innerHTML = user[u];
+                    row.appendChild(td);
+                 }
+
+                    var editTd = document.createElement("td");
+                    var deleteTd = document.createElement("td");
+                    var editBtn = document.createElement("button");
+                    editBtn.innerHTML = "EDIT";
+                    // editBtn.setAttribute('onclick' , `editUser(${index})`);
+                    editTd.appendChild(editBtn);
+
+                    var deleteBtn = document.createElement("button");
+                    deleteBtn.setAttribute("onclick" , `deleteUser(${index})`);
+                     deleteBtn.innerHTML="DELETE";
+                     deleteTd.appendChild(deleteBtn);
+ 
+                     row.appendChild(editTd);
+                     row.appendChild(deleteTd);  
+                 document.querySelector("tbody").appendChild(row);
+
+          })
+        
+    }
+
+     async function deleteUser(index)
+    {
+        const res = await fetch(`http://localhost:3000/userDetails/${users[index].id}` , {
+            method:'DELETE',
+        }) ;
+         
+        location.reload();
+        
+
+    }
+
+    async function editUser(index) 
+    {
+        var firstName  =   document.getElementById("fName");
+        var lastName = document.getElementById("lName");
+        var dob = document.getElementById("dob");
+        var email = document.getElementById("email");
+        var mobNum = document.getElementById("mobNum");
+        var submitBtn = document.getElementById('submitBtn');
+        var buttonDiv = document.getElementById('buttonDiv');       
+
+          firstName.setAttribute("value", users[index].firstName);
+          lastName.setAttribute("value", users[index].lastName);
+          dob.setAttribute("value", users[index].DateOfBirth);
+          email.setAttribute("value" , users[index].email);
+          mobNum.setAttribute("value" , users[index].mobileNum);
+          firstName.focus();
+          firstName.setSelectionRange(users[index].firstName.length  , users[index].firstName.length  );
+          submitBtn.style.display='none';
+      
+           var saveBtn  = document.createElement('button');
+           saveBtn.innerHTML='Save';
+           console.log
+           buttonDiv.appendChild(saveBtn);
+           
+          
+
+
+          saveBtn.addEventListener('click' , async()=> {
+
+            const userObject = {
+            
+            firstName : firstName.value,
+            lastName : users[index].lastName,
+            email :  users[index].email,
+            DateOfBirth : users[index].DateOfBirth,
+            mobileNum : users[index].mobileNum
+        }
+
+            const res = await fetch(`http://localhost:3000/userDetails/${users[index].id}`  , {
+                method:'PUT',
+                headers: {'Content-Type': 'application/json' },
+                body:JSON.stringify(userObject),
+            })
+            console.log(res.staus);
+          } )
+ 
+
+
+
+    }
+
+  </script>
+</html>

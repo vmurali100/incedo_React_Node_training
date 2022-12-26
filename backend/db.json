@@ -1,0 +1,12 @@
+{
+    "users":[ 
+        {
+            "firstName": "Hariharan",
+            "lastName":"B"
+        }, 
+        {
+            "firstName": "Leo",
+            "lastName":"Messi"
+        }
+    ]
+}

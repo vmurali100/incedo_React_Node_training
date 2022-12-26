@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     
+    <form onsubmit="createUser()">
+   
+          
+            <label> First Name </label>
+            <input  type="text" id='fname' />
+          
+          <button  type='submit'> Submit </button>
+         
+    </form>
+    <script>
+        async function createUser()
+         {
+            event.preventDefault();
+            var userObj = {
+                firstName : document.getElementById('fname').value,
+            }
+            console.log(userObj.firstName)
+
+                 
+            var requestObj = new XMLHttpRequest();
+
+            requestObj.onreadystatechange = function()
+
+            {
+                if(requestObj.readyState ==4 && requestObj.status == 201)
+                {
+                    getAllUsers();
+                   console.log('User Created');
+                }
+            }
+                
+            
+
+            requestObj.open('POST' , 'http://localhost:3000/users');
+            requestObj.setRequestHeader('Content-Type', 'application/json');
+            requestObj.send(JSON.stringify( userObj));
+
+            
+            
+
+                     
+        }
+
+        function getAllUsers() 
+        {
+            var requestObj = new XMLHttpRequest();
+            requestObj.open('GET', 'http://localhost:3000/users');
+            requestObj.send();
+
+            requestObj.onreadystatechange = function()  {
+                if ( requestObj.readyState && requestObj.status == 200)
+            {
+                console.log(JSON.parse(requestObj.response));
+
+            }
+            }
+            
+
+                
+            
+
+        }
+    </script>
+
+</body>
+    
+</html>
