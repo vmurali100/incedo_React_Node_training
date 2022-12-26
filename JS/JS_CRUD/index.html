@@ -37,6 +37,7 @@
         postInfo.onreadystatechange = function () {
           if (postInfo.readyState == 4 && postInfo.status == 201) {
             getAllUsersFromServer();
+
           }
         };
         postInfo.open("POST", "http://localhost:3000/users");
