@@ -8,7 +8,18 @@ export class Person extends Component {
       personDetails: {
         email: "sriganesh0908@gmail.com",
         city: "Mummidivaram",
+        state: "Andhra Pradesh",
+        Language: "Telugu"
       },
+      person :{
+        fname: "Wenjie",
+        lname: "Cummins",
+        tel: "(758)273-9014",
+        address: "4402 Tortor Rd",
+        city: "Mystic",
+        state: "ND",
+        zip: 85584
+        },
       subjects: ["HTML", "CSS", "JS", "ReactJS","NodeJS"],
     };
   }
@@ -22,6 +33,16 @@ export class Person extends Component {
                 return <li key={i}>{val}</li>
             })
             }
+        </ul>
+        <ul>
+            {Object.keys(this.state.personDetails).map((val)=>{
+                return <li>{this.state.personDetails[val]}</li>
+            })}
+        </ul>
+        <ul>
+            {Object.keys(this.state.personDetails).map((val)=>{
+                return <li>{this.state.personDetails[val]}</li>
+            })}
         </ul>
       </div>
     );
