@@ -9,7 +9,7 @@ export class Person extends Component {
         email: "sriganesh0908@gmail.com",
         city: "Mummidivaram",
       },
-      subjects: ["HTML", "CSS", "JS", "ReactJS"],
+      subjects: ["HTML", "CSS", "JS", "ReactJS","NodeJS"],
     };
   }
   render() {
@@ -17,6 +17,12 @@ export class Person extends Component {
       <div>
         <h2>{this.state.fname}</h2>
         <h2>{this.state.personDetails.email}</h2>
+        <ul>
+            {this.state.subjects.map((val,i)=>{
+                return <li key={i}>{val}</li>
+            })
+            }
+        </ul>
       </div>
     );
   }
