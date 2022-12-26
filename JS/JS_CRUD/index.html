@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="fname">First Name : </label>
+        <input type="text" name="" id="fname"> <br> <br>
+        <label for="lname">Last Name </label> 
+        <input type="text" name="" id="lname"> <br> <br>
+        <button type="button" onclick="getUser()">Get User</button>
+    </form>
+    <script>
+        // 1. Create A User 
+        function getUser(){
+            var newPerson = captureuser();
+            console.log(newPerson)
+            var postInfo = new XMLHttpRequest();
+            postInfo.onreadystatechange = function(){
+                if(postInfo.readyState == 4 && postInfo.status == 201){
+                    getAllUsersFromServer()
+                }
+            }
+            postInfo.open("POST","http://localhost:3000/users");
+            postInfo.setRequestHeader("Content-Type","application/json")
+            postInfo.send(JSON.stringify(newPerson))
+        }
+
+        function captureuser(){
+            var person = {
+                fname:"",
+                lname:""
+            }
+            for(a in person){
+                person[a]= document.getElementById(a).value
+            }
+            
+            return person
+        }
+
+        function getAllUsersFromServer(){
+            var getInfo = new XMLHttpRequest();
+            getInfo.onreadystatechange = function(){
+                if(getInfo.readyState == 4 && getInfo.status == 200){
+                    console.log(getInfo.response)
+                }
+            }
+            getInfo.open("GET","http://localhost:3000/users");
+            getInfo.send()
+        }
+
+        getAllUsersFromServer()
+        function displayUsers(){
+            
+        }
+        // 2. Read A User 
+        // 3. Update A User 
+        // 4. Delete A User 
+    </script>
+</body>
+</html>
