@@ -13,21 +13,20 @@
       table {
         margin: 21px;
       }
-      #exp
-      {
+      #exp {
         width: 40%;
       }
-      td{
+      td {
         padding: 10px;
       }
-      th{
+      th {
         padding: 6px;
       }
     </style>
   </head>
 
   <body>
-    <h1>Dating App Details </h1>
+    <h1>Dating App Details</h1>
     <form>
       <label for="username">Username : </label>
       <input type="text" name="" id="username" /> <br />
@@ -38,31 +37,29 @@
       <label for="email">Email Address:</label>
       <input type="text" name="" id="email" /> <br />
       <br />
-    
+
       <select name="i_am" id="i_am">
         <option value="man">I am a man</option>
-        <option value="woman">I am a woman</option>
-   
-      </select><br />
+        <option value="woman">I am a woman</option></select
+      ><br />
       <br />
       <select name="i_want" id="i_want">
         <option value="man">I want a man</option>
-        <option value="woman">I want a woman</option>
-      </select><br />
+        <option value="woman">I want a woman</option></select
+      ><br />
       <br />
       <label for="dob">Date of Birth:</label>
-      <input type="date" name="" id="dob" /> 
+      <input type="date" name="" id="dob" />
       <br />
       <br />
-     
+
       <label for="height">Height</label>
-      <select name="height" id="height">
-      </select><br />
+      <select name="height" id="height"></select
+      ><br />
       <br />
       <label for="weight">Weight</label>
-      <select name="weight" id="weight">
-   
-      </select><br />
+      <select name="weight" id="weight"></select
+      ><br />
       <br />
       <button type="button" onclick="getUser()">Create</button>
       <button type="button" id="btn" onclick="updateUser()" disabled="true">
@@ -89,20 +86,18 @@
     </table>
     <script>
       // 1. Create A User
-      function optionsGenerator(type,start,end)
-      {
-        var select = document.getElementById(type);    
+      function optionsGenerator(type, start, end) {
+        var select = document.getElementById(type);
 
-for (var i =start ; i<= end; i++){
-
-    var option = document.createElement('option');
-    option.value = i;
-    option.innerHTML = i;
-    select.options.add(option);
-}
+        for (var i = start; i <= end; i++) {
+          var option = document.createElement("option");
+          option.value = i;
+          option.innerHTML = i;
+          select.options.add(option);
+        }
       }
-      optionsGenerator('weight',20,150);
-      optionsGenerator('height',100,200);
+      optionsGenerator("weight", 20, 150);
+      optionsGenerator("height", 100, 200);
       function getUser() {
         var newPerson = captureuser();
         var postInfo = new XMLHttpRequest();
@@ -118,14 +113,14 @@ for (var i =start ; i<= end; i++){
 
       function captureuser() {
         var person = {
-            username:"",
-            pass:"",
-            email:"",
-            i_am:"",
-            i_want:"",
-            dob:"",
-            height:"",
-            weight:"",
+          username: "",
+          pass: "",
+          email: "",
+          i_am: "",
+          i_want: "",
+          dob: "",
+          height: "",
+          weight: "",
         };
         for (a in person) {
           person[a] = document.getElementById(a).value;
