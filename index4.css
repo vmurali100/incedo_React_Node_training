@@ -1,0 +1,112 @@
+body{
+    background-color: #14247d;
+}
+
+fieldset{
+    border:2px solid white;
+    margin:100px 200px;
+}
+
+legend{
+    color:white;
+}
+
+label{
+    color:white;
+}
+
+.university{
+    padding:10px 150px;
+}
+
+.university input{
+    margin-left:15px;
+    padding:3px;
+    width:300px;
+}
+.institute{
+    padding:10px 165px;
+}
+
+.institute input{
+    margin-left:15px;
+    padding:3px;
+    width:300px;
+}
+
+.branch{
+    padding:10px 170px;
+}
+
+.branch select{
+    margin-left:15px;
+    padding:3px;
+    width:180px;
+}
+
+.degree{
+    padding:10px 170px;
+}
+
+.degree select{
+    margin-left:15px;
+    padding:3px;
+    width:100px;
+}
+
+.white{
+    color:white;
+    font-family: sans-serif;
+}
+
+.averagecpi{
+    padding:10px 135px;
+}
+
+.averagecpi input{
+    width:60px;
+    padding:3px;
+    margin-left:15px;
+}
+
+.averagecpi .white{
+    color:white;
+    font-family: sans-serif;
+    padding-left:5px;
+}
+
+.experience{
+    padding:10px 145px;
+}
+
+.experience input{
+    width:60px;
+    padding:3px;
+    margin-left:15px;
+}
+
+.experience .white{
+    color:white;
+    font-family: sans-serif;
+    padding-left:5px;
+}
+
+.yourwebsiteorblog{
+    padding:10px 75px;
+}
+
+.yourwebsiteorblog input{
+    margin-left:15px;
+    padding:3px;
+    width:300px;
+}
+
+button{
+    background-color: greenyellow;
+    border:0px;
+    padding:10px 30px;
+    border-radius:5px;
+}
+
+
+
