@@ -1,0 +1,19 @@
+{
+  "user": [
+    {
+      "fname": "Nibras",
+      "lname": "Ahamed",
+      "id": 1
+    },
+    {
+      "fname": "Gowtham",
+      "lname": "Sundar",
+      "id": 2
+    },
+    {
+      "fname": "Uvan",
+      "lname": "Narayan",
+      "id": 3
+    }
+  ]
+}
