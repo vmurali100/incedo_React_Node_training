@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 1</title>
+  </head>
+  <body>
+    <div>
+      <h1>HTML form</h1>
+      <form class="inputForm" onsubmit="createUser()" method="post">
+        <div><label>First Name:</label>
+        <input id="fName" type="text"></input></div>
+        <div><label>Last Name:</label>
+            <input id="lName" type="text"></input></div>
+        <div><label>Date of birth:</label>
+            <input id="dob" type="date"></input></div>
+        <div><label>Email Id:</label>
+            <input id="email" type="email"></input></div>
+        <div><label>Mobile number :</label>
+            <input id="mobNum" type="text"></input></div>
+            <button>Submit</button>
+            <button type="reset">Reset</button>
+      </form>
+    </div>
+  </body>
+  <script>
+    //create a user
+
+    async function createUser(){
+        event.preventDefault();
+        var firstName = event.target.elements.fName.value;
+        var lastName = event.target.elements.lName.value;
+        var email = event.target.elements.email.value;
+        var dob = event.target.elements.dob.value;
+        var mobNum = event.target.elements.mobNum.value;
+        
+        const userObjects = {
+            
+            firstName : firstName,
+            lastName : lastName,
+            email : email,
+            DateOfBirth : dob,
+            mobileNum : mobNum 
+        }
+        console.log(userObjects)
+
+        const res = await fetch('http://localhost:3000/userDetails' , {
+            method: 'POST',
+            body : JSON.stringify(userObjects),
+            headers: { 'Content-Type': 'application/json; charset=UTF-8' }
+        });
+        console.log(res);
+                     
+    }
+
+    
+
+  </script>
+</html>

@@ -1,0 +1,68 @@
+{
+  "userDetails": [
+    {
+      "id": 1,
+      "firstName": "Uvan",
+      "lastNamw": "Narayanan",
+      "DateOfBirth": "",
+      "emailId": "uvannarayanan@gmail.com",
+      "mobileNum": "9489460038"
+    },
+    {
+      "firstName": "Uvan",
+      "lastName": "N",
+      "email": "uvan.narayanan@incedoinc.com",
+      "DateOfBirth": "2022-12-07",
+      "mobileNum": "88787659",
+      "id": 2
+    },
+    {
+      "firstName": "Gowtham",
+      "lastName": "S",
+      "email": "kemodin345@pyrelle.com",
+      "DateOfBirth": "2022-12-22",
+      "mobileNum": "88787553",
+      "id": 3
+    },
+    {
+      "firstName": "Srikanth",
+      "lastName": "V S",
+      "email": "uvannarayanan2013@gmail.com",
+      "DateOfBirth": "2022-12-12",
+      "mobileNum": "7456435435",
+      "id": 4
+    },
+    {
+      "firstName": "Uvan",
+      "lastName": "",
+      "email": "",
+      "DateOfBirth": "",
+      "mobileNum": "",
+      "id": 5
+    },
+    {
+      "firstName": "Uvan",
+      "lastName": "N ",
+      "email": "uvan.narayanan@incedoinc.com",
+      "DateOfBirth": "2022-12-15",
+      "mobileNum": "88787659",
+      "id": 6
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "DateOfBirth": "",
+      "mobileNum": "",
+      "id": 7
+    },
+    {
+      "firstName": "Uvan",
+      "lastName": "N",
+      "email": "uvan.narayanan@incedoinc.com",
+      "DateOfBirth": "2022-12-15",
+      "mobileNum": "88787659",
+      "id": 8
+    }
+  ]
+}
