@@ -1,11 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
-import Header from './components/Header';
+import {Person} from './components/Person';
+import User , { MainUser, OtherUser } from './components/User';
 
 function App() {
   return (
     <div className="App">
-      <Header/>
+      <Person/>
+       {/* <User/>
+        <MainUser/>
+        <OtherUser/> */}
+      
+     
       
     </div>
   );
