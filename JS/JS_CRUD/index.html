@@ -4,17 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>HTML Form</title>
   </head>
   <body>
     <form>
+      <h1>HTML Form</h1>
       <label for="fname">First Name : </label>
       <input type="text" name="" id="fname" /> <br />
       <br />
-      <label for="lname">Last Name </label>
+      <label for="lname">Last Name: </label>
       <input type="text" name="" id="lname" /> <br />
       <br />
-      <button type="button" onclick="getUser()">Get User</button>
+      <label for="dob">Date of birth </label>
+      <input type="date" name="" id="dob" /> <br />
+      <br />
+      <label for="email">Email Id: </label>
+      <input type="text" name="" id="email" /> <br />
+      <br />
+      <label for="mobile">Mobile Number</label>
+      <input type="tel" name="" id="mobile" /> <br />
+      <br />
+      <button type="button" onclick="submitUser()">Submit</button>
+      <button type="button" onclick="reset()">Reset</button>
     </form>
     <hr />
     <table border="1">
@@ -22,20 +33,23 @@
         <tr>
           <th>First Name</th>
           <th>Last Name</th>
+          <th>Date of Birth</th>
+          <th>Email Id</th>
+          <th>Mobile Number</th>
           <th>Id</th>
-          <th>Edit</th>
-          <th>Delete</th>
         </tr>
       </thead>
       <tbody></tbody>
     </table>
     <script>
       // 1. Create A User
-      function getUser() {
+      function submit() {
+        console.log("nishe");
         var newPerson = captureuser();
         var postInfo = new XMLHttpRequest();
         postInfo.onreadystatechange = function () {
           if (postInfo.readyState == 4 && postInfo.status == 201) {
+            location.reload()
             getAllUsersFromServer();
           }
         };
@@ -48,6 +62,9 @@
         var person = {
           fname: "",
           lname: "",
+          dob:"",
+          mail:"",
+          mobile:""
         };
         for (a in person) {
           person[a] = document.getElementById(a).value;
