@@ -1,14 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import User from './Components/User';
-import Form from './Components/Form';
+import UserClass1 from './Components/UserClass1';
 import Registration from './Components/Registration';
-import Userfunc from './Components/UserFunc';
+import UserFunc1 from './Components/UserFunc1';
 
 function App() {
   return (
     <div>
-    <Userfunc/>
+    <UserClass1/>
     </div>
   );
 }

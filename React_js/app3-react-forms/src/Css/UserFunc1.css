@@ -1,0 +1,13 @@
+.form-style{
+    margin-top: 10px;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-bottom: auto;
+    background-color:white;
+}
+.inputfield{
+    padding: 10px 30px 10px 30px;
+}
+.border{
+    border-width: 100px;
+}
