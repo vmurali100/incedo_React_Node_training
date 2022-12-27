@@ -1,6 +1,6 @@
 import { Component } from "react";
 
-export class Register extends Component {
+export class RegisterClass extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,7 +20,7 @@ export class Register extends Component {
     this.clearForm();
   };
   clearForm = () => {
-    this.setState ({
+    this.setState({
       fname: "",
       lname: "",
       email: "",
