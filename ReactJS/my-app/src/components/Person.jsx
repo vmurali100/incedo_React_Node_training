@@ -8,10 +8,10 @@ export class Person extends Component {
       WelcomeMessage:
         "Hi All ... Welcome to Incedeo ReactJS And NodeJS Training !!",
       personDetails: {
-        email: "ram@gmail.com",
-        city: "Bangalore",
-        stte: "Karnataka",
-        langulage: "Kannada",
+        email: "subash@gmail.com",
+        city: "Anantapur",
+        stte: "AP",
+        langulage: "Telugu",
       },
       subjects: [
         "HTML",

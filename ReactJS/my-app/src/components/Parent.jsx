@@ -16,7 +16,7 @@ export default class Parent extends Component {
   }
 
   changeMessage =()=>{
-    this.setState({welcome:"I am going to Change Nw !!!!"})
+    this.setState({welcome:"I am going to Change Now !!!!"})
   }
 
   render() {
