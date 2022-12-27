@@ -55,7 +55,7 @@ clearForm=()=>{
           <input type="password" name="Password"  onChange={(e)=>{this.handleChange(e)}} /> <br />
           <label htmlFor="CPassword">Confirm password: </label> <br/>
           <input type="password" name="cpassword" onChange={(e)=>{this.handleChange(e)}} /> <br />
-          <button onClick={this.addUser} type="button">Register</button>
+          <input onClick={this.addUser} type="button" value="Register"/>
         </form>
       </div>
       </div>

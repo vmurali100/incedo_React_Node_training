@@ -1,5 +1,5 @@
 body{
-    background: lightblue;
+    background: white;
 }
 .Form{
     max-width: 350px;
@@ -30,7 +30,7 @@ input[type=password], select{
 }
 input[type=button]{
     width: 100%;
-    background: black;
+    background: blue;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
