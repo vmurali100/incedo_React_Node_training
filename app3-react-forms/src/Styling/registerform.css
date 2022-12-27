@@ -1,0 +1,13 @@
+.form-container{
+    width:400px;
+    background-color: white;
+}
+
+input{
+    margin-left:10px;
+    width:400px;
+}
+
+label{
+    margin-left:10px;
+}
