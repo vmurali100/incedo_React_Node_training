@@ -17,8 +17,9 @@ const RegisterForm2 = () => {
     }
 
     return <>
-        <h1>Register Form In Functional Components</h1>
-        <form>
+        <div className="backimage">
+        <h1>Register</h1>
+        <form className="form-container">
             <label htmlFor="fname">First Name</label><br />
             <input id="fname" name="fname" type="text" onChange={(e) => { handleChange(e) }} value={user.fname} /><br /><br />
             <label htmlFor="lname">Last Name</label><br />
@@ -33,6 +34,7 @@ const RegisterForm2 = () => {
             <input id="confirmpassword" name="confirmpassword" type="password" onChange={(e) => { handleChange(e) }} value={user.confirmpassword} /><br /><br />
             <center><button type="button" className="btn btn-primary" onClick={() => { handleSubmit() }}>Register User</button></center>
         </form>
+        </div>
     </>
 };
 

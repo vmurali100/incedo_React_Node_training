@@ -1,13 +1,29 @@
 .form-container{
-    width:400px;
+    width:450px;
     background-color: white;
+    margin:auto;
+    padding:30px 20px;
+    border-radius:5px;
 }
 
 input{
     margin-left:10px;
-    width:400px;
+    width:380px;
 }
 
 label{
     margin-left:10px;
+}
+
+.backimage{
+    background-color: #64b5f6;
+    height:100vh;
+}
+
+h1{
+    text-align: center;
+}
+
+button{
+    width:92%;
 }
