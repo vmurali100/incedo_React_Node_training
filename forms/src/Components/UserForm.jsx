@@ -95,7 +95,7 @@ const UserForm = () => {
           </div>
           <div className="mb-3">
             <label htmlFor="c_passwd" className="form-label">
-              Password
+              Confirm Password
             </label>
             <input
               type="password"
