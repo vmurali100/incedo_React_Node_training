@@ -31,7 +31,11 @@ addUser=()=>{
 clearForm=()=>{
   this.setState({
     fname:"",
-    lname:""
+    lname:"",
+    email:"",
+    username:"",
+    password:"",
+    cpassword:""
  })
 }
   render() {
@@ -51,6 +55,7 @@ clearForm=()=>{
 
           <label htmlFor="password">Enter Password : </label>
           <input type="text" name="password" value={this.state.password} onChange={(e)=>{this.handleChange(e)}} /> <br />
+
           <label htmlFor="cpassword">Confirm Password : </label>
           <input type="text" name="cpassword" value={this.state.cpassword} onChange={(e)=>{this.handleChange(e)}} /> <br />
 

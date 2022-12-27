@@ -1,11 +1,12 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Form from "./Components/Form";
+//import Form from "./Components/Form";
+import Userfun from "./Components/Userfun";
 
 function App() {
   return (
     <div className="App">
-      <Form />
+      <Userfun />
     </div>
   );
 }
