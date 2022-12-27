@@ -1,16 +1,10 @@
+import './UserFun.css';
 import React from "react";
 
 import { useState } from "react";
 
 
-
 const Userfun = () => {
-
-    // WE can declare a Variable , and a function to manipulate that variable ;
-
-    //   const [age, setAge] = useState(40);
-
-
 
     const [user, setUser] = useState({ fname: "", lname: "", email: "", username: "", password: "", password1: "" });
 
@@ -45,9 +39,19 @@ const Userfun = () => {
     return (
 
         <div>
-
+<div class="container">
+    <div class="row">
+    <div class="col-sm-4">
+                    </div>
+                    <div class="col-sm-4">
+                    </div>
+                    <div class="row"></div>
+                    <div class="col-sm-4">
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="sign">
             <form>
-
+            <div class="labeltext" style={{"font-weight":"bold","text-align":"center","font-size":"30px"}}>Register</div>
                 <div className="mb-3">
 
                     <label htmlFor="fname" className="form-label">
@@ -198,7 +202,7 @@ const Userfun = () => {
 
                     <label htmlFor="password1" className="form-label">
 
-                        COnfirm Password
+                        Confirm Password
 
                     </label>
 
@@ -222,7 +226,8 @@ const Userfun = () => {
 
                 </div>
 
-
+                <a href="#" style={{"text-decoration":"none"}}>Back to Login</a>
+                <br/>
 
                 <button
 
@@ -239,7 +244,10 @@ const Userfun = () => {
                 </button>
 
             </form>
-
+</div>
+        </div>
+        </div>
+        </div>
         </div>
 
     );

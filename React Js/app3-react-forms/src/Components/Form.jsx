@@ -1,4 +1,4 @@
-import './Form.css';
+import '../Form.css';
 import React, { Component } from "react";
 
 export default class Form extends Component {
@@ -76,7 +76,7 @@ export default class Form extends Component {
                                 <label htmlFor="Confirm Password">Confirm Password</label>
                                 <input type="password" name="confirmpassword" value={this.state.confirmpassword} onChange={(e) => { this.handleChange(e) }} />
                                 </div>
-                                <a href="#">Back to Login</a>
+                                <a href="#" style={{"text-decoration":"none"}}>Back to Login</a>
                                 <br />
                                 <button onClick={this.addUser} type="button" class="btn btn-primary">Register</button>
                             </form>

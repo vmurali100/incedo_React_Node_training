@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(95, 171, 248);
+}
+.sign {
+    width: 250px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin : 20px;
+    box-shadow: 0px 1px 36px 5px rgba(0, 0, 0, 0.28);
+    border-radius: 5px;
+    background-color: white;
+}
