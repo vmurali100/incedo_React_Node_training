@@ -6,12 +6,15 @@ import Component1 from './Components/Component1';
 import { Person } from './Classes/Person';
 import User from './Forms/User';
 import Registration from './Forms/Registration';
+import Form1 from './Assignment_Day3/Form1/q1';
+import UserForm from './Assignment_Day3/Form1/q1.function';
+import User1 from './Assignment_Day3/Form2/q2';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Registration />
+    <User1/>
   </React.StrictMode>
 );
 
