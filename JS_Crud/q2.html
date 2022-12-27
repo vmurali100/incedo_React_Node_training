@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body{
+            background: lightblue;
+        }
+        .Form{
+            max-width: 350px;
+            margin: auto;
+            border-radius: 10px;
+            background: orangered;
+            padding: 20px;
+        }
+        input[type=text], select{
+            width: 100%;
+            padding: 5px 10px;
+            margin: 2px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+
+        }
+        input[type=password], select{
+            width: 100%;
+            padding: 5px 10px;
+            margin: 2px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+
+        }
+        input[type=button]{
+            width: 100%;
+            background: black;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type=button]:hover{
+            background: #000;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="Form">
+        <h1>Form</h1>
+    <form>
+      <label for="fname">Name </label> <br>
+      <input type="text" name="" id="fname" placeholder="Name"/> <br />
+      <br />
+      <label for="Uname">Username </label> <br>
+      <input type="text" name="" id="Uname" placeholder="Username"/> <br />
+      <br />
+      <label for="email">Email </label> <br>
+      <input type="text" name="" id="email" placeholder="Email"/> <br />
+      <br />
+      <label for="passw">Password </label> <br>
+      <input type="password" name="" id="passw" placeholder="Password"/> <br />
+      <br />
+      <label for="cpassw">Confirm Password </label> <br>
+      <input type="password" name="" id="cpassw" placeholder="Confirm Password"/> <br />
+      <br />
+      <label for="msg">Message </label> <br>
+      <input type="text" name="" id="msg" placeholder="Message" style="padding-bottom: 50px; "/> <br />
+      <br />
+      <input type="button" onclick="getUser()" value="Send">
+    </form>
+    <hr />
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th>Message</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+      
+    </script>
+    </div>
+  </body>
+</html>
