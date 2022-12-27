@@ -4,12 +4,14 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import User1 from './User1';
+import User2 from './User2';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
-    <User1 />
+    {/* <User1 /> */}
+    <User2 />
   </React.StrictMode>
 );
 
