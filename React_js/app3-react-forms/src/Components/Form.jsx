@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { CSSProperties } from "react";
 export default class Form extends Component {
     constructor(props) {
       super(props)
@@ -39,8 +39,8 @@ clearForm=()=>{
 }
   render() {
     return (
-      <div>
-        <form>
+      <div >
+        <form style={{"align":"center","background-color":"green","marginTop":"50px","marginBottom":"50px","marginRight":"50px","marginLeft":"50px","alignItems":"center"}}>
           <label htmlFor="First Name">First Name</label>
           <br/>
           <input type="text" name="fname" onChange={(e)=>{this.handleChange(e)}} value={this.state.fname}/> <br />
