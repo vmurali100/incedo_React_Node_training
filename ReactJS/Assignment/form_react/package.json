@@ -1,5 +1,5 @@
 {
-  "name": "appl-intro",
+  "name": "form_react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,14 +12,7 @@
     "web-vitals": "^2.1.4"
   },
   "overrides": {
-    "css-select@2.1.0"
-    :{
-    "nth-check":"2.0.1"
-    },
-    "css-select@4.3.0"
-    :{
-    "nth-check":"2.0.1"
-    }
+    "nth-check": "2.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
