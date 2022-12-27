@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.form-container{
+  min-height:100vh;
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  padding:0px;
+  padding-bottom:60px;
+  background:#eee;
+
+}

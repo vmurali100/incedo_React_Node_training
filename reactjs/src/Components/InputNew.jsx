@@ -23,7 +23,7 @@ const InputNew = () => {
     }
 
     return (
-        <div>
+        <div className="form-container">
             <form>
                 <h2>Register</h2>
                 <div className="mb-3">
