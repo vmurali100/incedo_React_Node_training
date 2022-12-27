@@ -24,7 +24,7 @@ handleChange=(e)=>{
   
 }
 
-addUser=()=>{
+registerUser=()=>{
   console.log(this.state)
   const { password, confirmpassword } = this.state;
       // perform all neccassary validations
@@ -63,7 +63,7 @@ clearForm=()=>{
           <input type="passowrd" name="password" onChange={(e)=>{this.handleChange(e)}} value={this.state.password}/> <br />
           <label htmlFor="confirmpassword">Confirm Password : </label>
           <input type="password" name="confirmpassword" onChange={(e)=>{this.handleChange(e)}} value={this.state.confirmpassword}/> <br />
-          <button onClick={this.addUser} type="button">Register User</button>
+          <button onClick={this.registerUser} type="button">Register User</button>
         </form>
       </div>
     );
