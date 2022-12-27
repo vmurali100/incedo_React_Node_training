@@ -41,6 +41,7 @@ const UserForm = () => {
           <label htmlFor="lname" className="form-label">
             Last Name
           </label>
+          <br></br>
           <input
             type="text"
             className="form-control-lg"
@@ -55,6 +56,7 @@ const UserForm = () => {
           <label htmlFor="exampleInputEmail1" className="form-label">
             Email address
           </label>
+          <br></br>
           <input
             type="email"
             className="form-control-lg"
@@ -69,6 +71,7 @@ const UserForm = () => {
           <label htmlFor="username" className="form-label">
             Username
           </label>
+          <br></br>
           <input
             type="text"
             className="form-control-lg"
@@ -83,6 +86,7 @@ const UserForm = () => {
           <label htmlFor="password" className="form-label">
             Enter password
           </label>
+          <br></br>
           <input
             type="text"
             className="form-control-lg"
