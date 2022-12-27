@@ -24,9 +24,10 @@ export const RegisterFunction = () => {
     });
   };
   const handleChange = (e) => {
-    let newUser = { ...user };
-    newUser[e.target.name] = e.target.value;
-    setUser(newUser);
+    // let newUser = { ...user };
+    // newUser[e.target.name] = e.target.value;
+    // setUser(newUser);
+    setUser({ ...user, [e.target.name]: e.target.value });
   };
   return (
     <div>
@@ -84,6 +85,7 @@ export const RegisterFunction = () => {
           onChange={(e) => handleChange(e)}
           value={user.confirmpassword}
         />
+        <br />
         <br />
         <button onClick={register} type="button">
           Register
