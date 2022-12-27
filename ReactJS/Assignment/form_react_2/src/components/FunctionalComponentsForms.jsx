@@ -4,10 +4,10 @@ const startState = {
   fname: "",
   lname: "",
   email: "",
-  cemail:"",
+  phone: "",
   username: "",
   pass: "",
-  cpass: "",
+  bio: "",
 };
 function FunctionalForms() {
   const [user, setUser] = useState({ ...startState });
@@ -19,7 +19,7 @@ function FunctionalForms() {
     setUser(newState);
   };
   const handleClick = function () {
-    console.log("User :",user);
+    console.log("User :", user);
 
     setUser(startState);
   };
@@ -57,12 +57,12 @@ function FunctionalForms() {
         />{" "}
         <br />
         <br />
-        <label htmlFor="cemail">Confirm Email :</label>
+        <label htmlFor="phone">Phone :</label>
         <input
           type="text"
-          name="cemail"
-          id="cemail"
-          value={user.cemail}
+          name="phone"
+          id="phone"
+          value={user.phone}
           onChange={(e) => handleChange(e)}
         />{" "}
         <br />
@@ -87,17 +87,19 @@ function FunctionalForms() {
         />{" "}
         <br />
         <br />
-        <label htmlFor="cpass">Confirm Password:</label>
+        <label htmlFor="bio">Short Bio:</label>
         <input
-          type="password"
-          name="cpass"
-          id="cpass"
-          value={user.cpass}
+          type="text"
+          name="bio"
+          id="bio"
+          value={user.bio}
           onChange={(e) => handleChange(e)}
         />{" "}
         <br />
         <br />
-        <button type={"button"} onClick={handleClick}>Register</button>
+        <button type={"button"} onClick={handleClick}>
+          Register
+        </button>
       </form>
     </Fragment>
   );

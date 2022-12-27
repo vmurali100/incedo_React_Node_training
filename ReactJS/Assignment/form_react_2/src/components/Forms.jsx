@@ -4,10 +4,10 @@ const startState = {
   fname: "",
   lname: "",
   email: "",
-  cemail:"",
+  phone:"",
   username: "",
   pass: "",
-  cpass: "",
+  bio: ""
 };
 class Froms extends Component {
   constructor(props) {
@@ -61,12 +61,12 @@ class Froms extends Component {
           />{" "}
           <br />
           <br />
-          <label htmlFor="cemail">Confirm Email :</label>
+          <label htmlFor="phone">Phone:</label>
           <input
             type="text"
-            name="cemail"
-            id="cemail"
-            value={this.state.cemail}
+            name="phone"
+            id="phone"
+            value={this.state.phone}
             onChange={(e) => this.handleChange(e)}
           />{" "}
           <br />
@@ -91,12 +91,12 @@ class Froms extends Component {
           />{" "}
           <br />
           <br />
-          <label htmlFor="cpass">Confirm Password:</label>
+          <label htmlFor="bio">Short Bio:</label>
           <input
-            type="password"
-            name="cpass"
-            id="cpass"
-            value={this.state.cpass}
+            type="text"
+            name="bio"
+            id="bio"
+            value={this.state.bio}
             onChange={(e) => this.handleChange(e)}
           />{" "}
           <br />
