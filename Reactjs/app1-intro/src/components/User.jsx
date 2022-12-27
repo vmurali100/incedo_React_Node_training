@@ -65,7 +65,7 @@ export default class User extends Component {
           <label htmlFor="Confirm Password" class = "form-label">Confirm Password : </label>
           <input type="password" name="cpwd" class= "form-control" value={this.state.cpwd} onChange={(e)=>{this.handleChange(e)}} /> <br />
         </div>
-        <button type = "submit" onClick={this.addUser} class=" btn btn-primary">Submit</button>
+        <button type = "button" onClick={this.addUser} class=" btn btn-primary">Submit</button>
        
         </form>
       </div>
