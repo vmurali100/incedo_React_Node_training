@@ -23,7 +23,7 @@ export default class Form2 extends Component {
   }
 
   register =() => {
-    if(this.state.password == this.state.cpassword){
+    if(this.state.password === this.state.cpassword){
       alert("password matched");
       console.log(this.state);
       this.clearAll();
