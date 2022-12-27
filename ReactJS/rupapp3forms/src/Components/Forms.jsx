@@ -73,7 +73,7 @@ export default class Form extends Component {
                                 </div>
                                 <a href="#">Back to Login</a>
                                 <br />
-                                <button onClick={this.addUser} type="button">Register</button>
+                                <button onClick={this.addUser} type="button" class="btn btn-primary">Register</button>
                             </form>
                         </div>
                     </div>
