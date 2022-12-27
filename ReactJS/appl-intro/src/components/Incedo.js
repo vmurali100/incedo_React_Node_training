@@ -39,7 +39,3 @@ export default class ChrisClass extends React.Component
 
     }
 }
-export  function Chris()
-{
-    return <h1>Helllo</h1>
-}
