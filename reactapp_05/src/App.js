@@ -3,17 +3,16 @@ import './App.css';
 import {Person} from './components/Person';
 // import Parent from './Components/Parent';
 import User , { MainUser, OtherUser } from './components/User';
-import User1 from "./components/User1";
+import ClassForm from "./components/ClassForm";
+import Registration from "./components/Registration";
+import FunctionForm from "./components/FunctionForm";
 
 function App() {
   return (
-    <div className="App">
-      {/* <Person/> */}
-      <User1/>
-       {/* <User/>
-        <MainUser/>
-        <OtherUser/> */}
+    <div className="App container">
       
+      <ClassForm/>
+      {/* <FunctionForm/> */}
      
       
     </div>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class User extends Component {
+export default class ClassForm extends Component {
     constructor(props) {
       super(props)
     
@@ -15,7 +15,7 @@ export default class User extends Component {
     }
     
 handleChange=(e)=>{
-    console.log(e.target.name);
+    //console.log(e.target.name);
     var inputName = e.target.name
     var newUser = {...this.state} // Creating a Copy of State and Storing in newUser
     newUser[inputName] = e.target.value
@@ -40,7 +40,7 @@ clearForm=()=>{
 }
   render() {
     return (
-      <div>
+      <div className="App-container">
         <form>
           <label htmlFor="First Name">First Name : </label>
           <input type="text" name="fname" onChange={(e)=>{this.handleChange(e)}} value={this.state.fname}/> <br />
