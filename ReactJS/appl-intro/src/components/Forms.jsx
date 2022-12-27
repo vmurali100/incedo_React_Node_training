@@ -32,6 +32,7 @@ class Froms extends Component
     render()
     {
         return <Fragment>
+            <h1>Class Components</h1>
             <form>
             <label for="fname">First Name : </label>
       <input type="text" name="fname" id="fname"  value={this.state.fname} onChange={(e)=>this.handleChange(e)}/> <br />

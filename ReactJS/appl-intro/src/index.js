@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Parent from './components/Parent';
 import Froms from './components/Forms';
+import FunctionalForms from './components/FunctionalComponentsForms';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,6 +13,7 @@ root.render(
    {/* <ChrisClass />
    <Chris/> */}
    <Froms/>
+   <FunctionalForms/>
    <Profiler id="Testings" onRender={(id, phase, // either "mount" (if the tree just mounted) or "update" (if it re-rendered)
   actualDuration, // time spent rendering the committed update
   baseDuration, // estimated time to render the entire subtree without memoization
