@@ -61,7 +61,7 @@ clearForm=()=>{
           <br/>
           <label htmlFor="Confirm Password">Confirm Password</label>
           <br/>
-          <input type="password" name="confirmpassword" value={this.state.lname} onChange={(e)=>{this.handleChange(e)}} /> <br />
+          <input type="password" name="confirmpassword" value={this.state.confirmpassword} onChange={(e)=>{this.handleChange(e)}} /> <br />
           <br/>
           <a href="#">Back to Login</a>
           <br/>
