@@ -16,6 +16,7 @@ class RegisterForm extends Component
     }
     handleChange = (e)=>{
         console.log(e.target.value);
+        // why should we keep this in brackets?
         this.setState({...this.state,[e.target.name]:e.target.value});
     }
 
