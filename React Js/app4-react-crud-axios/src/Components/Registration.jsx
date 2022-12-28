@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import UserForm from "./UserForm";
 import axios from "axios";
-import UserTable from "./UsersTable";
+import UserTable from "./UserTable";
 import { useEffect } from "react";
 
 const Registration = () => {
