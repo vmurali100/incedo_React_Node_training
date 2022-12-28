@@ -1,14 +1,13 @@
 {
   "users": [
     {
-      "fname": "Ravi",
-      "lname": "Kumar",
+      "fname": "",
+      "lname": "",
+      "email": "",
+      "username": "suchi",
+      "password": "123",
+      "confirmpassword": "",
       "id": 1
-    },
-    {
-      "fname": "Suchi",
-      "lname": "Muppala",
-      "id": 2
     }
   ]
 }

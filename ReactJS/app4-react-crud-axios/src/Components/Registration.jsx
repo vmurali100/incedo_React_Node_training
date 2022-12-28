@@ -1,7 +1,10 @@
 import { useState } from "react";
 import UserForm from "./UserForm";
+// import UserTable from "./UserTable";
 import UserTable from "./UserTable";
-export const RegisterFunction = () => {
+import axios from "axios";
+import { useEffect } from "react";
+export const Registration = () => {
   const [user, setUser] = useState({
     fname: "",
     lname: "",
@@ -9,15 +12,23 @@ export const RegisterFunction = () => {
     username: "",
     password: "",
     confirmpassword: "",
+    id: "",
   });
   const [users, setUsers] = useState([]);
   const [editIndex, setEditIndex] = useState(null);
+  useEffect(() => {
+    getAllUsers();
+  }, []);
   const register = () => {
-    console.log(user);
-    let newUsers = [...users];
-    newUsers.push(user);
-    setUsers(newUsers);
-    clearForm();
+    // console.log(user);
+    // let newUsers = [...users];
+    // newUsers.push(user);
+    // setUsers(newUsers);
+    // clearForm();
+    axios.post("http://localhost:3000/users/", user).then(() => {
+      clearForm();
+      getAllUsers();
+    });
   };
   const clearForm = () => {
     setUser({
@@ -29,6 +40,11 @@ export const RegisterFunction = () => {
       confirmpassword: "",
     });
   };
+  const getAllUsers = () => {
+    axios.get("http://localhost:3000/users").then((res) => {
+      setUsers(res.data);
+    });
+  };
   const handleChange = (e) => {
     // let newUser = { ...user };
     // newUser[e.target.name] = e.target.value;
@@ -37,14 +53,19 @@ export const RegisterFunction = () => {
   };
 
   const deleteUser = (u) => {
-    console.log(users);
-    var newUsers = users.filter((usr) => usr.fname !== u.fname);
-    console.log(newUsers);
-    setUsers(newUsers);
+    // console.log(users);
+    // var newUsers = users.filter((usr) => usr.fname !== u.fname);
+    // console.log(newUsers);
+    console.log(u.id);
+    axios.delete("http://localhost:3000/users/" + u.id).then((res) => {
+      getAllUsers();
+    });
   };
   const editUser = (user, i) => {
     setEditIndex(i);
-    setUser(user);
+    axios.put("http://localhost:3000/users/" + user.id, user).then((res) => {
+      setUser(res.data);
+    });
   };
 
   const updateUser = () => {
@@ -52,7 +73,6 @@ export const RegisterFunction = () => {
     newUsers[editIndex] = user;
     setUsers(newUsers);
     setEditIndex(null);
-    clearForm();
   };
   return (
     <div>
