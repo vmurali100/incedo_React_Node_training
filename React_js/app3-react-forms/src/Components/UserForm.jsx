@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-const UserForm = ({user,handleChange,handleSubmit}) => {
+const UserForm = ({ user, handleChange, handleSubmit, updateUser, editIndex }) => {
   // WE can declare a Variable , and a function to manipulate that variable ;
   //   const [age, setAge] = useState(40);
   return (
@@ -50,13 +50,23 @@ const UserForm = ({user,handleChange,handleSubmit}) => {
           />
         </div>
 
-        <button
-          type="button"
-          className="btn btn-primary"
-          onClick={handleSubmit}
-        >
-          Submit
-        </button>
+        {editIndex!=null? (
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={updateUser}
+          >
+            Update User
+          </button>
+        ) : (
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={handleSubmit}
+          >
+            Submit
+          </button>
+        )}
       </form>
     </div>
   );
