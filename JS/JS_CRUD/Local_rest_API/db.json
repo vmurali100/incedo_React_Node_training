@@ -9,6 +9,26 @@
       "pass": "2222",
       "bio": "helllo",
       "id": 1
+    },
+    {
+      "fname": "Short",
+      "lname": "Chris",
+      "email": "chris.manivannan@incedoinc.com",
+      "phone": "8825896232",
+      "username": "Chris4843",
+      "pass": "Tstings",
+      "bio": "bio",
+      "id": 2
+    },
+    {
+      "fname": "Testings",
+      "lname": "Lastname",
+      "email": "chris.manivannan@incedoinc.com",
+      "phone": "90083829923",
+      "username": "Hari@12349",
+      "pass": "testttsings",
+      "bio": "Bio Bio",
+      "id": 3
     }
   ],
   "details": [],

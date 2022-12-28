@@ -7,7 +7,8 @@ import { Component } from "react";
   phone:"",
   username: "",
   pass: "",
-  bio: ""
+  bio: "",
+  id:""
 };
 class Froms extends Component {
   constructor(props) {
