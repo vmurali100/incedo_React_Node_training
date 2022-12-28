@@ -8,7 +8,7 @@ import UserFunc1 from './Components/UserFunc1';
 function App() {
   return (
     <div>
-    <UserClass1/>
+    <Registration/>
     </div>
   );
 }
