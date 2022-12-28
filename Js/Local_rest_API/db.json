@@ -14,9 +14,15 @@
     },
     {
       "fname": "Ram",
-      "lname": "Krishna",
-      "email": "ram@gmail.com",
+      "lname": "Kumar",
+      "email": "ramKumar@gmail.com",
       "id": 2
-      }
+    },
+    {
+      "fname": "Manjunadh",
+      "lname": "Ch",
+      "email": "manjunadh.ch.223@gmail.com",
+      "id": 3
+    }
   ]
 }
