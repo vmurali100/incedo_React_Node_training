@@ -1,12 +1,14 @@
 
 import './App.css';
 
-import Userinfn from './Userinfn';
+
+import Userinfn1 from './Userinfn1';
+import Userinfn2 from './userinfn2';
 
 function App() {
   return (
     <div className="App">
-  <Userinfn />
+ <Userinfn2 />
     </div>
   );
 }

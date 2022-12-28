@@ -1,21 +1,23 @@
 import React, { useState } from 'react'
 
-export default function Userinfn() {
-    const[user,setuser]=useState({fname:"",
-    lname:"",
-    email:"",
-    username:"",
-    Enterpwd:"",
-    Confirmpwd:""})
-    onsubmit=()=>{
-        console.log(user)
+export default function Userinfn1() {
+    const [user, setuser] = useState({
+        fname: "",
+        lname: "",
+        email: "",
+        username: "",
+        Enterpwd: "",
+        Confirmpwd: ""
+    })
+    onsubmit = () => {
+        console.log(user);
         // clearform()
     }
     const handlechange = (e) => {
         let newUser = { ...user };
         newUser[e.target.name] = e.target.value;
         setuser(newUser);
-      };
+    };
     // clearform=()=>{
     //     setuser({fname:"",
     //     lname:"",
@@ -24,7 +26,8 @@ export default function Userinfn() {
     //     Enterpwd:"",
     //     Confirmpwd:""})
     // }
-  return (
+    return (
+        
     <div>
        <h3>Register</h3>
         <form >
@@ -43,5 +46,6 @@ export default function Userinfn() {
            <button type="button" onClick={onsubmit}>submit</button>
         </form>
     </div>
-  )
+    )
+
 }
