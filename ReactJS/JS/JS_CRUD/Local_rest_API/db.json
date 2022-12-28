@@ -1,22 +1,28 @@
 {
-    "users": [
-      {
-        "fname": "Murali",
-        "lname": "Kumar",
-        "email": "vmurali100@gmail.com",
-        "id": 1
-      },
-      {
-        "fname": "Ram",
-        "lname": "Krishna",
-        "email": "ram@gmail.com",
-        "id": 2
-      },
-      {
-        "fname": "ABC",
-        "lname": "CDF",
-        "email": "anv@gmail.com",
-        "id": 3
-      }
-    ]
-  }
+  "users": [
+    {
+      "fname": "Subah",
+      "lname": "Rajini",
+      "email": "Rajini@gmail.com",
+      "id": 1
+    },
+    {
+      "fname": "Rup",
+      "lname": "Reddy",
+      "email": "rupreddy@gmail.com",
+      "id": 2
+    },
+    {
+      "fname": "Ganesh",
+      "lname": "Mullapudi",
+      "email": "Mullapudi@gmail.com",
+      "id": 3
+    },
+    {
+      "fname": "rupendra",
+      "lname": "reddy",
+      "email": "p.reddy@incedoinc.com",
+      "id": 4
+    }
+  ]
+}
