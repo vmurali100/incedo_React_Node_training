@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import './Form.css';
 export default class User extends Component {
     constructor(props) {
       super(props)
