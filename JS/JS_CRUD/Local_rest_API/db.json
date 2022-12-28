@@ -1,5 +1,16 @@
 {
-  "user": [],
+  "user": [
+    {
+      "fname": "Short",
+      "lname": "Chris",
+      "email": "chris.manivannan@incedoinc.com",
+      "phone": "1223455",
+      "username": "Userame1213",
+      "pass": "2222",
+      "bio": "helllo",
+      "id": 1
+    }
+  ],
   "details": [],
   "university": [],
   "dating": []
