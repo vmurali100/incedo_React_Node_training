@@ -50,7 +50,7 @@ const UserForm = ({ user, handleChange, handleSubmit, updateUser, editIndex }) =
           />
         </div>
 
-        {editIndex ? (
+        {editIndex !== null ? (
           <button
             type="button"
             className="btn btn-primary"

@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import UserForm from "./UserForm";
 import UserTable from "./UserTable";
+import axios from "axios";
+import { useEffect } from "react";
 
 const Registration = () => {
-  const [user, setUser] = useState({ fname: "", lname: "", email: "" });
+  const [user, setUser] = useState({ fname: "", lname: "", email: ""});
   const [users, setUsers] = useState([]);
   const [editIndex,setEditIndex] = useState(null)
+
+  useEffect(()=>{
+    getAllUsers()
+  },[])
 
   const handleChange = (e) => {
     let newUser = { ...user };
@@ -14,20 +20,28 @@ const Registration = () => {
   };
 
   const handleSubmit = () => {
-    let newUsers = [...users];
-    newUsers.push(user);
-    setUsers(newUsers);
-    clearForm();
+    axios.post("http://localhost:3000/users", user).then(() => {
+      clearForm();
+      getAllUsers();
+    });
   };
+
 
   const clearForm = () => {
-    setUser({ fname: "", lname: "", email: "" });
+    setUser({ fname: "", lname: "", email: ""});
+  };
+  const getAllUsers = () => {
+    axios.get("http://localhost:3000/users").then((response) => {
+      console.log(response);
+      setUsers(response.data);
+    });
+  };
+  const deleteuser = (user) => {
+    axios.delete("http://localhost:3000/users/"+user.id).then(()=>{
+        getAllUsers()
+    })
   };
 
-  const deleteuser = (user) => {
-    var newUsers = users.filter((usr) => usr.fname !== user.fname);
-    setUsers(newUsers);
-  };
 
   const editUser = (user,i)=>{
     setEditIndex(i)
@@ -60,24 +74,6 @@ const Registration = () => {
           <UserTable users={users} deleteuser={deleteuser} editUser={editUser} />
         </div>
       </div>
-      {/* <form>
-        <div className="mb-3">
-          <label for="exampleInputEmail1" className="form-label">
-            Email address
-          </label>
-          <input type="email" className="form-control" />
-        </div>
-        <div className="mb-3">
-          <label for="exampleInputPassword1" className="form-label">
-            Password
-          </label>
-          <input type="password" className="form-control" />
-        </div>
-
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
-      </form> */}
     </div>
   );
 };
