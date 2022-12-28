@@ -1,7 +1,8 @@
+import Registration from "./Form2/Registration";
 function App() {
   return (
     <div className="App">
-      <h1>Hello world</h1>
+       <Registration/>
     </div>
   );
 }

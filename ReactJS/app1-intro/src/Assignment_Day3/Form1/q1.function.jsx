@@ -4,9 +4,13 @@ import { useState } from "react";
 const UserForm = () => {
 
   const [user, setUser] = useState({ username:"",email:"",password:"",website:"",fname:"",lname:"",dpname:"",});
+  const [users,setUsers] = useState([]);
 
   const handleSubmit = () => {
     console.log(user);
+    let newUsers = [...users];
+    newUsers.push(user);
+    setUsers(newUsers)
     clearForm()
   };
   const handleChange = (e) => {
@@ -29,7 +33,7 @@ const UserForm = () => {
         <h1>Registration Form</h1>
         <div className="row">
           <div className="col-3">
-          <p>Trigger this action when</p>
+          <p>Select Registration type</p>
                 <select class="form-select" aria-label="Default select example">
                   <option selected>Open this select menu</option>
                   <option value="1">One</option>
