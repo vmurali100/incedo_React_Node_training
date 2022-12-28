@@ -1,3 +1,16 @@
 {
-    "users":["Murali","Krishna"]
+  "users": [
+    {
+      "fname": "Surya",
+      "lname": "P",
+      "email": "surya.p@incedoinc.com",
+      "id": 1
+    },
+    {
+      "fname": "dave",
+      "lname": "g",
+      "email": "v",
+      "id": 2
+    }
+  ]
 }
