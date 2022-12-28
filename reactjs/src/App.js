@@ -8,7 +8,7 @@ import InputNew from './Components/InputNew';
 function App() {
   return (
     <div className="App">
-      <InputNew/>
+      <assignment1/>
     </div>
   );
 }
