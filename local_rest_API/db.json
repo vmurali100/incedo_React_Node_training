@@ -1,12 +1,22 @@
 {
   "users": [
     {
-      "fname": "segu",
-      "lname": "Naveen",
-      "dob": "29-10-2000",
-      "email": "segu.naveen@incedoinc.com",
-      "mobileno": "8978717487",
+      "fname": "jai",
+      "lname": "sai deep",
+      "email": "JaiSaiDeep@incedoinc.com",
       "id": 1
+    },
+    {
+      "fname": "sushith",
+      "lname": "kalpam",
+      "email": "SushithKalpam@incedoinc.com",
+      "id": 3
+    },
+    {
+      "fname": "segu",
+      "lname": "naveen",
+      "email": "segu.naveen@incedoinc.com",
+      "id": 4
     }
   ],
   "details": [
