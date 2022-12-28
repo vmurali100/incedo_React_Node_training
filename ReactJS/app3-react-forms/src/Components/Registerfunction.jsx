@@ -31,63 +31,86 @@ export const RegisterFunction = () => {
   };
   return (
     <div>
-      <form>
-        <label htmlFor="First Name">First Name : </label>
-        <br />
-        <input
-          type="text"
-          name="fname"
-          onChange={(e) => handleChange(e)}
-          value={user.fname}
-        />
-        <br />
-        <label htmlFor="Last Name">Last Name : </label>
-        <br />
-        <input
-          type="text"
-          name="lname"
-          onChange={(e) => handleChange(e)}
-          value={user.lname}
-        />
-        <br />
-        <label htmlFor="Email">Email Id : </label>
-        <br />
-        <input
-          type="text"
-          name="email"
-          onChange={(e) => handleChange(e)}
-          value={user.email}
-        />
-        <br />
-        <label htmlFor="User Name">User Name : </label>
-        <br />
-        <input
-          type="text"
-          name="username"
-          onChange={(e) => handleChange(e)}
-          value={user.username}
-        />
-        <br />
-        <label htmlFor="Password">Password : </label>
-        <br />
-        <input
-          type="text"
-          name="password"
-          onChange={(e) => handleChange(e)}
-          value={user.password}
-        />
-        <br />
-        <label htmlFor="Confirm Password">Confirm Password: </label>
-        <br />
-        <input
-          type="text"
-          name="confirmpassword"
-          onChange={(e) => handleChange(e)}
-          value={user.confirmpassword}
-        />
-        <br />
-        <br />
-        <button onClick={register} type="button">
+      <form className="container">
+        <div className="mb-3">
+          <label htmlFor="fname" className="form-label">
+            First Name :
+          </label>
+          <br />
+          <input
+            type="text"
+            name="fname"
+            onChange={(e) => handleChange(e)}
+            value={user.fname}
+          />
+          <br />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="lname" className="form-label">
+            Last Name :
+          </label>
+          <br />
+          <input
+            type="text"
+            name="lname"
+            onChange={(e) => handleChange(e)}
+            value={user.lname}
+          />
+          <br />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="email" className="form-label">
+            Email Id :
+          </label>
+          <br />
+          <input
+            type="text"
+            name="email"
+            onChange={(e) => handleChange(e)}
+            value={user.email}
+          />
+          <br />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="fname" className="form-label">
+            User Name :
+          </label>
+          <br />
+          <input
+            type="text"
+            name="username"
+            onChange={(e) => handleChange(e)}
+            value={user.username}
+          />
+          <br />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="password" className="form-label">
+            Password :
+          </label>
+          <br />
+          <input
+            type="text"
+            name="password"
+            onChange={(e) => handleChange(e)}
+            value={user.password}
+          />
+          <br />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="confirmpassword" className="form-label">
+            Confirm Password :
+          </label>
+          <br />
+          <input
+            type="text"
+            name="confirmpassword"
+            onChange={(e) => handleChange(e)}
+            value={user.confirmpassword}
+          />
+          <br />
+        </div>
+        <button onClick={register} type="button" className="btn btn-primary">
           Register
         </button>
       </form>

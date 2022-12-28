@@ -7,7 +7,7 @@ import { RegisterFunction } from "./Components/Registerfunction";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App container">
       {/* <User /> */}
       {/* <RegisterClass />
       <Registration /> */}
