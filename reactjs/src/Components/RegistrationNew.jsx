@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 const RegistrationNew = () => {
   const [user, setUser] = useState({ fname: "", lname: "", email: "" });
-  const [editIndex, seteditIndex] = useState(null);
+  const [editIndex, setEditIndex] = useState(null);
   const [users, setUsers] = useState([]);
 
   // Use Effect will trigger after component Renders ... Similar to componentDidMount
@@ -45,7 +45,20 @@ const RegistrationNew = () => {
         getAllUsers()
     })
   };
-  const updateUser = () => {};
+
+  const updateUser = () => {
+    axios.put("http://localhost:3000/users").then(()=>{
+        getAllUsers()
+        setEditIndex(null)
+        clearForm()
+    })
+  };
+
+  const editUser = (user,i)=>{
+    setEditIndex(i)
+    setUser(user)
+  }
+
   return (
     <div>
       <div className="row">
@@ -62,6 +75,7 @@ const RegistrationNew = () => {
             users={users}
             deleteuser={deleteuser}
             updateUser={updateUser}
+            editUser={editUser}
           />
         </div>
       </div>
