@@ -1,27 +1,24 @@
 import logo from "./logo.svg";
 import "./App.css";
- import { BrowserRouter, Route, Routes } from "react-router-dom";
- import ReadUser from "./components/ReadUser";
- import CreateUser from "./components/CreateUser";
- import UpdateUser from "./components/UpdateUser";
- import DeleteUser from "./components/DeleteUser";
- import NavBar from "./components/NavBar";
-
-import SampleTask from "./components/Assignment/SampleTask";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ReadUsers from "./Components/ReadUsers";
+import CreateUser from "./Components/CreateUser";
+import UpdateUsers from "./Components/UpdateUsers";
+import DeleteUser from "./Components/DeleteUser";
+import NavBar from "./Components/NavBar";
 
 function App() {
   return (
-    <div className="App container">
-      {<BrowserRouter>
+    <div className="App">
+      <BrowserRouter>
       <NavBar/>
         <Routes>
-          <Route path="/" element={<ReadUser />} />
+          <Route path="/" element={<ReadUsers />} />
           <Route path="/create" element={<CreateUser />} />
-          <Route path="/update" element={<UpdateUser />} />
-          <Route path="/delete" element={<DeleteUser />} />
+          <Route path="/update/:id" element={<UpdateUsers />} />
+          <Route path="/delete/:id" element={<DeleteUser />} />
         </Routes>
-      </BrowserRouter> }
-      <SampleTask/>
+      </BrowserRouter>
     </div>
   );
 }
