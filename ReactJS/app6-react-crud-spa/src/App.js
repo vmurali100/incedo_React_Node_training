@@ -6,7 +6,6 @@ import CreateUser from "./Components/CreateUser";
 import UpdateUsers from "./Components/UpdateUsers";
 import DeleteUser from "./Components/DeleteUser";
 import NavBar from "./Components/NavBar";
-import SampleTask from "./Components/SampleTask";
 
 function App() {
   return (
@@ -14,10 +13,10 @@ function App() {
       <BrowserRouter>
       <NavBar/>
         <Routes>
-          <Route path="/" element={<SampleTask />} />
+          <Route path="/" element={<ReadUsers />} />
           <Route path="/create" element={<CreateUser />} />
-          <Route path="/update" element={<UpdateUsers />} />
-          <Route path="/delete" element={<DeleteUser />} />
+          <Route path="/update/:id" element={<UpdateUsers />} />
+          <Route path="/delete/:id" element={<DeleteUser />} />
         </Routes>
       </BrowserRouter>
     </div>

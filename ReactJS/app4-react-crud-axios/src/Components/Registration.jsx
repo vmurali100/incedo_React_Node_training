@@ -12,10 +12,10 @@ const Registration = () => {
   const [isEdit,setIsEdit]=useState(false)
 
   // Use Effect will trigger after component Renders ... Similar to componentDidMount
-
   useEffect(() => {
     getAllUsers();
   }, []);
+  
   const handleChange = (e) => {
     let newUser = { ...user };
     newUser[e.target.name] = e.target.value;
