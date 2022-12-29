@@ -6,7 +6,7 @@ import Pricing from "./Components/Pricing";
 import Features from "./Components/Features";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <BrowserRouter>
