@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import FunctionalRegistration from './RegistrationForm/FunctionalRegistration';
+import Registration from './React_Axios_Crud/Registration';
+//import FunctionalRegistration from './RegistrationForm/FunctionalRegistration';
 
 function App() {
   return (
     <div className="App container">
-      <FunctionalRegistration/>
+      <Registration/>
     </div>
   );
 }

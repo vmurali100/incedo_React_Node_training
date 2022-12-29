@@ -17,9 +17,9 @@ const Registration = () => {
     setUser({ fname: "", lname: "", email: "", username:"", password1:"", password2:"" })
   }
   return (
-    <div>
+    <div >
         <div className="row">
-        <div className="col-4">
+        <div className="parent conainer justify-content-center align-items-center col-4" >
         <form>
         <div className="mb-3">
           <label htmlFor="fname" className="form-label">
@@ -111,7 +111,7 @@ const Registration = () => {
           className="btn btn-primary"
           onClick={handleSubmit}
         >
-          Submit
+          Register
         </button>
       </form>
     </div>
