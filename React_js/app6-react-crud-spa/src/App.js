@@ -6,11 +6,12 @@ import CreateUser from "./Components/CreateUser";
 import UpdateUsers from "./Components/UpdateUsers";
 import DeleteUser from "./Components/DeleteUser";
 import NavBar from "./Components/NavBar";
+import SampleTask from "./Components/SampleTask";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      {/* <BrowserRouter>
       <NavBar/>
         <Routes>
           <Route path="/" element={<ReadUsers />} />
@@ -18,7 +19,8 @@ function App() {
           <Route path="/update" element={<UpdateUsers />} />
           <Route path="/delete" element={<DeleteUser />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+      <SampleTask/>
     </div>
   );
 }
