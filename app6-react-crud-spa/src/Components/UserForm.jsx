@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 class UserForm extends Component {
     constructor(props) {
+        console.log(props);
         super(props);
     }
     render() {
@@ -50,9 +51,10 @@ class UserForm extends Component {
                             }}
                         />
                     </div>
+                    {console.log(this.props.isEdit)}
                    {
-                     this.props.editIndex != null ? 
-                     <button type="button" className="btn btn-primary" onClick={this.props.updateUser}>UpdateUser</button>:
+                     this.props.isEdit ? 
+                     <button type="button" className="btn btn-primary" onClick={this.props.handleSubmit}>UpdateUser</button>:
                      <button type="button" className="btn btn-primary" onClick={this.props.handleSubmit} > Submit </button>
                    }
                     

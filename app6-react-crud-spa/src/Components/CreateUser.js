@@ -1,6 +1,7 @@
 import React,{Component} from "react";
 import UserForm from "./UserForm";
 import axios from 'axios';
+import { Navigate } from "react-router-dom";
 
 class CreateUser extends Component
 {
@@ -10,7 +11,9 @@ class CreateUser extends Component
         this.state={
             user:{fname:"",
                   lname:"",
-                  email:""}
+                  email:""},
+            isEdit:false,
+            moveToReadUser:false
         }
     }
     handleChange=(e)=>
@@ -20,8 +23,9 @@ class CreateUser extends Component
        this.setState({user:newUser});
     }
     handleSubmit=()=>{
-        axios.post("http://localhost:3000/users"+this.state.user).then(()=>{
-            clearForm();
+        axios.post("http://localhost:3000/users",this.state.user).then(()=>{
+            this.clearForm();
+            this.setState({moveToReadUser:true});
         });
     }
     clearForm = ()=>
@@ -34,7 +38,8 @@ class CreateUser extends Component
     {
         return <>
                <h1>CreateUser</h1>
-               <UserForm user={this.state.user} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
+               {this.state.moveToReadUser && <Navigate to="/read" replace={true} />}
+               <UserForm user={this.state.user} handleChange={this.handleChange} handleSubmit={this.handleSubmit} isEdit={this.state.isEdit}/>
                </>
     };
 };
