@@ -1,12 +1,9 @@
 {
   "users": [
     {
-      "fname": "",
-      "lname": "",
-      "email": "",
-      "username": "suchi",
-      "password": "123",
-      "confirmpassword": "",
+      "fname": "Suchitha",
+      "lname": "Muppala1",
+      "email": "muppala.suchitha@incedoinc.com",
       "id": 1
     }
   ]
