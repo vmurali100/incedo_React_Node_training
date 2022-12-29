@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import UserForm from "./UserForm";
 import axios from "axios";
-import UserTable from "./UserTable";
+import UserTable from "./UsersTable";
 import { useEffect } from "react";
 
 const Registration = () => {
@@ -12,10 +12,10 @@ const Registration = () => {
   const [isEdit,setIsEdit]=useState(false)
 
   // Use Effect will trigger after component Renders ... Similar to componentDidMount
-
   useEffect(() => {
     getAllUsers();
   }, []);
+  
   const handleChange = (e) => {
     let newUser = { ...user };
     newUser[e.target.name] = e.target.value;
