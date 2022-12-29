@@ -12,19 +12,21 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Prices from './Components/Prices'
 import Features from './Components/Features';
+import Registration from './Components/Registration'
 
 
 function App() {
   return (
     <div className="App">
-    <BrowserRouter>
+    {/* <BrowserRouter>
     <Navbar/>
     <Routes>
       <Route path='/' element={<Home/>} />
       <Route path='/prices' element={<Prices/>} />
       <Route path='/features' element={<Features/>} />
     </Routes>
-    </BrowserRouter>
+    </BrowserRouter> */}
+    <Registration/>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 
 const UserTable = ({users, deleteuser,editUser}) => {
-  console.log(users)
+  
   return (
     <div>
       <table className="table">

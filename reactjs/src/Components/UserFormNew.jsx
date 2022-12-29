@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-const UserFormNew = ({ user, handleChange, handleSubmit, updateUser, editIndex }) => {
+const UserFormNew = ({ user, handleChange, handleSubmit, updateUser, editIndex, isEdit }) => {
   // WE can declare a Variable , and a function to manipulate that variable ;
   //   const [age, setAge] = useState(40);
   return (
@@ -50,7 +50,7 @@ const UserFormNew = ({ user, handleChange, handleSubmit, updateUser, editIndex }
           />
         </div>
 
-        {editIndex !== null ? (
+        {isEdit ? (
           <button
             type="button"
             className="btn btn-primary"

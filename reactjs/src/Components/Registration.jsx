@@ -3,8 +3,8 @@ import UserForm from "./UserForm";
 import UserTable from "./UserTable";
 
 const Registration = () => {
-  const [user, setUser] = useState({ fname: "", lname: "", email: "" });
-  const [users,setUsers] = useState([])
+  const [user, setUser] = useState({ fname: "", lname: "", email: "" }); //stores incoming inputs before submit : 1 object
+  const [users,setUsers] = useState([]) //gets submitted here : array of objects
   const [editIndex,setEditIndex] = useState(null)
 
   const handleChange = (e) => {

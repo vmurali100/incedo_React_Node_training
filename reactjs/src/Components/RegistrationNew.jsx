@@ -9,12 +9,14 @@ const RegistrationNew = () => {
   const [user, setUser] = useState({ fname: "", lname: "", email: "" });
   const [editIndex, setEditIndex] = useState(null);
   const [users, setUsers] = useState([]);
+  const [isEdit,setIsEdit]=useState(false)
 
   // Use Effect will trigger after component Renders ... Similar to componentDidMount
 
   useEffect(()=>{
     getAllUsers()
   },[])
+
   const handleChange = (e) => {
     let newUser = { ...user };
     newUser[e.target.name] = e.target.value;
@@ -47,16 +49,16 @@ const RegistrationNew = () => {
   };
 
   const updateUser = () => {
-    axios.put("http://localhost:3000/users").then(()=>{
+    axios.put("http://localhost:3000/users/" + user.id,user).then(()=>{
         getAllUsers()
-        setEditIndex(null)
+        setIsEdit(false);
         clearForm()
-    })
-  };
+  });
+}
 
   const editUser = (user,i)=>{
-    setEditIndex(i)
-    setUser(user)
+    setUser(user);
+    setIsEdit(true)
   }
 
   return (
@@ -68,6 +70,7 @@ const RegistrationNew = () => {
             handleChange={handleChange}
             editIndex={editIndex}
             handleSubmit={handleSubmit}
+            isEdit={isEdit}
           />
         </div>
         <div className="col-8">
