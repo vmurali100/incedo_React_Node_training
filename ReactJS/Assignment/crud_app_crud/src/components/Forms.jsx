@@ -23,7 +23,7 @@ class Froms extends Component {
     newState[name] = e.target.value;
     this.setState(newState);
   };
-  handleClick = () =>{
+  handleClick =()=>{
     console.log("User :", this.state);
     this.setState(startState);
   };

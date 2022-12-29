@@ -4,9 +4,9 @@
       "fname": "Short",
       "lname": "Chris",
       "email": "chris.manivannan@incedoinc.com",
-      "phone": "1223455",
-      "username": "Userame1213",
-      "pass": "2222",
+      "phone": "142343",
+      "username": "Userame",
+      "pass": "erwe",
       "bio": "helllo",
       "id": 1
     },
@@ -14,21 +14,11 @@
       "fname": "Short",
       "lname": "Chris",
       "email": "chris.manivannan@incedoinc.com",
-      "phone": "8825896232",
-      "username": "Chris4843",
-      "pass": "Tstings",
+      "phone": "14234",
+      "username": "Chris48",
+      "pass": "test",
       "bio": "bio",
       "id": 2
-    },
-    {
-      "fname": "Testings",
-      "lname": "Lastname",
-      "email": "chris.manivannan@incedoinc.com",
-      "phone": "90083829923",
-      "username": "Hari@12349",
-      "pass": "testttsings",
-      "bio": "Bio Bio",
-      "id": 3
     }
   ],
   "details": [],

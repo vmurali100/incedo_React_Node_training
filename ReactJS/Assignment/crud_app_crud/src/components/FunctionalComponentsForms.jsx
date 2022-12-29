@@ -11,6 +11,7 @@ const startState = {
 };
 function FunctionalForms({user,handleChange,handleClick,editIndex,updateUser}) {
  console.log("indexx",editIndex)
+ console.log(startState)
   return (
     <Fragment>
       <h1>Functional Components</h1>

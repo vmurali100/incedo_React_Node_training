@@ -2,7 +2,7 @@ import { Fragment } from "react";
 
 function Table({users,handleDelete,handleEdit})
 {
-    console.log(users)
+    console.log("Testings",!!users)
     return <Fragment>
         {!!users &&
        <table>
