@@ -6,21 +6,24 @@ import DeleteUser from './Components/DeleteUser';
 import ReadUser from './Components/ReadUser';
 import CreateUser from './Components/CreateUser';
 import UpdateUser from './Components/UpdateUser';
+import SampleTask from './sampleTask/SampleTask';
 
 
 function App() {
   return (
-    <div className="App">
-    <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<CreateUser/>} />
-        <Route path="/read" element={<ReadUser/>} />
-        <Route path="/update" element={<UpdateUser/>} />
-        <Route path="delete" element={<DeleteUser/>} />
-      </Routes>
-    </BrowserRouter>
-    </div>
+    // <div className="App">
+    // <BrowserRouter>
+    //   <NavBar />
+    //   <Routes>
+    //     <Route path="/" element={<CreateUser/>} />
+    //     <Route path="/read" element={<ReadUser/>} />
+    //     <Route path="/update" element={<UpdateUser/>} />
+    //     <Route path="delete" element={<DeleteUser/>} />
+    //   </Routes>
+    // </BrowserRouter>
+    // </div>
+    <SampleTask />
+
     
   );
 }
