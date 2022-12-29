@@ -1,8 +1,7 @@
 import React from "react";
 
 const UserForm = ({ user, handleChange, handleSubmit, updateUser, isEdit }) => {
-  // WE can declare a Variable , and a function to manipulate that variable ;
-  //   const [age, setAge] = useState(40);
+
   return (
     <div>
       <form>

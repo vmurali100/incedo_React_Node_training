@@ -4,8 +4,8 @@ import Registration from './Components/Registration';
 
 function App() {
   return (
-    <div>
-     <Registration/> 
+    <div className="App container">
+      <Registration/>
     </div>
   );
 }
