@@ -1,10 +1,22 @@
 {
   "users": [
     {
-      "fname": "Cherukuri ",
-      "lname": "Amarendra",
-      "email": "c.amarendra@incedoinc.com",
-      "id": 3
+      "fname": "Murali VVV",
+      "lname": "Kumar",
+      "email": "vmurali100@gmail.com",
+      "id": 1
+    },
+    {
+      "fname": "Ram",
+      "lname": "Krishna",
+      "email": "ram@gmail.com",
+      "id": 2
+    },
+    {
+      "fname": "Balaji",
+      "lname": "Kumar",
+      "email": "balaji@gmail.com",
+      "id": 5
     }
   ]
 }
