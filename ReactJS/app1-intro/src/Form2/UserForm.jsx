@@ -2,34 +2,32 @@ import React from "react";
 import { useState } from "react";
 
 const UserForm = ({ user, handleChange, handleSubmit, updateUser, editIndex }) => {
-    // WE can declare a Variable , and a function to manipulate that variable ;
-    //   const [age, setAge] = useState(40);
     return (
         <div>
             <form>
                 <div className="mb-3">
-                    <label htmlFor="fname" className="form-label">
-                        First Name
+                    <label htmlFor="name" className="form-label">
+                        Name
                     </label>
                     <input
                         type="text"
                         className="form-control"
-                        value={user.fname}
-                        name="fname"
+                        value={user.name}
+                        name="name"
                         onChange={(e) => {
                             handleChange(e);
                         }}
                     />
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="lname" className="form-label">
-                        Last Name
+                    <label htmlFor="username" className="form-label">
+                        User Name
                     </label>
                     <input
                         type="text"
                         className="form-control"
-                        value={user.lname}
-                        name="lname"
+                        value={user.username}
+                        name="username"
                         onChange={(e) => {
                             handleChange(e);
                         }}
@@ -49,7 +47,62 @@ const UserForm = ({ user, handleChange, handleSubmit, updateUser, editIndex }) =
                         }}
                     />
                 </div>
-
+                <div className="mb-3">
+                    <label htmlFor="address" className="form-label">
+                        Address
+                    </label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        value={user.address}
+                        name="address"
+                        onChange={(e) => {
+                            handleChange(e);
+                        }}
+                    />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="phone" className="form-label">
+                        Phone
+                    </label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        value={user.phone}
+                        name="phone"
+                        onChange={(e) => {
+                            handleChange(e);
+                        }}
+                    />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="website" className="form-label">
+                        Website
+                    </label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        value={user.website}
+                        name="website"
+                        onChange={(e) => {
+                            handleChange(e);
+                        }}
+                    />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="company" className="form-label">
+                        Company
+                    </label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        value={user.company}
+                        name="company"
+                        onChange={(e) => {
+                            handleChange(e);
+                        }}
+                    />
+                </div>
                 {editIndex !== null ? (
                     <button
                         type="button"

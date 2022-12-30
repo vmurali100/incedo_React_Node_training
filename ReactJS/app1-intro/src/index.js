@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Registration from './Form2/Registration';
+import EmpRegistration from './Form3/EmpRegistration';
 import reportWebVitals from './reportWebVitals';
 {/*
 import Component1 from './Components/Component1';

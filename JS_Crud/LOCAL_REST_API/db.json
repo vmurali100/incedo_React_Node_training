@@ -1,3 +1,10 @@
 {
-  "users": []
+  "users": [
+    {
+      "fname": "bhargav",
+      "lname": "Bhavirisetty",
+      "email": "b.bhargav@incedoinc.com",
+      "id": 2
+    }
+  ]
 }
