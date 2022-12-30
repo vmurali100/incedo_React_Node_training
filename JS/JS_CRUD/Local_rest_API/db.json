@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "fname": "Murali",
+      "fname": "Murali VVV",
       "lname": "Kumar",
       "email": "vmurali100@gmail.com",
       "id": 1
@@ -13,10 +13,10 @@
       "id": 2
     },
     {
-      "fname": "ABC-FGH",
-      "lname": "CDFFF",
-      "email": "anv@gmail.com",
-      "id": 3
+      "fname": "Balaji",
+      "lname": "Kumar",
+      "email": "balaji@gmail.com",
+      "id": 5
     }
   ]
 }
