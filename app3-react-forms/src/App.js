@@ -8,11 +8,15 @@ import AssignmentFunctionalForm1 from './Day3 Assignments/Assignmentfunctionalfo
 import ParentRegistrationForm from './Components/ParentRegisterForm';
 import RegisterFormParentAxios from './Day4AxiosCrudOperations/RegisterFormParentAxios';
 import AssignmentFunctionalForm2 from './Day3 Assignments/Assignmentfunctionalform2';
+import Counter from './midtermassignment/Counter';
+import ListOfItems from './midtermassignment/listOfItems';
+import ApiResponse from './midtermassignment/ApiResponse';
+import Search from './midtermassignment/Search';
 
 function App() {
   return (
     <div>
-      <AssignmentFunctionalForm2 />
+      <Search />
     </div>
   );
 }
