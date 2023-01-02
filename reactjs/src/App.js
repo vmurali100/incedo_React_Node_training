@@ -58,6 +58,9 @@ function App() {
         </BrowserRouter>
       </AuthProvider> */}
 
+      {/* <ClickCounter/>
+      <HoverCounter/> */}
+
     </div>
   );
 }
