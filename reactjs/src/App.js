@@ -7,26 +7,57 @@ import InputNew from './Components/InputNew';
 import assignment1 from './Components/assignment1';
 import assignment2 from './Components/assignment2';
 import RegistrationNew from './Components/RegistrationNew';
-import Home from './Components/Home'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Navbar from './Components/Navbar';
+import Navbar from './Components/Router_crud_axios/Navbar';
 import Prices from './Components/Prices'
 import Features from './Components/Features';
 import Registration from './Components/Registration'
+import Task from './Components/Task';
+import Homepage from './Components/Homepage';
+import Home from './Components/Routing/Home';
+import ReadUsers from './Components/Router_crud_axios/ReadUsers';
+import CreateUser from './Components/Router_crud_axios/CreateUser';
+import UpdateUsers from './Components/Router_crud_axios/UpdateUsers';
+import DeleteUser from './Components/Router_crud_axios/DeleteUser';
+
 
 
 function App() {
   return (
-    <div className="App">
-    {/* <BrowserRouter>
-    <Navbar/>
-    <Routes>
-      <Route path='/' element={<Home/>} />
-      <Route path='/prices' element={<Prices/>} />
-      <Route path='/features' element={<Features/>} />
-    </Routes>
-    </BrowserRouter> */}
-    <Registration/>
+    <div className="App container">
+    <BrowserRouter>
+      <Navbar/>
+        <Routes>
+          <Route path="/" element={<ReadUsers />} />
+          <Route path="/create" element={<CreateUser />} />
+          <Route path="/update/:id" element={<UpdateUsers />} />
+          <Route path="/delete/:id" element={<DeleteUser />} />
+        </Routes>
+      </BrowserRouter>
+
+    {/* <Main users={users}/> 
+    <UseContextProvider value={users}>
+      <Main/>
+    </UseContextProvider> */}
+
+   {/* <AuthProvider>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route
+              path="/features"
+              element={
+                <RequiredAuth>
+                  <Features />
+                </RequiredAuth>
+              }
+            />
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider> */}
+
     </div>
   );
 }

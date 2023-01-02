@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 onclick="hanldeClick()">Hello World !! ...</h2>
+    <h2 id="myHeading">Hello ReactJS !!!</h2>
+    <h2>hello Node Js !!!</h2>
+
+    <input type="text" name="myname" id="">
+    <script>
+      function hanldeClick() {
+        console.log("hanldeClick Called ... !!");
+      }
+
+      // Adding an Event handle with DOM method
+      document.getElementById("myHeading").onclick = function (elementDetails) {
+        console.log(elementDetails.target)
+      };
+
+      document.querySelector("input").onkeydown  =function(e){
+        console.log(e)
+      }
+    </script>
+  </body>
+</html>
