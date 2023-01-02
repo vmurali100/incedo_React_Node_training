@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import {useState,useContext} from 'react';
 
 
-const UserContext = React.createContext();
+export const UserContext = React.createContext();
 
 export const AuthContext = ({children})=>
 {
