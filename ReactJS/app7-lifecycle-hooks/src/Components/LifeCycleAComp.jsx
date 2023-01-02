@@ -27,7 +27,7 @@ export default class LifeCycleAComp extends Component {
       <div>
         <button onClick={()=>{this.setState({showImage:!this.state.showImage})}}>Toggle Image</button>
         {/* <button onClick={()=>{this.setState({count:this.state.count+1})}}>Increment Count</button> */}
-        {/* <LifeCycleBComp count={this.state.count}/> */}
+        <LifeCycleBComp count={this.state.count}/>
         {this.state.showImage && <LifeCycleCComp/>}
         
       </div>
