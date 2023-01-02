@@ -11,6 +11,7 @@ class Employees extends Component {
     </div>;
   }
 }
+
 function mapStateToProps(state) {
   return {
     employees: state,

@@ -18,6 +18,7 @@ const reducer = (state = defaultState, action) => {
       return state.employees;
   }
 };
+
 const store = createStore(reducer);
 console.log(store);
 
