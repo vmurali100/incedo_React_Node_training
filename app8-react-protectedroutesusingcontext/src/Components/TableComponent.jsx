@@ -12,7 +12,11 @@ class TableComponent extends Component
    }
    componentDidMount()
    {
-      axios.get("http://localhost:3000/users").then(response=>{response.data.forEach((user)=>{user.checked=false});this.setState({users:response.data})});
+      this.getAllUsersFromServer();
+   }
+   getAllUsersFromServer()
+   {
+     axios.get("http://localhost:3000/users").then(response=>{response.data.forEach((user)=>{user.checked=false});this.setState({users:response.data})});
    }
    handleChange = (e,i)=>{
     console.log("inside change Email");
@@ -28,6 +32,25 @@ class TableComponent extends Component
     console.log(JSON.stringify(newUsers[i]));
     this.setState({users:newUsers})
    }
+
+   filterList = ()=>
+   {
+     var newusers = [];
+     this.state.users.forEach((user,i)=>{
+        if(user.checked === true)
+        {
+           newusers.push(user);
+        }
+     })
+     console.log(newusers);
+     for(let i=0;i<newusers.length;i++)
+     {
+       console.log(newusers[i].id);
+       axios.put("http://localhost:3000/users/"+newusers[i].id,newusers[i]);
+     }
+     this.getAllUsersFromServer();
+   }
+
    render()
    {
      return <>
@@ -51,6 +74,7 @@ class TableComponent extends Component
                                                 </tr>))}
             </tbody>
             </table>
+            <button onClick={()=>{this.filterList()}} className="btn btn-primary">Update All</button>
             </>
    };
 };

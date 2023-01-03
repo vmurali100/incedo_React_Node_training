@@ -20,8 +20,9 @@
     {
       "fname": "segu",
       "lname": "naveen",
-      "email": "segu.naveen@incedoinc.com",
-      "id": 1
+      "email": "Segu.Naveen@incedoinc.com",
+      "id": 1,
+      "checked": true
     },
     {
       "fname": "Bhargav",
@@ -30,10 +31,17 @@
       "id": 2
     },
     {
-      "fname": "sushith",
-      "lname": "kalpam",
-      "email": "Sushith.Kalpam@incedoinc.com",
-      "id": 3
+      "fname": "Sushith",
+      "lname": "Kalpam",
+      "email": "sushith.kalpam@incedoinc.com",
+      "id": 3,
+      "checked": true
+    },
+    {
+      "fname": "segu",
+      "lname": "Aparna",
+      "email": "segu.Aparna@incedoinc.com",
+      "id": 4
     }
   ]
 }

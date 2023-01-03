@@ -38,7 +38,7 @@ class CreateUser extends Component
     {
         return <>
                <h1>CreateUser</h1>
-               {this.state.moveToReadUser && <Navigate to="/read" replace={true} />}
+               {this.state.moveToReadUser && <Navigate to="/readuser" replace={true} />}
                <UserForm user={this.state.user} handleChange={this.handleChange} handleSubmit={this.handleSubmit} isEdit={this.state.isEdit}/>
                </>
     };
