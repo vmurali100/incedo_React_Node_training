@@ -8,9 +8,10 @@ class Employees extends Component {
 
     this.state = {
       employee: {
-        fname: "",
-        lname: "",
+        username: "",
         email: "",
+        password: "",
+        repeatpassword: "",
       },
       isEdit: false,
     };
@@ -27,11 +28,10 @@ class Employees extends Component {
   };
   clearForm = () => {
     this.setState({
-      employee: {
-        fname: "",
-        lname: "",
-        email: "",
-      },
+      username: "",
+      email: "",
+      password: "",
+      repeatpassword: "",
     });
   };
   handleChange = (e) => {
@@ -49,7 +49,9 @@ class Employees extends Component {
     return (
       <div>
         <form action="">
-          <label htmlFor="fname">First Name : </label>
+          <label htmlFor="username" className="html-label">
+            First Name :{" "}
+          </label>
           <input
             type="text"
             name="fname"
@@ -59,21 +61,33 @@ class Employees extends Component {
             }}
           />{" "}
           <br />
-          <label htmlFor="lname">Last Name : </label>
+          <label htmlFor="email">Email : </label>
           <input
             type="text"
-            name="lname"
-            value={this.state.employee.lname}
+            name="email"
+            value={this.state.employee.email}
+            disabled={this.state.isEdit ? true : false}
             onChange={(e) => {
               this.handleChange(e);
             }}
           />{" "}
           <br />
-          <label htmlFor="fname">Email : </label>
+          <label htmlFor="password">Password : </label>
           <input
             type="text"
-            name="email"
-            value={this.state.employee.email}
+            name="password"
+            value={this.state.employee.password}
+            disabled={this.state.isEdit ? true : false}
+            onChange={(e) => {
+              this.handleChange(e);
+            }}
+          />{" "}
+          <br />
+          <label htmlFor="password"> Repeat Password : </label>
+          <input
+            type="text"
+            name="repeat Password"
+            value={this.state.employee.password}
             disabled={this.state.isEdit ? true : false}
             onChange={(e) => {
               this.handleChange(e);
@@ -108,7 +122,7 @@ class Employees extends Component {
                   background: "grey",
                   padding: 2,
                   color: "white",
-                  marginLeft:10
+                  marginLeft: 10,
                 }}
                 onClick={() => {
                   this.handleDelete(emp);

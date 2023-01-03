@@ -1,15 +1,11 @@
-import React from 'react'
-import axios from "axios"
-import { useState } from "react"
-import './App.css';
-
-class ex4 extends Component {
-
-  render() {
-    return (
-      <div>
-      </div>
-    )
-  }
+import logo from "./logo.svg";
+import "./App.css";
+import Employees from "./Components/Employees";
+function App() {
+  return (
+    <div className="App">
+      <Employees />
+    </div>
+  );
 }
-export default ex4;
+export default App;
