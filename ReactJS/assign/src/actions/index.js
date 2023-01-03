@@ -1,4 +1,4 @@
-import { ADD_EMPLOYEE, DELETE_EMP, DELETE_USER, UPDATE_EMP } from "./actionTypes"
+import { ADD_EMPLOYEE, DELETE_EMP, UPDATE_EMP } from "./actionTypes"
 
 export const deleteEmpAction=(emp)=>{
     return {
