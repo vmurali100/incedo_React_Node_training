@@ -5,27 +5,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
+import { reducer } from "./reducers";
 
 // Default State should availble Across the Application
-const defaultState = {
-  employees: ["Rohan", "Arun", "Sam","Ravi Kumar","Ram Krishna"],
-};
-
-// Busisness Logic condition
-const reducer = (state = defaultState, action) => {
-  switch (action.type) {
-    default:
-      return state.employees;
-  }
-};
 
 const store = createStore(reducer);
-console.log(store);
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+console.log(store)
+root.render( 
   <React.StrictMode>
-    <Provider store={store}>
+    <Provider store={store}> 
       <App />
     </Provider>
   </React.StrictMode>
