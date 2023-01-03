@@ -1,12 +1,52 @@
 {
-    "users":[ 
-        {
-            "firstName": "Hariharan",
-            "lastName":"B"
-        }, 
-        {
-            "firstName": "Leo",
-            "lastName":"Messi"
-        }
-    ]
+  "users": [
+    {
+      "fname": "hari",
+      "lname": "",
+      "username": "",
+      "email": "",
+      "bio": "",
+      "id": 1
+    },
+    {
+      "fname": "hari",
+      "lname": "",
+      "username": "",
+      "email": "",
+      "bio": "",
+      "id": 2
+    },
+    {
+      "fname": "hari",
+      "lname": "",
+      "username": "",
+      "email": "",
+      "bio": "",
+      "id": 3
+    },
+    {
+      "fname": "hari",
+      "lname": "",
+      "username": "",
+      "email": "",
+      "bio": "",
+      "id": 4
+    },
+    {
+      "fname": "hari",
+      "lname": "",
+      "username": "",
+      "email": "",
+      "bio": "",
+      "id": 5
+    },
+    {
+      "fname": "hari",
+      "lname": "",
+      "username": "",
+      "email": "",
+      "bio": "",
+      "id": 6
+    }
+  ]
 }
