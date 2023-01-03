@@ -35,7 +35,8 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-    {/* <Main users={users}/> 
+    {/* const [users,setUsers] = useState(["Arun","Kumar","Sam","Sundar","Ravi"])
+    <Main users={users}/> 
     <UseContextProvider value={users}>
       <Main/>
     </UseContextProvider> */}

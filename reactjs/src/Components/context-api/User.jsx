@@ -1,17 +1,17 @@
 import React from 'react'
-import { UseContextConsumber } from './UseContext'
+import { UseContextConsumer } from './UseContext'
 
 const User = () => {
   return (
     <div>
       <h2>Welcome to User Componenent !!!</h2>
-      <UseContextConsumber>
+      <UseContextConsumer>
         {(users)=>{
          return <ul>
           {users.map((user,i)=> <li key={i}>{user}</li> )}
          </ul>
         }}
-      </UseContextConsumber>
+      </UseContextConsumer>
     </div>
   )
 }
