@@ -10,6 +10,7 @@ import NavBar from './Components/NavBar';
 import { AuthContext } from './Components/authContext';
 import RequiredAuth from './Components/requiredAuth';
 import TextClassContext from './Components/TestContext';
+import TableComponent from './Components/TableComponent';
 
 function App() 
 {
@@ -25,6 +26,7 @@ function App()
       <Route path="/updateuser/:id" element={<RequiredAuth><UpdateUser/></RequiredAuth>}></Route>
       <Route path="/readuser" element={<ReadUser/>}></Route>
       <Route path="/deleteuser/:id" element={<RequiredAuth><DeleteUser/></RequiredAuth>}></Route>
+      <Route path="/tableComponent" element={<TableComponent/>}></Route>
       {/* <Route path="/textcontext" element={<TextClassContext />}></Route> */}
      </Routes>
      </BrowserRouter>
