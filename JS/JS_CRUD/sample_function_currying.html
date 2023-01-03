@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function calculate() {
+        return function () {
+          return function (a, b, c) {
+            return a * b * c;
+          };
+        };
+      }
+
+      // console.log(calculate(20,30))
+      //   console.log(calculate()(20, 40));
+      console.log(calculate()()(10, 20, 30));
+    </script>
+  </body>
+</html>
