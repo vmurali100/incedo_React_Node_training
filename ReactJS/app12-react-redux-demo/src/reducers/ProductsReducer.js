@@ -7,6 +7,6 @@ export const productsReducer = (state=defaultState,action)=>{
             break;
     
         default:
-            return state.products
+            return state
     }
 }

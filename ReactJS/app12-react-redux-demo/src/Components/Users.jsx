@@ -3,8 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { addUserAction } from "../actions";
 
 const Users = () => {
-  const allUsers = useSelector((state) => state.users);
-  console.log(allUsers);
+  const allUsers = useSelector((state) => state.users.users);
   const dispatch = useDispatch();
   const handleAddUser = () => {
     dispatch(addUserAction("Murali"));
