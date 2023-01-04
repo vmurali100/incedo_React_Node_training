@@ -46,7 +46,7 @@ class Employees extends Component {
   };
   render() {
     console.log("Props : ", this.props);
-    return (
+    return ( 
       <div>
         <form action="">
           <label htmlFor="fname">First Name : </label>
