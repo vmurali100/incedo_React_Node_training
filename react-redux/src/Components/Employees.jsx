@@ -21,7 +21,7 @@ class Employees extends Component {
     this.props.deleteEmployee(emp);
   };
   addEmp = () => {
-    console.log(this.state.employee);
+    console.log("Add emp : ", this.state.employee);
     this.props.addEmp(this.state.employee);
     this.clearForm();
   };
@@ -45,7 +45,7 @@ class Employees extends Component {
     // this.clearForm();
   };
   render() {
-    console.log(this.props);
+    console.log("Props : ", this.props);
     return (
       <div>
         <form action="">
@@ -91,7 +91,7 @@ class Employees extends Component {
           )}
         </form>
         <ul>
-          {this.props.employees.map((emp, i) => (
+          {this.props.employeeDetails.map((emp, i) => (
             <li
               style={{ margin: 5, cursor: "pointer" }}
               key={i}
@@ -99,7 +99,7 @@ class Employees extends Component {
                 this.setState({ employee: emp, isEdit: true });
               }}
             >
-              {emp.email}- {emp.fname} - {emp.lname}
+              {emp.email} - {emp.fname} - {emp.lname}
               <span
                 style={{
                   width: 50,
@@ -127,7 +127,7 @@ class Employees extends Component {
 function mapStateToProps(state) {
   console.log("Store is : ", state);
   return {
-    employees: state.employees,
+    employeeDetails: state.employees,
   };
 }
 // This function will receive an dispatch Method and help to trigger the actions

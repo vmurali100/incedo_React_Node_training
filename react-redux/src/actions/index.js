@@ -1,4 +1,4 @@
-import { ADD_EMPLOYEE, DELETE_EMP, DELETE_USER, UPDATE_EMP } from "./actionTypes"
+import { ADD_EMP, DELETE_EMP, UPDATE_EMP, DELETE_USER } from "./actionTypes"
 
 export const deleteEmpAction=(emp)=>{
     return {
@@ -9,7 +9,7 @@ export const deleteEmpAction=(emp)=>{
  
 export const addEmpAction=(empName)=>{
     return {
-        type:ADD_EMPLOYEE,
+        type:ADD_EMP,
         payload:empName
     }
 }

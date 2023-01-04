@@ -1,9 +1,4 @@
-import {
-    ADD_EMPLOYEE,
-    DELETE_EMP,
-    DELETE_USER,
-    UPDATE_EMP,
-  } from "../actions/actionTypes";
+import { ADD_EMP, DELETE_EMP,UPDATE_EMP,DELETE_USER,} from "../actions/actionTypes";
   
   const defaultState = {
     employees: [
@@ -25,7 +20,7 @@ import {
           ...state,
           employees: state.employees.filter((emp) => emp !== action.payload),
         };
-      case ADD_EMPLOYEE:
+      case ADD_EMP:
         let newEmployees = [...state.employees];
         newEmployees.push(action.payload);
         return { ...state, employees: newEmployees };
