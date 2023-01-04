@@ -27,6 +27,7 @@ const HocComp = (OriginalComponent)=>
         render()
         {
           return (<div>
+            {console.log(<OriginalComponent/>)}
             <OriginalComponent count={this.state.count}  increment={this.increment} decrement={this.decrement} /> 
             </div>)
         }

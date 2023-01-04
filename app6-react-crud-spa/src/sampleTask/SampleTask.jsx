@@ -36,7 +36,11 @@ const SampleTask = ()=>{
         })
         setApiData(newUsers);
     };
-
+    const ObjectToList=(user)=>{
+          return (Object.keys(user).map((val,i)=>(
+             user[val]
+          )));
+    }
     return(
         <div>
             <table className="table">
@@ -59,10 +63,10 @@ const SampleTask = ()=>{
                     <td>{user.name}</td>
                     <td>{user.username}</td>
                     <td>{user.email}</td>
-                    <td>{user.showAddress ?<div><div>{JSON.stringify(user.address)}</div><button className="btn btn-primary" onClick={()=>{toggleAddress(user)}}>Close Address</button> </div>:<button className="btn btn-primary" onClick={()=>{toggleAddress(user)}}>Address</button>}</td>
+                    <td>{user.showAddress ?<div><div><ul>{Object.keys(user.address).map((pro,i)=>(<li key={i}>{typeof user.address[pro]=='object'?JSON.stringify(user.address[pro]):user.address[pro]}</li>))}</ul></div><button className="btn btn-primary" onClick={()=>{toggleAddress(user)}}>Close Address</button> </div>:<button className="btn btn-primary" onClick={()=>{toggleAddress(user)}}>Address</button>}</td>
                     <td>{user.phone}</td>
                     <td>{user.website}</td>
-                    <td>{user.showCompany ?<div><div>{JSON.stringify(user.company)}</div><button className="btn btn-primary" onClick={()=>{toggleCompany(user)}}>Close Company</button> </div>:<button className="btn btn-primary" onClick={()=>{toggleCompany(user)}}>Company</button>}</td>
+                    <td>{user.showCompany ?<div><div><ul>{Object.keys(user.company).map((pro,i)=>(<li key={i}>{user.company[pro]}</li>))}</ul></div><button className="btn btn-primary" onClick={()=>{toggleCompany(user)}}>Close Company</button> </div>:<button className="btn btn-primary" onClick={()=>{toggleCompany(user)}}>Company</button>}</td>
                   </tr> )}
                 </tbody>
             </table>

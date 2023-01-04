@@ -13,18 +13,18 @@ function App()
 {
 
   return (
-    <div className="App">
-    <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<CreateUser/>} />
-        <Route path="/read" element={<ReadUser/>} />
-        <Route path="/update/:id" element={<UpdateUser/>} />
-        <Route path="/delete/:id" element={<DeleteUser/>} />
-      </Routes>
-    </BrowserRouter>
-    </div>
-    // <SampleTask />
+    // <div className="App">
+    // <BrowserRouter>
+    //   <NavBar />
+    //   <Routes>
+    //     <Route path="/" element={<CreateUser/>} />
+    //     <Route path="/read" element={<ReadUser/>} />
+    //     <Route path="/update/:id" element={<UpdateUser/>} />
+    //     <Route path="/delete/:id" element={<DeleteUser/>} />
+    //   </Routes>
+    // </BrowserRouter>
+    // </div>
+    <SampleTask />
 
     
   );
