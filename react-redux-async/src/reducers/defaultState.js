@@ -1,3 +1,8 @@
 export const defaultState = {
-    users :[]
+    users: [
+        {
+            "fname": "Sai",
+            "email": "sai@gmail.com"
+        }
+    ]
 }

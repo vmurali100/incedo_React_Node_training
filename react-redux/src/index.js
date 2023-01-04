@@ -5,13 +5,13 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import { reducer } from "./reducers";
+import { reducer } from "./reducers"; 
 
 // Default State should availble Across the Application
 
 const store = createStore(reducer);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-console.log(store)
+console.log(store) 
 root.render( 
   <React.StrictMode>
     <Provider store={store}> 

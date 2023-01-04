@@ -3,14 +3,15 @@ import { useSelector, useDispatch } from "react-redux";
 import { addUserAction } from "../actions";
 
 const Users = () => {
-  const allUsers = useSelector((state) => state.users.users);
-  const dispatch = useDispatch();
+  const allUsers = useSelector((state) => state.users.users); //mapstatetoprops
+  console.log("Redux", allUsers)  
+  const dispatch = useDispatch(); //mapdispatchtoprops
   const handleAddUser = () => {
-    dispatch(addUserAction("Murali"));
+    dispatch(addUserAction("Tejasree"));
   };
   return (
     <div>
-      <h2>Hello From Users Component !!</h2>
+      <h2>Hello From Users Component !!</h2> 
       <button onClick={handleAddUser}>Add User</button>
       <ul>
         {allUsers.map((user, i) => (

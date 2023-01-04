@@ -3,6 +3,7 @@ import { defaultState } from "./defaultState";
 
 export const usersReducer = (state = defaultState, action) => {
   console.log("usersReducer called");
+  
   switch (action.type) {
     case ADD_USER:
       let newUsers = [...state.users];

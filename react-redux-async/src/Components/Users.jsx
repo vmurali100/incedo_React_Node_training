@@ -3,13 +3,16 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteUserAction, getAllUsersAction } from '../actions/usersActions';
 
-const Users = () => {
+const Users = () => { 
+    const usersDetails = useSelector((state)=> state.users);
+    console.log("Details", usersDetails)
+
     const dispatch = useDispatch();
+    
     useEffect(()=>{
         dispatch(getAllUsersAction())
     },[])
-    const usersDetails = useSelector((state)=> state.users);
-    console.log(usersDetails)
+    
   return (
     <div>
       <h2>Welcome to Users Component !!</h2>
@@ -37,7 +40,7 @@ const Users = () => {
     </tr> )}
   </tbody>
 </table>
-    </div>
+    </div> 
   )
 }
 
