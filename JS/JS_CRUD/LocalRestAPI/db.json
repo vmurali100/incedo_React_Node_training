@@ -3,14 +3,38 @@
     {
       "fname": "Teja",
       "lname": "M B",
+      "username": "Teju",
+      "password": "1234",
       "email": "teja.mb@incedoinc.com",
       "id": 1
     },
     {
       "fname": "pooja",
       "lname": "shree",
+      "username": "pooju",
+      "password": "12345",
       "email": "poo@gmail.com",
       "id": 2
+    },
+    {
+      "fname": "Indu",
+      "lname": "shree",
+      "username": "Indu",
+      "password": "123456",
+      "email": "indu@gmail.com",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "email": "murali@magna.org",
+      "username": "murali",
+      "password": "1234"
+    },
+    {
+      "id": 5,
+      "email": "Teja@incedo.org",
+      "username": "Tejasree",
+      "password": "1234"
     }
   ]
 }
