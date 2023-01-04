@@ -1,28 +1,40 @@
 {
   "users": [
     {
-      "fname": "Subah",
-      "lname": "Rajini",
-      "email": "Rajini@gmail.com",
-      "id": 1
+      "id": 371,
+      "email": "Ram@magna.org",
+      "username": "JJun",
+      "password": "EGXxA"
     },
     {
-      "fname": "Rup",
-      "lname": "Reddy",
-      "email": "rupreddy@gmail.com",
-      "id": 2
+      "id": 372,
+      "email": "Ravi@consequat.net",
+      "username": "APointelin",
+      "password": "P0zQl"
     },
     {
-      "fname": "Ganesh",
-      "lname": "Mullapudi",
-      "email": "Mullapudi@gmail.com",
-      "id": 3
+      "id": 373,
+      "email": "Naveen@fringilla.net",
+      "username": "AClinger",
+      "password": "LSc3k"
     },
     {
-      "fname": "rupendra",
-      "lname": "reddy",
-      "email": "p.reddy@incedoinc.com",
-      "id": 4
+      "id": 374,
+      "email": "Arun@tincidunt.org",
+      "username": "LPfeifer",
+      "password": "7bKD1"
+    },
+    {
+      "id": 375,
+      "email": "DWesley@placerat.com",
+      "username": "YTarbox",
+      "password": "Ef5ci"
+    },
+    {
+      "id": 376,
+      "email": "murali@magna.org",
+      "username": "murali",
+      "password": "1234"
     }
   ]
 }
