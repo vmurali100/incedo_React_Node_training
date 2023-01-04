@@ -2,13 +2,11 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { defaultState } from "./defaultState";
 import axios from "axios";
 
-export const getUsersAsyncAction = createAsyncThunk(
-  "users/getUsersAsyncAction",
-  () => handleGetAllUsers()
+export const getUsersAsyncAction = createAsyncThunk("users/getUsersAsyncAction",
+() => handleGetAllUsers()
 );
 
-export const addUserAsyncAction = createAsyncThunk(
-  "users/addUserAsyncAction",
+export const addUserAsyncAction = createAsyncThunk("users/addUserAsyncAction",
   (user) =>
     axios.post("http://localhost:3000/users/", user).then(async (res) => {
       const finalPayload = await handleGetAllUsers();

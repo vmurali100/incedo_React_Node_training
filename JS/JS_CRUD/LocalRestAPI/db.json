@@ -23,6 +23,18 @@
       "password": "123456",
       "email": "indu@gmail.com",
       "id": 3
+    },
+    {
+      "id": 4,
+      "email": "Teja@incedo.org",
+      "username": "Tejasree",
+      "password": "1234"
+    },
+    {
+      "id": 5,
+      "email": "Teja@incedo.org",
+      "username": "Tejasree",
+      "password": "1234"
     }
   ]
 }

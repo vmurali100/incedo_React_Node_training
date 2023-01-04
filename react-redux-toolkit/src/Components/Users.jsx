@@ -1,15 +1,13 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  addUserAsyncAction,
-  deleteUser,
-  getUsersAsyncAction,
-} from "../store/usersSlice";
+import {addUserAsyncAction,deleteUser,getUsersAsyncAction} from "../store/usersSlice";
 
 const Users = () => {
   const usersDetails = useSelector((state) => state.users);
+  console.log("user details are: ", usersDetails)
   const dispatch = useDispatch();
+
   const handleDelete = (i) => {
     dispatch(deleteUser(i));
   };
@@ -17,6 +15,7 @@ const Users = () => {
   useEffect(() => {
     dispatch(getUsersAsyncAction());
   }, []);
+  
   const addUser = () => {
     dispatch(
       addUserAsyncAction({
