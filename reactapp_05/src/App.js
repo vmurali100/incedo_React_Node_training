@@ -9,7 +9,7 @@ import FunctionForm from "./components/FunctionForm";
 
 function App() {
   return (
-    <div className="App container">
+    <div className="App-container">
       
       <ClassForm/>
       {/* <FunctionForm/> */}
