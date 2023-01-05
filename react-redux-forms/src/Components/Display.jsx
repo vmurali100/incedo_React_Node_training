@@ -1,14 +1,14 @@
 import {useState,useEffect} from 'react';
 import { useSelector,useDispatch } from 'react-redux';
-import { deleteDeveloperInDbJson , setDeveloper} from '../Store/DeveloperSlice';
+import { setDeveloper} from '../Store/UserSlice';
 const ReduxStateDisplay = ()=>{
 
-    const [developers,setDevelopers] = useState([]);
-    const reduxState = useSelector((state)=>state.developers.developers);
+    const [users,setUsers] = useState([]);
+    const userDetails = useSelector((state)=>state.users.users);
     const dispatch = useDispatch();
     useEffect(()=>{
-      setDevelopers(reduxState);
-    },[reduxState])
+      setUsers(users);
+    },[users])
 
     return <>
            <div className="container">
@@ -21,22 +21,17 @@ const ReduxStateDisplay = ()=>{
                     <th>LastName</th>
                     <th>Email</th>
                     <th>Password</th>
-                    <th>ProgrammingLanguage</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
                 </tr>
             </thead>
              <tbody>
                 {
-                  developers.map((developer,i)=>(<tr key={i}><td>{developer.id}</td>
-                                                             <td>{developer.username}</td>
-                                                             <td>{developer.fname}</td>
-                                                             <td>{developer.lname}</td>
-                                                             <td>{developer.email}</td>
-                                                             <td>{developer.password}</td>
-                                                             <td>{developer.programinglang}</td>
-                                                             <td><button type="button"  onClick={()=>{dispatch(setDeveloper(developer))}}className="btn btn-warning">Edit</button></td>
-                                                             <td><button type="button"  onClick={()=>{dispatch(deleteDeveloperInDbJson(developer.id))}} className="btn btn-danger">Delete</button></td>
+                  users.map((user,i)=>(<tr key={i}><td>{user.id}</td>
+                                                             <td>{user.username}</td>
+                                                             <td>{user.fname}</td>
+                                                             <td>{user.lname}</td>
+                                                             <td>{user.email}</td>
+                                                             <td>{user.password}</td>
+                                                            
                                                  </tr>))
                 } 
              </tbody>

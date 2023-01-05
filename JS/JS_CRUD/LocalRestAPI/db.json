@@ -35,6 +35,17 @@
       "email": "Teja@incedo.org",
       "username": "Tejasree",
       "password": "1234"
+    },
+    {
+      "username": "biu",
+      "fname": "ioaHX",
+      "lname": "A",
+      "password": "21358",
+      "id": 6
+    },
+    {
+      "email": "as",
+      "id": 7
     }
   ]
 }

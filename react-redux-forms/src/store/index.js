@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
-import  developerSlice  from './DeveloperSlice';
+import  UserSlice  from './UserSlice';
 export const store = configureStore({
     reducer:{
-        developers:developerSlice
+        users:UserSlice
     },
 });
