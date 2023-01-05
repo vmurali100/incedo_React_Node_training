@@ -7,15 +7,15 @@ import {Provider} from 'react-redux'
 import {reducer}  from  './reducers'
 
 const store = createStore(  reducer ); 
-
+console.log(store);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
 
-    <Provider>
+    <Provider store={store}> 
+    <App />
 
     </Provider>
-    <App />
   </React.StrictMode>
 );
 

@@ -21,7 +21,15 @@ class UserRedux extends Component {
   render() {
     return (
       <div>
+             <form>
+                
+              <label htmlFor='username'> Username:</label>
+              <input  type="text"  name="username" value={this.state.user.username} 
+              
+                  
+              />
 
+            </form>           
             
       </div>
     )
