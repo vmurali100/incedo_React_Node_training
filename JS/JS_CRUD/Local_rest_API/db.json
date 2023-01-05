@@ -1,26 +1,5 @@
 {
-  "user": [
-    {
-      "fname": "Short",
-      "lname": "Chris",
-      "email": "chris.manivannan@incedoinc.com",
-      "phone": "142343",
-      "username": "Userame",
-      "pass": "erwe",
-      "bio": "helllo",
-      "id": 1
-    },
-    {
-      "fname": "Short",
-      "lname": "Chris",
-      "email": "chris.manivannan@incedoinc.com",
-      "phone": "14234",
-      "username": "Chris48",
-      "pass": "test",
-      "bio": "bio",
-      "id": 2
-    }
-  ],
+  "user": [],
   "details": [],
   "university": [],
   "dating": []
