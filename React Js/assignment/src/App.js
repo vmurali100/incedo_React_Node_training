@@ -1,10 +1,9 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Employees from "./Components/Employees";
+import Form2 from "./Components/Register";
 function App() {
   return (
     <div className="App">
-      <Employees />
+      <Form2/>
     </div>
   );
 }
