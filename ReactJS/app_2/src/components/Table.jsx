@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Table({users, showCompany, hideCompany, showAddress, hideAddress, addressChecker, companyChecker}) {
+export default function Table({ users, showCompany, hideCompany, showAddress, hideAddress, addressChecker, companyChecker }) {
     return (
         <div>
             <table className="table">
@@ -25,10 +25,11 @@ export default function Table({users, showCompany, hideCompany, showAddress, hid
                         <td>{user.username}</td>
                         <td>{user.email}</td>
                         <td>
-                            {addressChecker ? (<p>click here</p>) : 
-                            (<p>
-                                {JSON.stringify(user.address)}
-                            </p>)
+                            {addressChecker ? (<p>click here</p>) :
+                                (<div>
+                                    <td>{user.address.street}</td>
+                                    <td>{user.address.street}</td>
+                                </div>)
                             }
                         </td>
                         <td>

@@ -1,11 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-import Process from './components/Process';
+import First from './MidAssignment/First';
+import Second from './MidAssignment/Second';
+import Third from './MidAssignment/Third';
+import Registration from './form/Registration';
 
 function App() {
   return (
-    <div className="App">
-      <Process />
+    <div style={{width:"25%",alignItems:"center",margin:"auto"}}>
+      <Registration />
     </div>
   );
 }
