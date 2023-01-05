@@ -1,3 +1,6 @@
+
 export const defaultState = {
-    users: [],
-  };
+  developers:[],
+  developer:{},
+  isEdit:false
+};

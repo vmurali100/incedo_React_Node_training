@@ -28,7 +28,7 @@ export const usersSlice = createSlice({
       state.users.splice(action, 1);
     },
   },
-  extraReducers: (builder) => {
+  extraReducers: (builder) => { //asynchronous actions here
     builder.addCase(getUsersAsyncAction.fulfilled, (state, action) => {
       state.users = action.payload;
     });
