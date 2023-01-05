@@ -1,28 +1,70 @@
 {
   "users": [
     {
-      "fname": "Murali",
-      "lname": "Kumar",
-      "email": "vmurali100@gmail.com",
-      "id": 1
+      "id": 371,
+      "email": "Ram@magna.org",
+      "username": "JJun",
+      "password": "EGXxA"
     },
     {
-      "fname": "Ram",
-      "lname": "Krishna",
-      "email": "ram@gmail.com",
-      "id": 2
+      "id": 372,
+      "email": "Ravi@consequat.net",
+      "username": "APointelin",
+      "password": "P0zQl"
     },
     {
-      "fname": "Ram",
-      "lname": "Kumar",
-      "email": "ramKumar@gmail.com",
-      "id": 2
+      "id": 373,
+      "email": "Naveen@fringilla.net",
+      "username": "AClinger",
+      "password": "LSc3k"
     },
     {
-      "fname": "Manjunadh",
-      "lname": "Ch",
-      "email": "manjunadh.ch.223@gmail.com",
-      "id": 3
+      "id": 374,
+      "email": "Arun@tincidunt.org",
+      "username": "LPfeifer",
+      "password": "7bKD1"
+    },
+    {
+      "id": 375,
+      "email": "DWesley@placerat.com",
+      "username": "YTarbox",
+      "password": "Ef5ci"
+    },
+    {
+      "id": 376,
+      "email": "murali@magna.org",
+      "username": "murali",
+      "password": "1234"
+    },
+    {
+      "id": 377,
+      "email": "murali@magna.org",
+      "username": "murali",
+      "password": "1234"
+    },
+    {
+      "id": 378,
+      "email": "murali@magna.org",
+      "username": "murali",
+      "password": "1234"
+    },
+    {
+      "id": 379,
+      "email": "murali@magna.org",
+      "username": "murali",
+      "password": "1234"
+    },
+    {
+      "id": 380,
+      "email": "murali@magna.org",
+      "username": "murali",
+      "password": "1234"
+    },
+    {
+      "id": 381,
+      "email": "murali@magna.org",
+      "username": "murali",
+      "password": "1234"
     }
   ]
 }
