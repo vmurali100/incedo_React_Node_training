@@ -1,8 +1,10 @@
-import { ADD_USER, DELETE_USER, UPDATE_USER } from "../actions/actionTypes";
+import { ADD_USER, DELETE_USER, SET_USER, UPDATE_USER } from "../actions/actionTypes";
 
 const initialState = { employees: [] };
 export const empReducer = (state = initialState, action) => {
   switch (action.type) {
+    case SET_USER:
+    return { ...state, employees:action.payload };
     case ADD_USER:
         console.log("Test",action.payload)
       const newEmp = [...state.employees];
