@@ -4,7 +4,8 @@ import axios from 'axios';
 
 export const postDevelopersInDbJson = createAsyncThunk("developers/postDevelopersInDbJson",(developer)=>
     axios.post("http://localhost:3000/developers/",developer).then(async (res)=>{
-      
+      const Devs = axios.get("http://localhost:3001/employees/getAllEmployees");
+      console.log(Devs);
       return await handleGetAllDevelopers(); 
     })
 );
