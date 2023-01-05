@@ -1,4 +1,5 @@
 export const defaultState = {
+<<<<<<< HEAD
     users:[
         {
           "id": 371,
@@ -32,3 +33,7 @@ export const defaultState = {
         }
       ]
 }
+=======
+  users: [],
+};
+>>>>>>> 1b49dce71a83faad60a4549fa49317479697c594

@@ -8,11 +8,17 @@ import { store } from "./store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+<<<<<<< HEAD
   <React.StrictMode>
     <Provider store={store}>
       <App />
     </Provider>
   </React.StrictMode>
+=======
+    <Provider store={store}>
+      <App />
+    </Provider>
+>>>>>>> 1b49dce71a83faad60a4549fa49317479697c594
 );
 
 // If you want to start measuring performance in your app, pass a function

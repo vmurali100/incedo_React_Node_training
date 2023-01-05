@@ -1,6 +1,7 @@
 {
   "users": [
     {
+<<<<<<< HEAD
         "id": 371,
         "email": "LPsarros@magna.org",
         "username": "JJun",
@@ -29,6 +30,36 @@
         "email": "DWesley@placerat.com",
         "username": "YTarbox",
         "password": "Ef5ci"
+=======
+      "id": 371,
+      "email": "Ram@magna.org",
+      "username": "JJun",
+      "password": "EGXxA"
+    },
+    {
+      "id": 372,
+      "email": "Ravi@consequat.net",
+      "username": "APointelin",
+      "password": "P0zQl"
+    },
+    {
+      "id": 373,
+      "email": "Naveen@fringilla.net",
+      "username": "AClinger",
+      "password": "LSc3k"
+    },
+    {
+      "id": 374,
+      "email": "Arun@tincidunt.org",
+      "username": "LPfeifer",
+      "password": "7bKD1"
+    },
+    {
+      "id": 375,
+      "email": "DWesley@placerat.com",
+      "username": "YTarbox",
+      "password": "Ef5ci"
+>>>>>>> 1b49dce71a83faad60a4549fa49317479697c594
     }
 ]
 }
