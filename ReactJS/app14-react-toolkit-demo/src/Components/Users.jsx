@@ -45,6 +45,7 @@ const Users = () => {
         </thead>
         <tbody>
 <<<<<<< HEAD
+<<<<<<< HEAD
             {usersDetails.users.map((user,i)=> <tr key={i}>
                 <td>{user.id}</td>
                 <td>{user.email}</td>
@@ -58,6 +59,8 @@ const Users = () => {
                 </td>
             </tr> )}
 =======
+=======
+>>>>>>> 7958420f8ff5d27eb5071f5a10b7c2f92c70aa9f
           {usersDetails.users.map((user, i) => (
             <tr key={i}>
               <td>{user.id}</td>
@@ -79,7 +82,10 @@ const Users = () => {
               </td>
             </tr>
           ))}
+<<<<<<< HEAD
 >>>>>>> 1b49dce71a83faad60a4549fa49317479697c594
+=======
+>>>>>>> 7958420f8ff5d27eb5071f5a10b7c2f92c70aa9f
         </tbody>
       </table>
     </div>

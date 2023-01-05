@@ -2,6 +2,7 @@
   "users": [
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "id": 371,
         "email": "LPsarros@magna.org",
         "username": "JJun",
@@ -43,6 +44,20 @@
       "password": "P0zQl"
     },
     {
+=======
+      "id": 371,
+      "email": "Ram@magna.org",
+      "username": "JJun",
+      "password": "EGXxA"
+    },
+    {
+      "id": 372,
+      "email": "Ravi@consequat.net",
+      "username": "APointelin",
+      "password": "P0zQl"
+    },
+    {
+>>>>>>> 7958420f8ff5d27eb5071f5a10b7c2f92c70aa9f
       "id": 373,
       "email": "Naveen@fringilla.net",
       "username": "AClinger",
@@ -59,7 +74,10 @@
       "email": "DWesley@placerat.com",
       "username": "YTarbox",
       "password": "Ef5ci"
+<<<<<<< HEAD
 >>>>>>> 1b49dce71a83faad60a4549fa49317479697c594
+=======
+>>>>>>> 7958420f8ff5d27eb5071f5a10b7c2f92c70aa9f
     }
 ]
 }

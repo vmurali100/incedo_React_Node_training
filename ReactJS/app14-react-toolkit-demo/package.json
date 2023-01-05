@@ -8,9 +8,13 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     "axios": "^1.2.2",
 >>>>>>> 1b49dce71a83faad60a4549fa49317479697c594
+=======
+    "axios": "^1.2.2",
+>>>>>>> 7958420f8ff5d27eb5071f5a10b7c2f92c70aa9f
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
