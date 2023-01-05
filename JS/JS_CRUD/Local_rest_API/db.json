@@ -4,7 +4,9 @@
       "fname": "Suchitha",
       "lname": "Muppala",
       "email": "muppala.suchitha@incedoinc.com",
-      "id": 3
+      "username": "suchi",
+      "password": "123",
+      "confirmpassword": "123"
     }
   ]
 }

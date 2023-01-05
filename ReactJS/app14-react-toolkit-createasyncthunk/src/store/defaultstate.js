@@ -1,5 +1,5 @@
 export const defaultState = {
-  users: [
+  Students: [
     {
       id: 1,
       username: "suchi",
