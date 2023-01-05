@@ -5,7 +5,7 @@
       "lname": "M B",
       "username": "Teju",
       "password": "1234",
-      "email": "teja.mb@incedoinc.com",
+      "email": "teja.jicom",
       "id": 1
     },
     {
@@ -13,7 +13,7 @@
       "lname": "shree",
       "username": "pooju",
       "password": "12345",
-      "email": "poo@gmail.com",
+      "email": "poo@gl.com",
       "id": 2
     },
     {
@@ -21,18 +21,12 @@
       "lname": "shree",
       "username": "Indu",
       "password": "123456",
-      "email": "indu@gmail.com",
+      "email": "indu@gl.com",
       "id": 3
     },
     {
       "id": 4,
-      "email": "Teja@incedo.org",
-      "username": "Tejasree",
-      "password": "1234"
-    },
-    {
-      "id": 5,
-      "email": "Teja@incedo.org",
+      "email": "Teja@al.orf",
       "username": "Tejasree",
       "password": "1234"
     },
