@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "fname": "Gowtham",
+      "lname": "S",
+      "email": "gowtham@gmail.com",
+      "id": 1
+    },
+    {
+      "fname": "Surya",
+      "lname": "p",
+      "email": "Surya@gmail.com",
+      "id": 2
+    },
+    {
+      "fname": "uvan",
+      "lname": "n",
+      "email": "uvan.narayanana@gmail.com",
+      "id": 3
+    }
+  ]
+}
