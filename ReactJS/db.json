@@ -9,18 +9,6 @@
   "users": [
     {
       "id": 1,
-      "fname": "mani",
-      "lname": "venkat",
-      "email": "mani@mail.com"
-    },
-    {
-      "id": 2,
-      "fname": "naveen",
-      "lname": "segu",
-      "email": "nav@mail.com"
-    },
-    {
-      "id": 1,
       "fname": "shashank",
       "lname": "R",
       "email": "sha@mail.com"
@@ -36,6 +24,12 @@
       "lname": "nagalla",
       "email": "ara@mail.com",
       "id": 4
+    },
+    {
+      "id": 2,
+      "fname": "naveen",
+      "lname": "segu",
+      "email": "nav@mail.com"
     }
   ],
   "comments": [

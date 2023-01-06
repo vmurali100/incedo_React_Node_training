@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { addUser, addUserAsyncAction, getAllUsersAction } from '../store/slice';
+import { addUser, addUserAsyncAction, delUserAsyncAction, getAllUsersAction } from '../store/slice';
 const Registration = () => {
   const dispatch = useDispatch();
 
@@ -12,6 +12,10 @@ const Registration = () => {
   var[user,setUser]=useState({fname:"", lname:"", email:""});
   const handleSubmit=()=>{
     dispatch(addUserAsyncAction(user));
+  }
+
+  const handleDeleteAsync=(user)=>{
+    dispatch(delUserAsyncAction(user));
   }
 
   const handleChange=(e)=>{
@@ -43,7 +47,8 @@ const Registration = () => {
         <button type='button' onClick={()=>handleSubmit()}>submit</button>
       </form>
       <ul>
-        {allUsers.map((user, i) => (<li key={i} onClick={()=>setUser(user)}>{user.fname}-{user.lname}-{user.email}</li>)
+        {allUsers.map((user, i) => (<li key={i} onClick={()=>setUser(user)}>{user.fname}-{user.lname}-{user.email}
+        <button type='button' onClick={()=>handleDeleteAsync(user)}>delete</button></li>)
             
         )}
       </ul>
