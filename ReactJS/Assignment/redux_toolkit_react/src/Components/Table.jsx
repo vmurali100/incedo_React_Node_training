@@ -4,6 +4,7 @@ import {
   addData,
   deleteData,
   getData,
+  getDataFromAPI,
   updateData,
 } from "../Actions/asyncDataActions";
 import { addUser, deleteUser, setUser, updateUser } from "../Slices/dataSlice";

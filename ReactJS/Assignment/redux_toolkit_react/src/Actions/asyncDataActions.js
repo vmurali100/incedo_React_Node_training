@@ -8,6 +8,15 @@ export const getData = () => (dispatch) => {
     })
     .catch((err) => console.log(err));
 };
+export const getDataFromAPI =()=>(dispatch)=>
+{
+  axios
+  .get("https://jsonplaceholder.typicode.com/users")
+  .then((res) => {
+    dispatch(setUser(res.data));
+  })
+  .catch((err) => console.log(err));
+}
 export const deleteData = (id) => (dispatch) => {
   axios
     .delete("http://localhost:3000/user/" + id)
