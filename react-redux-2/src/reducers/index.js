@@ -2,8 +2,8 @@ import { ADD_USER, DELETE_USER, UPDATE_USER } from "../actions/actionTypes";
 
 const defaultState = {
     users : [
-        {name : "Tejasree", email: "tej@gmail.com"},
-        {name : "Pooja", email: "poo@gmail.com"}
+        {name : "Tejasree", email: "tej@gmail.com", tech:"Java"},
+        {name : "Pooja", email: "poo@gmail.com", tech:"Python"}
     ]
 };
 
@@ -24,10 +24,11 @@ export const reducer = (state=defaultState, action) =>{
     case UPDATE_USER:
         let newUpdatedUsers = [...state.users];
         newUpdatedUsers.forEach((usr,i)=>{
-            if(usr==action.payload){
+            if(usr.name==action.payload.name){
                 newUpdatedUsers[i]=action.payload;
             }
         });
+        //console.log("Payload", action.payload)
         return{ ...state, users:newUpdatedUsers
         };
 
