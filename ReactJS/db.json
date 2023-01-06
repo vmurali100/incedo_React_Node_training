@@ -11,7 +11,7 @@
       "id": 1,
       "fname": "shashank",
       "lname": "R",
-      "email": "sha@mail.com"
+      "email": "shashank@mail.com"
     },
     {
       "id": 3,
@@ -30,6 +30,12 @@
       "fname": "naveen",
       "lname": "segu",
       "email": "nav@mail.com"
+    },
+    {
+      "id": 5,
+      "fname": "mani",
+      "lname": "venkat",
+      "email": "mani@mail.com"
     }
   ],
   "comments": [

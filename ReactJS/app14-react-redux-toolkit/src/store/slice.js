@@ -19,6 +19,14 @@ export const delUserAsyncAction = createAsyncThunk(
             return data;
         })
 )
+export const updateUserAsyncAction = createAsyncThunk(
+    "users/updateUserAsyncAction",
+    (user)=>
+        axios.put("http://localhost:3000/users/"+user.id,user).then(async(res)=>{
+            const newData = await getUsers();
+            return newData;
+        })
+)
 // export const addUserAction = createAsyncThunk("users/addUserAction",(user)=> axios.post("http://localhost:3000/users/",user).then( async (res) => {
 //     const data = await getUsers();
 //     return data;
@@ -58,6 +66,9 @@ export const userSlice = createSlice({
             state.users=action.payload;
         })
         builder.addCase(delUserAsyncAction.fulfilled,(state,action)=>{
+            state.users=action.payload;
+        })
+        builder.addCase(updateUserAsyncAction.fulfilled,(state,action)=>{
             state.users=action.payload;
         })
     }
