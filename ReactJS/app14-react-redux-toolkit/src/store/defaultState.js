@@ -1,11 +1,7 @@
-export const defaultState = [
-    users = [{
-        id: "1",
-        fname: "mani",
-        lname: "venkat",
-        email: "mani@gmail.com",
-        password: "password",
-        language: "java"
-    }
-    ]
-]
+export const defaultState = {
+    users : [
+        {fname:"mani", lname:"venkat", email:"mani@email.com"},
+        {fname:"naveen", lname:"segu", email:"naveen@email.com"},
+        {fname:"shashank", lname:"R", email:"shashank@email.com"}
+    ],
+}

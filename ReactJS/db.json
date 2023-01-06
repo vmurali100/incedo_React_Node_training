@@ -6,6 +6,38 @@
       "author": "typicode"
     }
   ],
+  "users": [
+    {
+      "id": 1,
+      "fname": "mani",
+      "lname": "venkat",
+      "email": "mani@mail.com"
+    },
+    {
+      "id": 2,
+      "fname": "naveen",
+      "lname": "segu",
+      "email": "nav@mail.com"
+    },
+    {
+      "id": 1,
+      "fname": "shashank",
+      "lname": "R",
+      "email": "sha@mail.com"
+    },
+    {
+      "id": 3,
+      "fname": "harsha",
+      "lname": "mama",
+      "email": "har@mail.com"
+    },
+    {
+      "fname": "aravind",
+      "lname": "nagalla",
+      "email": "ara@mail.com",
+      "id": 4
+    }
+  ],
   "comments": [
     {
       "id": 1,
