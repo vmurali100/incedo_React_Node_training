@@ -4,7 +4,6 @@
       "fname": "Teja",
       "lname": "M B",
       "username": "Teju",
-      "password": "1234",
       "email": "teja.jicom",
       "id": 1
     },
@@ -12,7 +11,6 @@
       "fname": "pooja",
       "lname": "shree",
       "username": "pooju",
-      "password": "12345",
       "email": "poo@gl.com",
       "id": 2
     },
@@ -20,21 +18,18 @@
       "fname": "Indu",
       "lname": "shree",
       "username": "Indu",
-      "password": "123456",
       "email": "indu@gl.com",
       "id": 3
     },
     {
       "id": 4,
       "email": "Teja@al.orf",
-      "username": "Tejasree",
-      "password": "1234"
+      "username": "Tejasree"
     },
     {
       "username": "biu",
       "fname": "ioaHX",
       "lname": "A",
-      "password": "21358",
       "id": 6
     },
     {
