@@ -7,7 +7,7 @@ const Users = () => {
   const usersDetails = useSelector((state) => state.users);
   console.log("user details are: ", usersDetails)
   const dispatch = useDispatch();
-
+ 
   const handleDelete = (i) => {
     dispatch(deleteUser(i));
   };

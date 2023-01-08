@@ -40,6 +40,13 @@
       "email": "Henry@or.com",
       "stack": "Nodejs",
       "id": 6
+    },
+    {
+      "username": "Tejasree",
+      "name": "Teju",
+      "email": "te@123",
+      "stack": "Reactjs",
+      "id": 7
     }
   ]
 }
