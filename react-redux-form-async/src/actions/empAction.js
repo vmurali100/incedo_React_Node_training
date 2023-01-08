@@ -25,25 +25,15 @@ export const deleteUserAction =(id)=>{
     }
 }
 
-export const updateUserAction = (id) => {
+export const updateUserAction = (employee) => {
    return (dispatch) => {
-    axios.put("http://localhost:3000/users/"+id,{
-        username:"Henry",
-        name:"HenryMayor",
-        email:"Henry@or.com",
-        stack:"Nodejs"
-    }).then(()=>{getUsersAPI(dispatch)})
+    axios.put("http://localhost:3000/users/"+employee.id,employee).then(()=>{getUsersAPI(dispatch)})
    }
 }
 
-export const addUserAction = () => {
+export const addUserAction = (employee) => {
     return(dispatch) => {
-    axios.post("http://localhost:3000/users", {
-        username:"New User",
-        name:"News_User_Hello",
-        email:"newuser@or.com",
-        stack:"none"
-    }).then(()=>{
+    axios.post("http://localhost:3000/users",employee).then(()=>{
         getUsersAPI(dispatch)
     })
 }

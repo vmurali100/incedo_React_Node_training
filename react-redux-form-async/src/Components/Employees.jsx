@@ -2,9 +2,12 @@ import React from "react";
 import {useSelector, useDispatch} from 'react-redux'
 import { useEffect } from "react";
 import { addUserAction, deleteUserAction, getAllUsersAction, updateUserAction } from "../actions/empAction";
+import { useState } from "react";
 
 const Employees = () =>{
 
+const [employee, setEmployee] = useState({username:'',name:'',email:'',stack:''})
+const[isEdit, setIsEdit] = useState(false);
 const empDetails = useSelector((state=>state.employees))
 const dispatch = useDispatch();
 console.log("Details:", empDetails);
@@ -18,19 +21,47 @@ const handleDelete = (id) => {
     console.log(id)
 }
 
-const handleEdit = (id) => {
-    dispatch(updateUserAction(id))
-    console.log(id)
+const handleEdit = (usr) => {
+    setIsEdit(true);
+    setEmployee(usr)
+    console.log(usr)
 }
 
-const handleAdd = () => {
-    dispatch(addUserAction())
+const handleAdd = (employee) => {
+    dispatch(addUserAction(employee));
+    clearForm();
+}
+
+const handleChange = (e) => {
+let newEmp = {...employee};
+newEmp[e.target.name]=e.target.value;
+setEmployee(newEmp);
+}
+
+const clearForm =()=>{
+    setEmployee({username:'',name:'',email:'',stack:''})
+}
+
+const updateUser = ()=>{
+    dispatch(updateUserAction(employee));
+    console.log("update",employee)
+    clearForm();
 }
 
 return(
     <div>
+        <form>
+            <label htmlFor="username">Username : </label>
+            <input type="text" value={employee.username} name="username" onChange={(e)=>{handleChange(e)}}></input><br/>
+            <label htmlFor="name">Name : </label>
+            <input type="text" value={employee.name} name="name" onChange={(e)=>{handleChange(e)}}></input><br/>
+            <label htmlFor="email">Email : </label>
+            <input type="text" value={employee.email} name="email" onChange={(e)=>{handleChange(e)}}></input><br/>
+            <label htmlFor="stack">Tech Stack : </label>
+            <input type="text" value={employee.stack} name="stack" onChange={(e)=>{handleChange(e)}}></input><br />
+            {isEdit? (<button onClick={()=>{updateUser()}}>Update</button>) :(<button onClick={()=>{handleAdd(employee)}}>Register</button>)}
+        </form>
         <h1>Employee Details</h1><br />
-        <button onClick={()=>{handleAdd()}}>Add Employee</button><br />
         <table>
             <thead>
                 <tr>
@@ -51,7 +82,7 @@ return(
                 <td>{usr.name}</td>
                 <td>{usr.email}</td>
                 <td>{usr.stack}</td>
-                <td><button onClick={()=>{handleEdit(usr.id)}}>Edit</button></td>
+                <td><button onClick={()=>{handleEdit(usr)}}>Edit</button></td>
                 <td><button onClick={()=>{handleDelete(usr.id)}}>Delete</button></td>
             </tr>
                 ))}
