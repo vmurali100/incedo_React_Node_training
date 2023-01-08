@@ -3,38 +3,43 @@
     {
       "fname": "Teja",
       "lname": "M B",
+      "name": "Tejasree",
       "username": "Teju",
       "email": "teja.jicom",
+      "stack": "Java",
       "id": 1
     },
     {
       "fname": "pooja",
       "lname": "shree",
+      "name": "Pooja",
       "username": "pooju",
       "email": "poo@gl.com",
+      "stack": "python",
       "id": 2
     },
     {
       "fname": "Indu",
       "lname": "shree",
+      "name": "Indrajaasree",
       "username": "Indu",
       "email": "indu@gl.com",
+      "stack": "reactjs",
       "id": 3
     },
     {
       "id": 4,
       "email": "Teja@al.orf",
-      "username": "Tejasree"
+      "username": "Tejasree",
+      "name": "Gorge",
+      "stack": "Golang"
     },
     {
-      "username": "biu",
-      "fname": "ioaHX",
-      "lname": "A",
+      "username": "Henry",
+      "name": "HenryMayor",
+      "email": "Henry@or.com",
+      "stack": "Nodejs",
       "id": 6
-    },
-    {
-      "email": "as",
-      "id": 7
     }
   ]
 }

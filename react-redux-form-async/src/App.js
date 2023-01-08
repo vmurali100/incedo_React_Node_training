@@ -1,14 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import Display from './Components/Display';
-import UserRegistration from './Components/UserRegistration'
+import Employees from './Components/Employees';
 
 function App() {
   return (
     <div className="App">
-      <UserRegistration/>
-      <hr/>
-      <Display/>
+      <Employees/>
     </div>
   );
 }
