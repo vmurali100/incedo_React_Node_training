@@ -26,7 +26,7 @@ class App extends Component {
         width: "100%",
         height: "100vh"
       }}>
-       <Users/>
+      <Employees/>
       </div>
     );
   }

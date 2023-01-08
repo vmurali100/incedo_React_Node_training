@@ -15,7 +15,22 @@ export const addUserAsyncAction = createAsyncThunk(
       return finalPayload;
     })
 );
-
+export const editUserAsyncAction = createAsyncThunk(
+    "users/editUserAsyncAction",
+    (user)=>
+    axios.put("http://localhost:3000/users/"+user.id).then(async(res)=>{
+        const finalPayload =await handleGetAllUsers();
+        return finalPayload;
+    })
+)
+export const deleteUserAsyncAction = createAsyncThunk(
+    "users/deleteUserAsyncAction",
+    (user) =>
+      axios.delete("http://localhost:3000/users/"+user.id).then(async (res) => {
+        const finalPayload = await handleGetAllUsers();
+        return finalPayload;
+      })
+  );
 const handleGetAllUsers = () =>
   axios.get("http://localhost:3000/users").then((res) => res.data);
   
@@ -37,6 +52,13 @@ export const usersSlice = createSlice({
     builder.addCase(addUserAsyncAction.fulfilled, (state, action) => {
       state.users = action.payload;
     });
+    builder.addCase(deleteUserAsyncAction.fulfilled, (state, action) => {
+        state.users = action.payload;
+      });
+    builder.addCase(editUserAsyncAction.fulfilled, (state,action)=> {
+      state.users=action.payload;
+      state.user={};
+    })
   },
 });
 

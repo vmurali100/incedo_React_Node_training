@@ -1,60 +1,11 @@
 {
   "users": [
     {
-      "username": "bhargav",
-      "firstname": "Bhavirisetty",
-      "email": "b.bhargav@incedoinc.com",
+      "username": "b.bhargav@incedoinc.com",
+      "fname": "bhcahx",
+      "email": "b.bhargav@incedoinc.cndvs",
       "password": "bhargav",
-      "id": 2
-    },
-    {
-      "id": 3,
-      "email": "bhargav2000@gmail.com",
-      "username": "bhavirisetty",
-      "firstname": "bhargav",
-      "password": "1234"
-    },
-    {
-      "id": 4,
-      "email": "bhargav2000@gmail.com",
-      "username": "bhavirisetty",
-      "firstname": "bhargav",
-      "password": "1234"
-    },
-    {
-      "id": 5,
-      "email": "bhargav2000@gmail.com",
-      "username": "bhavirisetty",
-      "firstname": "bhargav",
-      "password": "1234"
-    },
-    {
-      "id": 6,
-      "email": "bhargav2000@gmail.com",
-      "username": "bhavirisetty",
-      "firstname": "bhargav",
-      "password": "1234"
-    },
-    {
-      "id": 7,
-      "email": "bhargav2000@gmail.com",
-      "username": "bhavirisetty",
-      "firstname": "bhargav",
-      "password": "1234"
-    },
-    {
-      "id": 8,
-      "email": "bhargav2000@gmail.com",
-      "username": "bhavirisetty",
-      "firstname": "bhargav",
-      "password": "1234"
-    },
-    {
-      "id": 9,
-      "email": "bhargav2000@gmail.com",
-      "username": "bhavirisetty",
-      "firstname": "bhargav",
-      "password": "1234"
+      "id": 3
     }
   ]
 }

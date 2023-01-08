@@ -6,11 +6,9 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import reducers from "./book/reducers"
 import reportWebVitals from './reportWebVitals';
+import reducer from './ReducerForm/Reducers'
 
-
-
-
-const store = createStore(reducers);
+const store = createStore(reducer);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 console.log(store)
 root.render(

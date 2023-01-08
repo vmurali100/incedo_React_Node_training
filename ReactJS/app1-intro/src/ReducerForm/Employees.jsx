@@ -32,6 +32,7 @@ class Employees extends Component {
         password:"",
         rpassword:""
       },
+      isEdit: false,
     });
   };
   handleChange = (e) => {
@@ -45,7 +46,6 @@ class Employees extends Component {
     this.clearForm();
   };
   render() {
-    console.log(this.props);
     return (
       <div>
         <form action="">
