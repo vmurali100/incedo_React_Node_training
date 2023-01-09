@@ -1,12 +1,24 @@
 {
   "users": [
     {
-      "fname": "Suchitha",
-      "lname": "Muppala",
-      "email": "muppala.suchitha@incedoinc.com",
+      "0": {
+        "fname": "suchi",
+        "lname": "muppala",
+        "email": "suchi@gmail.com",
+        "conformemail": "suchi@gmail.com",
+        "username": "suchi",
+        "password": "123",
+        "conformpassword": "123",
+        "id": 1
+      },
+      "fname": "muppala",
+      "lname": "Suchitha",
+      "email": "suchitha@incedoinc.com",
+      "conformemail": "suchitha@incedoinc.com",
       "username": "suchi",
       "password": "123",
-      "confirmpassword": "123"
+      "conformpassword": "123",
+      "id": 1
     }
   ]
 }

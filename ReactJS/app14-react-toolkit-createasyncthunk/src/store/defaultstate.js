@@ -1,13 +1,14 @@
 export const defaultState = {
-  Students: [
+  users: [
     {
-      id: 1,
+      fname: "suchi",
+      lname: "muppala",
+      email: "suchi@gmail.com",
+      conformemail: "suchi@gmail.com",
       username: "suchi",
       password: "123",
-      confirmpassword: "123",
-      email: "suchi@gmail.com",
-      fname: "m",
-      lname: "suchi",
+      conformpassword: "123",
+      id: 1,
     },
   ],
 };

@@ -1,0 +1,35 @@
+[
+  {
+    "fname": "muppala",
+    "lname": "Pradeepthi",
+    "company": "walmart",
+    "email": "deepu@gmail.com",
+    "username": "deepu",
+    "areacode": "+91",
+    "phone": "7842770646",
+    "subject": "xxxxx",
+    "isExisting": true
+  },
+  {
+    "fname": "muppala",
+    "lname": "suchi",
+    "company": "walmart",
+    "email": "suchi@gmail.com",
+    "username": "suchi",
+    "areacode": "+91",
+    "phone": "9182842519",
+    "subject": "xxxxx",
+    "isExisting": false
+  },
+  {
+    "fname": "yerra ss",
+    "lname": "sony",
+    "company": "incedo",
+    "email": "sony@gmail.com",
+    "username": "sony",
+    "areacode": "+91",
+    "phone": "9381347929",
+    "subject": "xxxxx",
+    "isExisting": false
+  }
+]

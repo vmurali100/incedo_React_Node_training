@@ -18,7 +18,17 @@ const Users = () => {
     dispatch(getUsersAsyncAction());
   }, []);
   const addUser = () => {
-    dispatch(addUserAsyncAction());
+    dispatch(
+      addUserAsyncAction({
+        id: 3,
+        username: "deepu",
+        password: "123",
+        confirmpassword: "123",
+        email: "deepu@gmail.com",
+        fname: "m",
+        lname: "deepu",
+      })
+    );
   };
   return (
     <div className="container">
