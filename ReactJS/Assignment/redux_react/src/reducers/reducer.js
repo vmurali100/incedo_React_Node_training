@@ -1,5 +1,5 @@
+import { combineReducers } from "@reduxjs/toolkit";
 import { ADD_USER, DELETE_USER, SET_USER, UPDATE_USER } from "../actions/actionTypes";
-
 const initialState = { employees: [] };
 export const empReducer = (state = initialState, action) => {
   switch (action.type) {

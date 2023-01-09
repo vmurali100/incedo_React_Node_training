@@ -38,7 +38,7 @@ function Table() {
     clearForm();
   };
   const handleUpdate = () => {
-    dispatch(updateData(user.id, user));
+    dispatch(updateData(user.username, user));
     setDisableUpdate(true);
     clearForm();
   };
@@ -103,7 +103,7 @@ function Table() {
                   {" "}
                   {JSON.stringify(emp)}
                 </div>
-                <button onClick={(e) => handleDelete(emp.id)}>delete</button>
+                <button onClick={(e) => handleDelete(i)}>delete</button>
               </li>
             );
           })}

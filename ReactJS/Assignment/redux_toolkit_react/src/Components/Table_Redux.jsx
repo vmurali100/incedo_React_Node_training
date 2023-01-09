@@ -102,7 +102,7 @@ export default function TableRedux() {
                   {" "}
                   {JSON.stringify(emp)}
                 </div>
-                <button onClick={(e) => handleDelete(emp.id)}>delete</button>
+                <button onClick={(e) => handleDelete(i)}>delete</button>
               </li>
             );
           })}

@@ -10,7 +10,7 @@ import { Provider } from 'react-redux';
 import userSlice from './Slice/user';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const store=configureStore({reducer:{user:userSlice,test:empReducer}});
+const store=configureStore({reducer:{user:empReducer}});
 console.log(store);
 root.render(
   <React.StrictMode>
