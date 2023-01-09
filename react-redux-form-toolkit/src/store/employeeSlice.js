@@ -32,12 +32,12 @@ export const employeeSlice = createSlice({
    name: "employeeslice",
    initialState: defaultState,
    reducers: {
-        setDeveloper:(state,action)=>{
-        state.developer=action.payload;
-        },
-        addUsers : (state, action) => {
-        state.employees.push(action.payload);
-        },
+         setEmployee: (state,action) => {
+          state.employees=action.payload
+         }
+        // addUsers : (state, action) => {
+        // state.employees.push(action.payload);
+        // },
    },
    extraReducers: (builder) => {
         builder.addCase(getUsersAsyncAction.fulfilled, (state,action) => {
@@ -49,11 +49,11 @@ export const employeeSlice = createSlice({
         builder.addCase(deleteUsersAsyncAction.fulfilled,(state,action)=>{
         state.employees = action.payload;
         });
-        builder.addCase(updateUsersAsyncAction.fulfilled,(state,action)=>{
-        state.employees = action.payload;
-        });
+        // builder.addCase(updateUsersAsyncAction.fulfilled,(state,action)=>{
+        // state.employees = action.payload;
+        // });
         },
 });
 
 export default employeeSlice.reducer;
-export const {addUsers} = employeeSlice.actions;
+// export const {addUsers} = employeeSlice.actions;

@@ -8,8 +8,10 @@ const Employees = () =>{
 
 const [employee, setEmployee] = useState({username:'',name:'',email:'',stack:''})
 const[isEdit, setIsEdit] = useState(false);
+
 const empDetails = useSelector((state=>state.employees))
 const dispatch = useDispatch();
+
 console.log("Details:", empDetails);
 
 useEffect(()=>{
@@ -58,7 +60,15 @@ return(
             <label htmlFor="email">Email : </label>
             <input type="text" value={employee.email} name="email" onChange={(e)=>{handleChange(e)}}></input><br/>
             <label htmlFor="stack">Tech Stack : </label>
-            <input type="text" value={employee.stack} name="stack" onChange={(e)=>{handleChange(e)}}></input><br />
+            <select name='stack' value={employee.stack} onChange={(e)=>{handleChange(e)}}>
+                <option value=''>Choose Tech Stack</option>
+                <option value='java'>Java</option>
+                <option value='reactjs'>Reactjs</option>
+                <option value='python'>Python</option>
+                <option value='nodejs'>Nodejs</option>
+            </select>
+            <br />
+            {/* <input type="text" value={employee.stack} name="stack" onChange={(e)=>{handleChange(e)}}></input><br /> */}
             {isEdit? (<button onClick={()=>{updateUser()}}>Update</button>) :(<button onClick={()=>{handleAdd(employee)}}>Register</button>)}
         </form>
         <h1>Employee Details</h1><br />

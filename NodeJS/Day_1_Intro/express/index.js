@@ -32,7 +32,7 @@ users.forEach((myusr,i)=>{
     if(myusr==userToUpdate){
         users[i]=newUser
     }
-}
+} 
 )
 res.json({users})
 })

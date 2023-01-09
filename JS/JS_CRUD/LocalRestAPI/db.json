@@ -44,9 +44,16 @@
     {
       "username": "Tejasree",
       "name": "Teju",
-      "email": "te@1234555",
+      "email": "te@1234",
       "stack": "Reactjs",
       "id": 7
+    },
+    {
+      "username": "n",
+      "name": "Bob",
+      "email": "bob@h.com",
+      "stack": "nodejs",
+      "id": 8
     }
   ]
 }
