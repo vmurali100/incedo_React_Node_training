@@ -11,7 +11,7 @@ router.get("/allUsers", (req, res) => {
 router.post("/register", async (req, res) => {
   const user = req.body;
   const users = await getLatestUsers();
-  const checkUser = isExistUser(users, user);
+  const checkUser = await isExistUser(users, user);
   if (checkUser) {
     res.send("User aleady exist !!. register with another email");
   } else {
@@ -23,7 +23,7 @@ router.post("/register", async (req, res) => {
 router.post("/login", async (req, res) => {
   const user = req.body;
   const users = await getLatestUsers();
-  const checkUser = isExistUser(users, user);
+  const checkUser = await isExistUser(users, user);
   if (checkUser) {
     res.send("login Successfull");
   } else {
@@ -74,11 +74,9 @@ function addUsers(users) {
   });
 }
 function isExistUser(users, user) {
-  return new Promise((resolve, result) => {
+  return new Promise((resolve, reject) => {
     users.forEach((u) => {
-      if (u.email == user.email) {
-        resolve(true);
-      } else resolve(false);
+      resolve(u.email === user.email);
     });
   });
 }
