@@ -1,0 +1,16 @@
+{
+  "name": "my_node_project",
+  "version": "1.0.0",
+  "description": "This is my first node project of 2023",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nishe",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  }
+}

@@ -1,0 +1,1 @@
+export const DELETE_STUDENT ="DELETE_STUDENT";
