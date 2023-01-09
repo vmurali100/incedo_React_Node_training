@@ -1,9 +1,9 @@
 import React from "react";
 import { Component } from "react";
 import { useState } from "react";
-
 import { useDispatch, useSelector } from "react-redux";
 import { addUserAsyncAction } from "../store/usersSlice";
+import UserForm from "./UserForm";
 const Registration = () => {
     const [user, setUser] = useState({ fname: "", lname: "", email: "", confirmemail: "", username : "", password: "", confirmpassword: "" });
     const usersDetails = useSelector((state) => state.users);
@@ -19,9 +19,6 @@ const Registration = () => {
           );
         
       };
-
-     
-        
         return(
             <div class="card" style={{width:'100%',height:"100%"}}>
                 <form>
@@ -92,8 +89,10 @@ const Registration = () => {
         </div>
     </div>
     </form>
+    <UserForm/>
   </div>
         )
     
 }
 export default Registration
+
