@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
-import {axios} from 'axios';
+import axios from 'axios';
 
 const defaultState = {
 
@@ -8,16 +8,18 @@ const defaultState = {
 
 
 export const getUserAsync = createAsyncThunk( 
+ 
 
     "users/getUserAsync", 
-    ()=> handleGetAllUsers()
+    ()=>  handleGetAllUsers()
 
 )
 
 
 const handleGetAllUsers = () => {
-
-    axios.get('https://jsonplaceholder.typicode.com/user').then( res => res.data)
+ 
+    console.log( 'get');
+    axios.get( 'https://jsonplaceholder.typicode.com/users').then( res => res.data)
       
     
 }
@@ -33,9 +35,10 @@ export const userSlice =  createSlice ( {
 
         },
 
-        delelteUser : ( state , action) => {
-             console.log(state);
-             return state;
+        deleteUser : ( state , action) => {
+                    
+            // console.log(action.payload);
+            return { ...state ,  users : state.users.filter((u) =>  u.username !== action.payload) }
              
 
         } ,

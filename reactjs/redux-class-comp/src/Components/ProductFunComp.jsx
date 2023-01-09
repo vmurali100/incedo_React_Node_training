@@ -1,7 +1,9 @@
 import React from 'react'
+import { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addProductAction } from '../Actions';
+import { getUserAsync } from '../';
+import { addProductAction  ,} from '../Actions';
 
 function ProductFunComp() {
 
@@ -9,7 +11,15 @@ function ProductFunComp() {
     const productsFromStore = useSelector( ( state) => state.products);
 
     let dispatch = useDispatch();
+ 
+  
 
+    useEffect( () => {
+
+        dispatch( getUserAsync());
+    })
+
+    
 
     
 

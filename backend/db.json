@@ -1,52 +1,10 @@
 {
   "users": [
     {
-      "fname": "hari",
-      "lname": "",
-      "username": "",
-      "email": "",
-      "bio": "",
-      "id": 1
-    },
-    {
-      "fname": "hari",
-      "lname": "",
-      "username": "",
-      "email": "",
-      "bio": "",
-      "id": 2
-    },
-    {
-      "fname": "hari",
-      "lname": "",
-      "username": "",
-      "email": "",
-      "bio": "",
-      "id": 3
-    },
-    {
-      "fname": "hari",
-      "lname": "",
-      "username": "",
-      "email": "",
-      "bio": "",
-      "id": 4
-    },
-    {
-      "fname": "hari",
-      "lname": "",
-      "username": "",
-      "email": "",
-      "bio": "",
-      "id": 5
-    },
-    {
-      "fname": "hari",
-      "lname": "",
-      "username": "",
-      "email": "",
-      "bio": "",
-      "id": 6
+
+      "id" :1 ,
+      "name" :"Hari" ,
+      "username":"hariharan_012"
     }
   ]
 }

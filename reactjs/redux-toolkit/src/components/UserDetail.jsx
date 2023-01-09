@@ -1,7 +1,8 @@
 import React from 'react'
+import { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch , useSelector} from 'react-redux'
-import { addUser, deleteUser } from '../store/userSlice';
+import { addUser, deleteUser, getUserAsync } from '../store/userSlice';
 function UserDetail() {
  
     let dispatch = useDispatch();
@@ -17,6 +18,14 @@ function UserDetail() {
         password:"",
      });
 
+    //  useEffect(() => {
+
+    //     dispatch(getUserAsync);
+        
+
+
+    //  })
+
 
      const handleChange = (e )=> {
 
@@ -25,9 +34,10 @@ function UserDetail() {
          setUser( { ...user , [name] : e.target.value } );
      }
 
-     const handleDelete = ( i) => {
-
+     const handleDelete = (username) => {
+ 
         
+         dispatch(deleteUser(username))
      }
 
      const handleSubmit = () => {
@@ -37,6 +47,8 @@ function UserDetail() {
 
 
      }
+
+     
 
 
   return (
@@ -80,7 +92,7 @@ function UserDetail() {
                           <p >{ `Last name : ${u.lastname}`}</p> 
                           <p >{ `Username : ${u.username}`}</p> 
                           <p > { `Phone : ${u.phone}`} </p> 
-                          <button style={{  }} onClick ={() => handleDelete(i)}>   Delete </button>
+                          <button style={{  }} onClick ={() => handleDelete(u.username)}>   Delete </button>
                              
 
                         
