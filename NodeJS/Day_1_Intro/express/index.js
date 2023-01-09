@@ -12,29 +12,29 @@ res.send("Hey there!")
 const users = ["Teju", "Pooja", "Indu"]
 
 app.get('/users', (req,res)=>{
-res.json({users:users})
+res.json({userDetails:users})
 })
 
 app.post("/create", (req,res)=>{
-users.push(req.body.user)
-res.json({users})
+users.push(req.body.newusr)
+res.json({users}) //else : res.json({userDetails:users}) or res.json({users:users})
 })
 
 app.delete("/delete", (req,res)=>{
-let delUsr = req.body.user;
-res.json({users: users.filter((usr) => usr !==delUsr)})
+let delUsr = req.body.deleteusr;
+res.json({userDetails: users.filter((usr) => usr !==delUsr)})
 })
 
 app.put("/update/:usr", (req,res)=>{
 let userToUpdate = req.params.usr;
-let newUser = req.body.user;
+let newUser = req.body.updateuser;
 users.forEach((myusr,i)=>{
     if(myusr==userToUpdate){
         users[i]=newUser
     }
 } 
 )
-res.json({users})
+res.json({users:users})
 })
 
 app.listen(3000, ()=>{
