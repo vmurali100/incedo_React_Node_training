@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var fs = require("fs");
+var jwt = require('jsonwebtoken');
 
 /* GET users listing. */
 router.get("/", function (req, res, next) {
@@ -24,12 +25,16 @@ router.post("/login", async (req, res) => {
   var user = req.body;
   var users = await getLatestUsers();
   var checkUser = isUserExist(users, user);
+  var token = jwt.sign(user, 'some secrete word');
+ 
   if (checkUser) {
-    res.status(200).json({ msg: "login Success !!" });
+    res.status(200).json({ msg: "login Success !!",token });
   } else {
     res.send("Login Failure  . Please try Again !! ");
   }
 });
+
+
 // fs.readFile("./data/users.json", (err, data) => {
 //   var users = JSON.parse(Buffer.from(data).toString());
 //   var checkUser = isUserExist(users, user);
