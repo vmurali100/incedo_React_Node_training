@@ -9,6 +9,7 @@ router.get("/", (req, res) => {
 router.get("/allEmployees", (req, res) => {
   fs.readFile("./data/employees_data.json", (err, data) => {
     var buf = Buffer.from(data);
+    //console.log(JSON.parse(buf.toString()))
     res.send({ allEmployees: JSON.parse(buf.toString()) });
   });
 });
