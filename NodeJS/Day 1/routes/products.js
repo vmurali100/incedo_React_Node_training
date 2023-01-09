@@ -53,7 +53,7 @@ route.put("/put/:id", async (req, res, next) => {
   console.log(mutateData);
   try {
     write(filePath, mutateData);
-    res.send("Successfully Update " + req.params.id);
+    res.send("Successfully Updated " + req.params.id);
   } catch (err) {
     next({ status: 502, message: "Message Passed as data" });
   }
