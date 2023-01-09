@@ -1,6 +1,7 @@
 export const defaultState = {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     users:[
         {
           "id": 371,
@@ -42,3 +43,7 @@ export const defaultState = {
   users: [],
 };
 >>>>>>> 7958420f8ff5d27eb5071f5a10b7c2f92c70aa9f
+=======
+  users: [],
+};
+>>>>>>> e7e10d628cae7290683bb487fd664591b397d070

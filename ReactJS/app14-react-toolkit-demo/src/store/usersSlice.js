@@ -1,11 +1,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { createSlice } from "@reduxjs/toolkit";
 import { defaultState } from "./defaultState";
 
 =======
 =======
 >>>>>>> 7958420f8ff5d27eb5071f5a10b7c2f92c70aa9f
+=======
+>>>>>>> e7e10d628cae7290683bb487fd664591b397d070
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { defaultState } from "./defaultState";
 import axios from "axios";
@@ -28,9 +31,12 @@ const handleGetAllUsers = () =>
   axios.get("http://localhost:3201/users").then((res) => res.data);
   
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 1b49dce71a83faad60a4549fa49317479697c594
 =======
 >>>>>>> 7958420f8ff5d27eb5071f5a10b7c2f92c70aa9f
+=======
+>>>>>>> e7e10d628cae7290683bb487fd664591b397d070
 export const usersSlice = createSlice({
   name: "users",
   initialState: defaultState,
@@ -44,9 +50,12 @@ export const usersSlice = createSlice({
   },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 7958420f8ff5d27eb5071f5a10b7c2f92c70aa9f
+=======
+>>>>>>> e7e10d628cae7290683bb487fd664591b397d070
   extraReducers: (builder) => {
     builder.addCase(getUsersAsyncAction.fulfilled, (state, action) => {
       state.users = action.payload;
@@ -62,9 +71,12 @@ export const usersSlice = createSlice({
     // });
   },
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 1b49dce71a83faad60a4549fa49317479697c594
 =======
 >>>>>>> 7958420f8ff5d27eb5071f5a10b7c2f92c70aa9f
+=======
+>>>>>>> e7e10d628cae7290683bb487fd664591b397d070
 });
 
 export default usersSlice.reducer;
