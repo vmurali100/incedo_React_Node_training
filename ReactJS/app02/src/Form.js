@@ -7,6 +7,7 @@ export default class Form extends Component {
     this.state = {
       fname: "",
       lname: "",
+      email:""
     };
   }
 
@@ -48,6 +49,16 @@ handleChange=(e)=>{
             type="text"
             name="lname"
             value={this.state.lname}
+            onChange={(e) => {
+              this.handleChange(e);
+            }}
+          ></input>{" "}
+          <br /> <br />
+          <label for="email">Enter your email </label>
+          <input
+            type="text"
+            name="email"
+            value={this.state.email}
             onChange={(e) => {
               this.handleChange(e);
             }}
