@@ -75,13 +75,11 @@ function UserDetail() {
             { usersFromStore.map( ( u , i) => {
                 return (
 
-                    <div  style ={{ display:'flex' , flexDirection:'column' , border:'1px solid black' }}key={i}>
+                    <div  style ={{ display:'' , flexDirection:'column' }}key={i}>
                           <p >{ `First name : ${u.firstname}`}</p> 
                           <p >{ `Last name : ${u.lastname}`}</p> 
                           <p >{ `Username : ${u.username}`}</p> 
-                          <p > { `Phone : ${u.phone}`} </p> 
-                          <button style={{  }} onClick ={() => handleDelete(i)}>   Delete </button>
-                             
+                          <p > { `Phone : ${u.phone}`} </p>                              
 
                         
                         </div>
