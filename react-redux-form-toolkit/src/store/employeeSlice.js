@@ -22,7 +22,7 @@ export const addUsersAsyncAction = createAsyncThunk("employeeslice/addUsersAsync
  }));
 
  
-export const updateUsersAsyncAction = createAsyncThunk("employees/updateUsersAsyncAction",(employee)=>
+export const updateUsersAsyncAction = createAsyncThunk("employeeslice/updateUsersAsyncAction",(employee)=>
 axios.put("http://localhost:3000/users/"+employee.id,employee).then(async (res)=>{
   return await getUsers();
 })
