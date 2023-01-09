@@ -74,7 +74,7 @@ class Employees extends Component {
             type="text"
             name="email"
             value={this.state.employee.email}
-            disabled={this.state.isEdit ? true : false}
+            //disabled={this.state.isEdit ? true : false}
             onChange={(e) => {
               this.handleChange(e);
             }}

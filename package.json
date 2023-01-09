@@ -19,6 +19,7 @@
   "homepage": "https://github.com/vmurali100/incedo_React_Node_training#readme",
   "dependencies": {
     "axios": "^1.2.2",
+    "express": "^4.18.2",
     "react": "^18.2.0",
     "react-redux": "^8.0.5"
   }
