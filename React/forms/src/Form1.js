@@ -17,6 +17,7 @@ export default class Form1 extends Component {
     
 handleChange=(e)=>{
     console.log(e.target.name);
+    
     var inputName = e.target.name
     var newUser = {...this.state} // Creating a Copy of State and Storing in newUser
     newUser[inputName] = e.target.value
