@@ -14,13 +14,13 @@ router.post("/register" , (req, res) => {
     console.log(req.body);
     
 
-    // fs.readFile('./data/users.json', ( err, data)=>{
+    fs.readFile('./data/users.json', ( err, data)=>{
 
-    //     var users = JSON.parse( Buffer.from(data).toString());
-    //     users.push(user);
+        var users = JSON.parse( Buffer.from(data).toString());
+        users.push(user);
 
-    //     addUserInFile(users);
-    // })
+        addUserInFile(users);
+    })
     
 
     res.send('Register route')

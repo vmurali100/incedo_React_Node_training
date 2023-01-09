@@ -12,7 +12,7 @@ export const getAllUsersAction = () =>
     }
 } 
 
-const getUsersFromApi = ( dispatch) => {
+const getUsersFromApi =  (dispatch) => {
   
     axios.get('https://jsonplaceholder.typicode.com/users').then( res => {
 

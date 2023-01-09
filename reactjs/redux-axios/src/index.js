@@ -11,14 +11,13 @@ import {configureStore} from '@reduxjs/toolkit';
 
 import { createStore, applyMiddleware } from 'redux';
 
-const store = createStore(userReducer,applyMiddleware(thunk));
+// const store = createStore(userReducer,applyMiddleware(thunk));
 
-// const store = configureStore( {
+const store = configureStore( {
   
-//   reducer: userReducer,
-//   middleware: [thunk],
+  reducer :{ user:userReducer}
 
-// })
+})
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 

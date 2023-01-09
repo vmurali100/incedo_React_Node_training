@@ -4,9 +4,10 @@ import { useDispatch , useSelector} from 'react-redux';
 function UserComp() {
 
   let dispatch = useDispatch();
-     
 
-  const getDataFromStore = useSelector((state) => state); 
+     
+      
+  const getDataFromStore = useSelector((state) => state.user); 
 
   console.log(getDataFromStore);
     useEffect( () => {
