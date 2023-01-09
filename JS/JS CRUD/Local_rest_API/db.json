@@ -1,34 +1,3 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "fname": "Cherukuri",
-      "lname": "Amarendra",
-      "email": "chamarendra2000@gmail.com",
-      "confirmemail": "chamarendra2000@gmail.com",
-      "username": "cheram4",
-      "password": "EGXxA",
-      "confirmpassword": "EGXxA"
-    },
-    {
-      "fname": "Murali ",
-      "lname": "Krishna",
-      "email": "m.sriganesh@incedoinc.com",
-      "confirmemail": "m.sriganesh@incedoinc.com",
-      "username": "Ganesh",
-      "password": "efndwjei",
-      "confirmpassword": "wenfejwn",
-      "id": 2
-    },
-    {
-      "fname": "Chilakala",
-      "lname": "Manju",
-      "email": "bsreekanth814@gmail.com",
-      "confirmemail": "bsreekanth814@gmail.com",
-      "username": "Ganesh",
-      "password": "fvdvsfvs",
-      "confirmpassword": "vsdvszvsz",
-      "id": 3
-    }
-  ]
+  "users": []
 }
