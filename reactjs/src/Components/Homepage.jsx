@@ -5,6 +5,7 @@ import Task from './Task'
 const Homepage = () => {
    // const [user, setUser] = useState({id:"", name:"", username:"", email: "", address: "", phone: "", website:"", company: ""})
     const [users, setUsers] = useState([])
+    const [address, setAdress] = useState({});
 
     useEffect(()=>{
         axios.get("https://jsonplaceholder.typicode.com/users").then((response)=>{
@@ -16,9 +17,13 @@ const Homepage = () => {
         });
     },[])
 
-    const ToggleAddress = (user) =>{
-    console.log("clicked1")
-
+    const ToggleAddress = (a) =>{
+    console.log(a)
+    let address = JSON.stringify(a.address);
+    console.log("newadress", address)
+    setAdress(address);
+    console.log("adress is", address)
+  
     }
 
     const ToggleCompany = (user) =>{
@@ -27,7 +32,7 @@ const Homepage = () => {
   
     return (
     <div>
-    <Task users={users} ToggleAddress={ToggleAddress} ToggleCompany={ToggleCompany}/>
+    <Task address={address} users={users} ToggleAddress={ToggleAddress} ToggleCompany={ToggleCompany}/>
     </div>
   )
 }

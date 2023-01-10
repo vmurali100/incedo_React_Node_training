@@ -48,7 +48,7 @@ const clearForm = ()=>{
         <div>
             <form action="">
                 <label htmlFor="name">Name : </label>
-                <input type="text" name="name" value={user.name} onChange={(e)=>{handleChange(e)}}></input> <br />
+                <input type="text" name="name" value={user.name} onChange={(e)=>{handleChange(e)}} disabled={isEdit? true:false}></input> <br />
                 <label htmlFor="email">Email : </label>
                 <input type="text" name="email" value={user.email} onChange={(e)=>{handleChange(e)}}></input> <br />
                 <label htmlFor="tech">Tech Stack : </label>

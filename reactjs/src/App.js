@@ -4,8 +4,6 @@ import Person from './Components/Person'
 import Parent from './Components/Parent'
 import Input from './Components/Input';
 import InputNew from './Components/InputNew';
-import assignment1 from './Components/assignment1';
-import assignment2 from './Components/assignment2';
 import RegistrationNew from './Components/RegistrationNew';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Router_crud_axios/Navbar';
@@ -24,6 +22,8 @@ import { AuthProvider } from "./Components/auth-project/auth";
 import NavBar from './Components/auth-project/NavBar';
 import Login from './Components/auth-project/Login'
 import RequiredAuth from './Components/auth-project/RequiredAuth'
+import SampleTask from './Components/SampleTask';
+import Timer from './Components/Timer';
 
 function App() {
   return (
@@ -48,7 +48,7 @@ function App() {
       {/* <ClickCounter/>
       <HoverCounter/> */}
  
-    <AuthProvider>
+    {/* <AuthProvider>
         <BrowserRouter>
           <NavBar />
           <Routes>
@@ -57,7 +57,9 @@ function App() {
             <Route path="/features" element={<RequiredAuth> <Features /> </RequiredAuth>} />
           </Routes>
         </BrowserRouter>
-    </AuthProvider>
+    </AuthProvider> */}
+
+    < Timer/>
 
     </div>
   );

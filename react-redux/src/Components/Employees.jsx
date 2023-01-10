@@ -66,7 +66,7 @@ class Employees extends Component {
             value={this.state.employee.lname}
             onChange={(e) => {
               this.handleChange(e);
-            }}
+            }} 
           />{" "}
           <br />
           <label htmlFor="fname">Email : </label>
