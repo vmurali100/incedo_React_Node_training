@@ -4,8 +4,9 @@ var fs = require("fs");
 var jwt = require('jsonwebtoken');
 
 /* GET users listing. */
-router.get("/", function (req, res, next) {
-  res.send("respond with a resource");
+router.get("/", async function (req, res, next) {
+  var users = await getLatestUsers();
+  res.send(users);
 });
 
 router.post("/register", async (req, res) => {
@@ -34,6 +35,36 @@ router.post("/login", async (req, res) => {
   }
 });
 
+router.delete("/delete/:email",async (req,res)=>{
+  var userEmail = req.params.email
+  var users = await getLatestUsers();
+  var deletedUsers = users.filter((usr)=> usr.email !== userEmail);
+  var allUsers = await addUsers(deletedUsers);
+  res.send(allUsers)
+})
+
+router.put('/update/:email',async(req,res)=>{
+  var userEmail = req.params.email;
+  var user = req.body
+  var users = await getLatestUsers();
+  console.log(user);
+  users.forEach((usr,i)=>{
+    if(usr['email']==userEmail){
+      users[i]=user
+    }
+  })
+  var allUsers = await addUsers(users);
+  res.send(allUsers)
+
+})
+
+router.post('/createUser',async (req,res)=>{
+  var user = req.body
+  var users = await getLatestUsers();
+  users.push(user);
+  var allUsers = await addUsers(users);
+  res.send(allUsers)
+})
 
 // fs.readFile("./data/users.json", (err, data) => {
 //   var users = JSON.parse(Buffer.from(data).toString());
