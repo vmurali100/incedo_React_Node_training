@@ -1,11 +1,51 @@
 const { Router } = require("express");
 const route = Router();
 const fs = require("fs");
+const { MongoClient, ServerApiVersion } = require("mongodb");
+const uri =
+  "mongodb+srv://dbUserChris:python472@cluster0.ptvoz.mongodb.net/?retryWrites=true&w=majority";
+const client = new MongoClient(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  serverApi: ServerApiVersion.v1,
+});
+const collection = client.db("Project").collection("addresses");
 const filePath = "./public/index.json";
 route.get("/", async (req, res) => {
   const d = await read(filePath);
   console.log(d);
-  res.send(JSON.stringify(d));
+  res.send();
+});
+route.get("/db", (req, res) => {
+  collection
+    .find()
+    .toArray()
+    .then((data) => console.log("Testings", res.json(data)));
+});
+route.get("/insertdb", (req, res, next) => {
+  collection.insertOne({ City: "Chennai" }, (err) => {
+    if (err) next(err);
+    else res.send("Inserted Successfully");
+  });
+});
+route.get("/updatedb", (req, res, next) => {
+  collection.updateOne(
+    { City: "Chennai" },
+    {
+      $set: {
+        no: "No 98",
+        AddressLine1: "3rd Cross ",
+        AddressLine2: "Ponnagar",
+        State: "TamilNadu",
+        Country: "India",
+        Pincode: "620001",
+      },
+    },
+    (err) => {
+      if (err) next(err);
+      else res.send("Inserted Successfully");
+    }
+  );
 });
 const read = (path) => {
   return new Promise((resolve, reject) =>
