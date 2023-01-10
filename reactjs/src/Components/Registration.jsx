@@ -46,7 +46,7 @@ const Registration = () => {
     <div>
       <div className="form-container">
         <div className="col-5">
-          <UserForm
+          <UserForm 
             user={user}
             setUser={setUser}
             handleChange={handleChange}

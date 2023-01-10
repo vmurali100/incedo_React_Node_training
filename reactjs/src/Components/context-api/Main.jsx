@@ -6,7 +6,7 @@ const Main = () => {
     <div>
       <h2>Welcome to Main Component !!!</h2>
       <hr />
-      <Parent />
+      <Parent  />
     </div>
   );
 };

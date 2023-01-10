@@ -18,7 +18,7 @@ const UserForm = ({ user, handleChange, handleSubmit, updateUser, editIndex }) =
             name="fname"
             onChange={(e) => {
               handleChange(e);
-            }}
+            }} 
           />
         </div>
         <div className="mb-3">

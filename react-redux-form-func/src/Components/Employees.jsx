@@ -8,7 +8,7 @@ const Employees = () =>{
     const[isEdit, setIsdit] = useState(false);
 
     const userDetails = useSelector((state) => state.users);
-    const dispatch = useDispatch();
+    const dispatch = useDispatch(); 
     console.log("userdetails are: ", userDetails)
 
 const handleChange = (e) => {

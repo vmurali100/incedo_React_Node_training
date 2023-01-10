@@ -48,6 +48,7 @@
         "email": "indu@",
         "phone": "8927420",
         "subject": "python",
-        "existingUser": "false"
+        "existingUser": "false",
+        "password": "1234"
     }
 ]
