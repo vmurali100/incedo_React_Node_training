@@ -1,0 +1,50 @@
+[
+  {
+    "fName": "Uvan",
+    "lName": "Narayanan",
+    "email": "hello6@nec.org",
+    "phone": 9489460038,
+    "existingCustomer": false,
+    "subject": "Node JS"
+  },
+  {
+    "fName": "Uvan",
+    "lName": "Narayanan",
+    "email": "hello6@nec.org",
+    "phone": 9489460038,
+    "existingCustomer": false,
+    "subject": "Node JS"
+  },
+  {
+    "fName": "Uvan",
+    "lName": "Narayanan",
+    "email": "hello6@nec.org",
+    "phone": 9489460038,
+    "existingCustomer": false,
+    "subject": "Node JS"
+  },
+  {
+    "fName": "nibu",
+    "lName": "aasife",
+    "email": "hello6@nec.org",
+    "phone": 9489460038,
+    "existingCustomer": false,
+    "subject": "React JS"
+  },
+  {
+    "fName": "nibu",
+    "lName": "aasife",
+    "email": "hello6@nec.org",
+    "phone": 9489460038,
+    "existingCustomer": false,
+    "subject": "React JS"
+  },
+  {
+    "fName": "nibu",
+    "lName": "aasife",
+    "email": "hello12@nec.org",
+    "phone": 9489460038,
+    "existingCustomer": false,
+    "subject": "React JS"
+  }
+]
