@@ -18,30 +18,112 @@
   },
   "users": [
     {
-      "fname": "segu",
-      "lname": "naveen",
-      "email": "Segu.Naveen@incedoinc.com",
-      "id": 1,
-      "checked": true
+      "username": "Naveen",
+      "password": "Naveen@2910",
+      "confirmpassword": "Naveen@2910",
+      "email": "segu.naveen@incedoinc.com",
+      "firstname": "Segu",
+      "lastname": "Naveen",
+      "id": 1
     },
     {
-      "fname": "Bhargav",
-      "lname": "Bhavirisetty",
-      "email": "b.bhargav@incedoinc.com",
+      "username": "",
+      "password": "",
+      "confirmpassword": "",
+      "email": "",
+      "firstname": "",
+      "lastname": "",
       "id": 2
     },
     {
-      "fname": "Sushith",
-      "lname": "Kalpam",
-      "email": "sushith.kalpam@incedoinc.com",
-      "id": 3,
-      "checked": true
+      "username": "Praveen",
+      "password": "praveen",
+      "confirmpassword": "Praveen",
+      "email": "praveen@incedoinc.com",
+      "firstname": "Praveen",
+      "lastname": "Segu",
+      "id": 3
     },
     {
-      "fname": "segu",
-      "lname": "Aparna",
-      "email": "segu.Aparna@incedoinc.com",
+      "username": "",
+      "password": "",
+      "confirmpassword": "",
+      "email": "",
+      "firstname": "",
+      "lastname": "",
       "id": 4
+    },
+    {
+      "username": "",
+      "password": "",
+      "confirmpassword": "",
+      "email": "",
+      "firstname": "",
+      "lastname": "",
+      "id": 5
+    },
+    {
+      "username": "",
+      "password": "",
+      "confirmpassword": "",
+      "email": "",
+      "firstname": "",
+      "lastname": "",
+      "id": 6
+    },
+    {
+      "username": "",
+      "password": "",
+      "confirmpassword": "",
+      "email": "",
+      "firstname": "",
+      "lastname": "",
+      "id": 7
+    },
+    {
+      "username": "",
+      "password": "",
+      "confirmpassword": "",
+      "email": "",
+      "firstname": "",
+      "lastname": "",
+      "id": 8
+    },
+    {
+      "username": "",
+      "password": "",
+      "confirmpassword": "",
+      "email": "",
+      "firstname": "",
+      "lastname": "",
+      "id": 9
+    },
+    {
+      "username": "",
+      "password": "",
+      "confirmpassword": "",
+      "email": "",
+      "firstname": "",
+      "lastname": "",
+      "id": 10
+    },
+    {
+      "username": "",
+      "password": "",
+      "confirmpassword": "",
+      "email": "",
+      "firstname": "",
+      "lastname": "",
+      "id": 11
+    },
+    {
+      "username": "harini",
+      "password": "Harini@12",
+      "confirmpassword": "Harini@12",
+      "email": "harini@incedoinc.com",
+      "firstname": "Harini",
+      "lastname": "Segu",
+      "id": 12
     }
   ],
   "developers": [

@@ -7,16 +7,26 @@ import ReadUser from './Components/ReadUser';
 import DeleteUser from './Components/DeleteUser';
 import UpdateUser from './Components/UpdateUser';
 import NavBar from './Components/NavBar';
-import { AuthContext } from './Components/authContext';
+import { AuthContext, UserContext } from './Components/authContext';
 import RequiredAuth from './Components/requiredAuth';
 import TextClassContext from './Components/TestContext';
 import TableComponent from './Components/TableComponent';
+import Parent from './PropsDrillPracticeComponents/ParentComponent';
+import {useContext, useState} from 'react';
+import { UsersContextProvider } from './ContextApiPracticeComponents/ContextApi';
+import ContextParentComponent from './ContextApiPracticeComponents/ContextParentComponent';
+import ContextChildComponent from './ContextApiPracticeComponents/ContextChildComponent';
+import ThemeAppJS from './ThemeButtonUsingContextAPI/ThemeApp';
+
+
 
 function App() 
 {
+  const [users,setUsers] = useState(["naveen","praveen","sushith","bharath","gowtham"]);
+  const [users2,setUsers2] = useState(["naveen2","praveen2","sushith2","bharath2","gowtham2"]);
   return (
     <div className="App">
-     <AuthContext>
+     {/* <AuthContext>
      <BrowserRouter>
      <NavBar />
      <Routes>
@@ -27,12 +37,18 @@ function App()
       <Route path="/readuser" element={<ReadUser/>}></Route>
       <Route path="/deleteuser/:id" element={<RequiredAuth><DeleteUser/></RequiredAuth>}></Route>
       <Route path="/tableComponent" element={<TableComponent/>}></Route>
-      {/* <Route path="/textcontext" element={<TextClassContext />}></Route> */}
      </Routes>
      </BrowserRouter>
-     </AuthContext>
+     </AuthContext> */}
+     {/* <Parent users={users}/> */}
+     {/* <UsersContextProvider value={{users,users2}}>
+        <ContextParentComponent/>
+     </UsersContextProvider> */}
+     <ThemeAppJS />
     </div>
   );
 }
 
 export default App;
+
+
