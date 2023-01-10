@@ -5,7 +5,7 @@ var fs = require("fs");
 const e = require("express");
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.json({ title: "Welcme to Products !!" });
+  res.json({ title: "Welcome to Products !!" });
 });
 
 router.post("/addProduct", checkUser, async (req, res) => {
@@ -13,14 +13,15 @@ router.post("/addProduct", checkUser, async (req, res) => {
   var allProducts = await getAllProducts();
   var check = checkProduct(allProducts, product);
   if(check){
-    res.send({msg:"The Product is Already exist . Please add a New product "})
+    res.send({msg:"The Product Already exists . Please add a New product "})
   }else{
     allProducts.push(product);
-    var allLatestProducts = await addProduct(allProducts);
+    var allLatestProducts = await addProduct(allProducts); //add data to file
     res.send({ msg: "Product Added Successfully ", products: allLatestProducts });
   }
  
 });
+
 function checkUser(req, res, next) {
   console.log(req.headers.authorization);
   const tokenDetails = req.headers.authorization.split(" ")[1];
@@ -39,6 +40,7 @@ const getAllProducts = () =>
       resolve(productsDetails);
     });
   });
+
 const addProduct = (products) =>
   new Promise((resolve, reject) => {
     fs.writeFile("./data/products.json", JSON.stringify(products), async () => {
