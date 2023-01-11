@@ -11,7 +11,9 @@ import {
 } from "../store/usersSlice";
 
 const Users = () => {
-  const [user,setUser]=useState({username:"",fname:"",email:"",password:""})
+  const [user,setUser]=useState({username:"",fname:"",email:"",password:"",programinglang:""});
+  const [users,setUsers]=useState([]);
+  const[isEdit, setIsEdit] = useState(false);
   const usersDetails = useSelector((state) => state.users);
   const dispatch = useDispatch();
   const handleDelete = (i) => {
@@ -21,6 +23,7 @@ const Users = () => {
   useEffect(() => {
     dispatch(getUsersAsyncAction());
   }, []);
+
   const addUser = () => {
     dispatch(
       addUserAsyncAction(user)
@@ -31,6 +34,18 @@ const Users = () => {
     newUser[e.target.name]=e.target.value;
     setUser(newUser);
   }
+  const handleEdit = (usr) => {
+    setIsEdit(true);
+    setUser(usr)
+    console.log(usr)
+}
+const updateUser = ()=>{
+  dispatch(editUserAsyncAction(user));
+  clearForm();
+}
+const clearForm =()=>{
+  setUser({username:"",fname:"",email:"",password:"",programinglang:""})
+}
   return (
     <div className="container">
       <label htmlFor="username" >User Name</label>
@@ -41,9 +56,14 @@ const Users = () => {
       <input className="form-control" value={user.email} onChange={(e)=>{handleChange(e)}} type="text" name="email"/>
       <label htmlFor="password" >Password</label>
       <input className="form-control" value={user.password} onChange={(e)=>{handleChange(e)}} type="password" name="password"/>
-      <button onClick={addUser} className="btn btn-primary">
-        Add User
-      </button>
+      <label htmlFor='programinglang'>Programing Language:</label>
+                <select name="programinglang" id="programinglang" onChange={(e)=>{handleChange(e)}} value={user.programinglang}>
+                    <option value=''>Select the programming language</option>
+                    <option value='java'>JAVA</option>
+                    <option value='python'>PYTHON</option>
+                    <option value='javascript'>JAVASCRIPT</option>
+                </select><br/><br/>
+      {isEdit? (<button onClick={()=>{updateUser()}}>Update</button>) :(<button onClick={addUser}>Register</button>)}
       <table className="table">
         <thead>
           <tr>
@@ -67,7 +87,7 @@ const Users = () => {
               <td>
                 <button className="btn btn-warning"
                 onClick={()=>{
-                    dispatch(editUserAsyncAction(user));
+                    handleEdit(user);
                 }}>Edit User</button>
               </td>
               <td>

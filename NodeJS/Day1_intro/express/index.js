@@ -13,7 +13,6 @@ app.get('/users',(req,res)=>{
     res.json({users})
 })
 app.post('/create',(req,res)=>{
-    //console.log(req.body);
     users.push(req.body.user);
     res.send({users});
 })

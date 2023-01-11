@@ -1,11 +1,20 @@
 {
   "users": [
     {
-      "username": "b.bhargav@incedoinc.com",
-      "fname": "bhcahx",
-      "email": "b.bhargav@incedoinc.cndvs",
-      "password": "bhargav",
-      "id": 3
+      "username": "bhsc",
+      "fname": "bhargav",
+      "email": "bhargavbhavirisetty2000@gmail.com",
+      "password": "bhbhb",
+      "programinglang": "java",
+      "id": 1
+    },
+    {
+      "username": "bhscbhvhv",
+      "fname": "bhhv",
+      "email": "bhargavbhavirisetty2000@gmail.com",
+      "password": "bhbhb",
+      "programinglang": "java",
+      "id": 2
     }
   ]
 }

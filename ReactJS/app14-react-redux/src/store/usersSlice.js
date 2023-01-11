@@ -10,7 +10,7 @@ export const getUsersAsyncAction = createAsyncThunk(
 export const addUserAsyncAction = createAsyncThunk(
   "users/addUserAsyncAction",
   (user) =>
-    axios.post("http://localhost:3000/users/", user).then(async (res) => {
+    axios.post("http://localhost:3000/users", user).then(async (res) => {
       const finalPayload = await handleGetAllUsers();
       return finalPayload;
     })
@@ -18,7 +18,7 @@ export const addUserAsyncAction = createAsyncThunk(
 export const editUserAsyncAction = createAsyncThunk(
     "users/editUserAsyncAction",
     (user)=>
-    axios.put("http://localhost:3000/users/"+user.id).then(async(res)=>{
+    axios.put("http://localhost:3000/users/"+user.id,user).then(async(res)=>{
         const finalPayload =await handleGetAllUsers();
         return finalPayload;
     })
@@ -31,8 +31,9 @@ export const deleteUserAsyncAction = createAsyncThunk(
         return finalPayload;
       })
   );
-const handleGetAllUsers = () =>
-  axios.get("http://localhost:3000/users").then((res) => res.data);
+const handleGetAllUsers = async () =>{
+  return await axios.get("http://localhost:3000/users").then((res) => res.data);
+}
   
 export const usersSlice = createSlice({
   name: "users",
@@ -43,7 +44,7 @@ export const usersSlice = createSlice({
     },
     deleteUser: (state, action) => {
       state.users.splice(action, 1);
-    },
+    }
   },
   extraReducers: (builder) => {
     builder.addCase(getUsersAsyncAction.fulfilled, (state, action) => {
@@ -58,9 +59,10 @@ export const usersSlice = createSlice({
     builder.addCase(editUserAsyncAction.fulfilled, (state,action)=> {
       state.users=action.payload;
       state.user={};
+      state.isEdit = !state.isEdit;
     })
   },
 });
 
 export default usersSlice.reducer;
-export const { addUserAction, deleteUser } = usersSlice.actions;
+export const { addUserAction, deleteUser} = usersSlice.actions;
