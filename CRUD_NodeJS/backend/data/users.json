@@ -1,0 +1,58 @@
+[
+  {
+    "fName": "Uvan",
+    "lName": "Narayanan",
+    "email": "hello6@nec.org",
+    "phone": 9489460038,
+    "existingCustomer": false,
+    "subject": "Node JS"
+  },
+  {
+    "fName": "Uvan",
+    "lName": "Narayanan",
+    "email": "hello6@nec.org",
+    "phone": 9489460038,
+    "existingCustomer": false,
+    "subject": "Node JS"
+  },
+  {
+    "fName": "Uvan",
+    "lName": "Narayanan",
+    "email": "hello12@nec.org",
+    "phone": 9489460038,
+    "existingCustomer": false,
+    "subject": "Node JS"
+  },
+  {
+    "fName": "Uvan",
+    "lName": "Narayanan",
+    "email": "hello14@nec.org",
+    "phone": 9489460038,
+    "existingCustomer": false,
+    "subject": "Node JS"
+  },
+  {
+    "fName": "Uvan",
+    "lName": "Narayanan",
+    "email": "hello15@nec.org",
+    "phone": 9489460038,
+    "existingCustomer": false,
+    "subject": "Node JS"
+  },
+  {
+    "fName": "Uvan",
+    "lName": "Narayanan",
+    "email": "hello16@nec.org",
+    "phone": 9489460038,
+    "existingCustomer": false,
+    "subject": "Node JS"
+  },
+  {
+    "fName": "Uvan",
+    "lName": "Narayanan",
+    "email": "hello55@nec.org",
+    "phone": 9489460038,
+    "existingCustomer": false,
+    "subject": "Node JS"
+  }
+]
