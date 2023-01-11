@@ -1,70 +1,44 @@
 {
   "users": [
     {
-      "id": 371,
-      "email": "Ram@magna.org",
-      "username": "JJun",
-      "password": "EGXxA"
+      "id": 1,
+      "fname": "Chilakala ",
+      "lname": "Manju",
+      "email": "bwflebw",
+      "confirmemail": "bfwfk",
+      "username": "wgfew",
+      "password": "wfijw",
+      "confirmpassword": "ewufhew"
     },
     {
-      "id": 372,
-      "email": "Ravi@consequat.net",
-      "username": "APointelin",
-      "password": "P0zQl"
+      "fname": "Manju",
+      "lname": "Ch",
+      "email": "manjunadh.ch.223@gmail.com",
+      "confirmemail": "manjunadh.ch.223@gmail.com",
+      "username": "Manjunadh",
+      "password": "Mnr@",
+      "confirmpassword": "Mnr@",
+      "id": 2
     },
     {
-      "id": 373,
-      "email": "Naveen@fringilla.net",
-      "username": "AClinger",
-      "password": "LSc3k"
+      "fname": "Manju",
+      "lname": "Ch",
+      "email": "manjunadh.ch.223@gmail.com",
+      "confirmemail": "manjunadh.ch.223@gmail.com",
+      "username": "Manjunadh",
+      "password": "Mnr@",
+      "confirmpassword": "Mnr@",
+      "id": 3
     },
     {
-      "id": 374,
-      "email": "Arun@tincidunt.org",
-      "username": "LPfeifer",
-      "password": "7bKD1"
-    },
-    {
-      "id": 375,
-      "email": "DWesley@placerat.com",
-      "username": "YTarbox",
-      "password": "Ef5ci"
-    },
-    {
-      "id": 376,
-      "email": "murali@magna.org",
-      "username": "murali",
-      "password": "1234"
-    },
-    {
-      "id": 377,
-      "email": "murali@magna.org",
-      "username": "murali",
-      "password": "1234"
-    },
-    {
-      "id": 378,
-      "email": "murali@magna.org",
-      "username": "murali",
-      "password": "1234"
-    },
-    {
-      "id": 379,
-      "email": "murali@magna.org",
-      "username": "murali",
-      "password": "1234"
-    },
-    {
-      "id": 380,
-      "email": "murali@magna.org",
-      "username": "murali",
-      "password": "1234"
-    },
-    {
-      "id": 381,
-      "email": "murali@magna.org",
-      "username": "murali",
-      "password": "1234"
+      "fname": "Manju",
+      "lname": "Ch",
+      "email": "manjunadh.ch.223@gmail.com",
+      "confirmemail": "manjunadh.ch.223@gmail.com",
+      "username": "Manjunadh",
+      "password": "Mnr@",
+      "confirmpassword": "Mnr@",
+      "id": 4
     }
   ]
 }
