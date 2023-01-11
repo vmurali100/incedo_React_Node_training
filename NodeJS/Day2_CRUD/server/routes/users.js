@@ -34,6 +34,11 @@ const write = (path, data) => {
 const userPresent = (user, newUser) => {
   return !!user.find((usr) => usr.email == newUser.email);
 };
+router.get("/read",async(req,res)=>
+{
+  const data=await read(filePath);
+  res.json({data})
+})
 router.post("/login", async (req, res) => {
   const data = await read(filePath);
   if (userPresent(data, req.body)) {
@@ -43,6 +48,35 @@ router.post("/login", async (req, res) => {
     res.json({ message: "Error" });
   }
 });
+router.delete("/delete/:id", async (req, res, next) => {
+  const data = await read(filePath);
+  console.log(req.params.id);
+  const mutateData= data.filter((d) => d.email != req.params.id)
+  try {
+    write(
+      filePath,
+     mutateData
+    );
+    res.status(200).json(mutateData);
+  } catch (err) {
+    next({ status: 502, message: "Message Passed as data" });
+  }
+});
+router.put("/put/:id", async (req, res, next) => {
+  const data = await read(filePath);
+  console.log(req.params.id);
+  let mutateData = [...data];
+  data.forEach((d, i) => {
+    if (d.email == req.params.id) mutateData[i] = req.body;
+  });
+  console.log(mutateData);
+  try {
+    write(filePath, mutateData);
+    res.json(mutateData);
+  } catch (err) {
+    next({ status: 502, message: "Message Passed as data" });
+  }
+});
 router.post("/register", async (req, res, next) => {
   const data = await read(filePath);
   console.log(req.body);
@@ -50,7 +84,7 @@ router.post("/register", async (req, res, next) => {
     data.push(req.body);
     try {
       write(filePath, data);
-      res.send("Success");
+      res.json(data);
     } catch (err) {
       next({ status: 502, message: "Message Passed as data" });
     }
