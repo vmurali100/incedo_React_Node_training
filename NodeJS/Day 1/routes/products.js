@@ -2,8 +2,8 @@ const { Router } = require("express");
 const route = Router();
 const fs = require("fs");
 const { MongoClient, ServerApiVersion } = require("mongodb");
-const uri =
-  "mongodb+srv://dbUserChris:python472@cluster0.ptvoz.mongodb.net/?retryWrites=true&w=majority";
+const uri ="mongodb+srv://dbUser1:<password>@cluster0.3nptx2z.mongodb.net/?retryWrites=true&w=majority"
+  
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -22,13 +22,13 @@ route.get("/db", (req, res) => {
     .toArray()
     .then((data) => console.log("Testings", res.json(data)));
 });
-route.get("/insertdb", (req, res, next) => {
+route.post("/insertdb", (req, res, next) => {
   collection.insertOne({ City: "Chennai" }, (err) => {
     if (err) next(err);
     else res.send("Inserted Successfully");
   });
 });
-route.get("/updatedb", (req, res, next) => {
+route.put("/updatedb", (req, res, next) => {
   collection.updateOne(
     { City: "Chennai" },
     {
@@ -43,10 +43,14 @@ route.get("/updatedb", (req, res, next) => {
     },
     (err) => {
       if (err) next(err);
-      else res.send("Inserted Successfully");
+      else res.send("Updated Successfully");
     }
   );
 });
+route.delete("/deletedb", (req, res, next) => {
+ 
+});
+
 const read = (path) => {
   return new Promise((resolve, reject) =>
     fs.readFile(path, (err, data) => {
