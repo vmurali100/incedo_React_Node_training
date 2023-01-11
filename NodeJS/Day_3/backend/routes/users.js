@@ -3,79 +3,70 @@ var router = express.Router();
 var fs = require("fs");
 const mysql = require('mysql2');
 
+
 // create the connection to database
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
+  password: 'root@123',
   database: 'incedoemployeedb'
 });
 
-/* GET users listing. */
-router.get("/", async function (req, res, next) {
-  var users = await getLatestUsers();
-  res.send(users);
-});
+// open the MySQL connection
 
-router.delete("/delete/:email",async (req,res)=>{
-  var userEmail = req.params.email
-  var users = await getLatestUsers();
-  var deletedUsers = users.filter((usr)=> usr.email !== userEmail);
-  var allUsers = await addUsers(deletedUsers);
-  res.send(allUsers)
-})
-
-router.put('/update/:email',async(req,res)=>{
-  var userEmail = req.params.email;
-  var user = req.body
-  var users = await getLatestUsers();
-  console.log(user);
-  users.forEach((usr,i)=>{
-    if(usr['email']==userEmail){
-      users[i]=user
-    }
-  })
-  var allUsers = await addUsers(users);
-  res.send(allUsers)
-
-})
-
-router.post('/createUser',async (req,res)=>{
-  var user = req.body
-  var users = await getLatestUsers();
-  users.push(user);
-  var allUsers = await addUsers(users);
-  res.send(allUsers)
-})
-
-
-function addUsers(users) {
-  return new Promise((resolve, reject) => {
-    fs.writeFile("./data/users.json", JSON.stringify(users), async () => {
-      var latestUsers = await getLatestUsers();
-      resolve(latestUsers);
-    });
-  });
-}
-
-function getLatestUsers() {
-  return new Promise((resolve, reject) => {
-    fs.readFile("./data/users.json", (err, data) => {
-      var users = JSON.parse(Buffer.from(data).toString());
-      resolve(users);
-    });
-  });
-}
-
-router.get("/dbConnection", function(req,res,next){
-  console.log("API running");
-  res.send("msg")
-  connection.connect((err) => {
+router.get("/dbconn", async(req,res) => {
+   console.log("API running");
+   res.send("API running");
+   connection.connect((err) => {
     if (err) {
       console.error('Error connecting: ' + err.stack);
       return;
     }
     console.log('Connected as thread id: ' + connection.threadId);
   });
+});
+
+router.get("/dbconn/getusers", async(req,res) => {
+  connection.query(
+    'select * from tblemployees',
+    function(err, results, fields) {
+      console.log(results); // results contains rows returned by server
+      res.send(results);
+    });
+});
+
+router.post("/dbconn/adduser",async(req,res) => {
+  var user = req.body;
+  console.log(user);
+  connection.query(
+    `INSERT INTO  tblemployees(id, ename,job,salary) VALUES(${user.id},'${user.ename}','${user.job}',${user.salary});`,
+    function(err, results, fields) {
+      console.log(err); // results contains rows returned by server
+      res.send(results);
+    });
+});
+
+router.delete("/dbconn/deluser/:ename",async(req,res) => {
+  var user = req.params.ename;
+  
+  //console.log(user);
+  connection.query(
+    `DELETE FROM tblemployees WHERE ename = "${user}"`,
+    function(err, results, fields) {
+      console.log(err); // results contains rows returned by server
+      res.send(results);
+    });
+    
+});
+
+router.put("/dbconn/updateuser/:ename", async(req,res) =>{
+  var user = req.params.ename;
+  connection.query(
+    `UPDATE tblemployees SET salary = 500000 WHERE ename = "${user}";`,
+    function(err, results, fields) {
+      console.log(err); // results contains rows returned by server
+      res.send(results);
+    });
 })
 
 module.exports = router;

@@ -16,11 +16,13 @@ router.get("/getUsers",async(req,res)=>
  const data=await collection.find().toArray();
  res.json(data)
 })
+
 router.get("/read",async(req,res)=>
 {
  const data=await collection.find().toArray();
  res.json(data)
 })
+
 router.post("/create",async(req,res,next)=>
 {
    collection.insertOne(req.body,(err,data)=>
@@ -29,6 +31,7 @@ router.post("/create",async(req,res,next)=>
     res.json(data);
    })
 })
+
 router.put("/update/:email",(req,res,next)=>
 {
    collection.updateOne({email:req.params.email},{$set:req.body},(err,data)=>
@@ -37,6 +40,7 @@ router.put("/update/:email",(req,res,next)=>
     res.json(data);
    })
 })
+
 router.delete("/delete/:email",(req,res,next)=>
 {
    collection.deleteOne({email:req.params.email},(err,data)=>
@@ -45,6 +49,7 @@ router.delete("/delete/:email",(req,res,next)=>
     res.json(data);
    })
 })
+
 /* GET users listing. */
 router.get("/", function (req, res, next) {
   res.send("respond with a resource");

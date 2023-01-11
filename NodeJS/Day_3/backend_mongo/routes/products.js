@@ -3,14 +3,16 @@ const route = Router();
 const fs = require("fs");
 const { MongoClient, ServerApiVersion } = require("mongodb");
 const uri ="mongodb+srv://dbUser1:<password>@cluster0.3nptx2z.mongodb.net/?retryWrites=true&w=majority"
-  
+
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   serverApi: ServerApiVersion.v1,
 });
+
 const collection = client.db("Project").collection("addresses");
 const filePath = "./public/index.json";
+
 route.get("/", async (req, res) => {
   const d = await read(filePath);
   console.log(d);
