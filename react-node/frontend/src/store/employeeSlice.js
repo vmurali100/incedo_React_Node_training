@@ -9,7 +9,10 @@ export const getAllUsersAsyncAction = createAsyncThunk(
 export const addUserAsyncAction = createAsyncThunk(
   "/users/adduser",
   async (user) => {
-    const response = await await fetch("");
+    const response = await await fetch("http://localhost:3000/users/",{
+        method:'POST',
+        body:JSON.stringify(user)
+    });
   }
 );
 const employeeSlice = createSlice({
