@@ -1,0 +1,13 @@
+[
+    {
+        "fname":"mani",
+        "lname":"venkat",
+        "company":"incedo",
+        "email":"mani@mail.com",
+        "phone":{
+            "area":"+91",
+            "phone":"12345"
+        },
+        "subject":"software trainee"
+    }
+]
