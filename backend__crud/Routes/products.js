@@ -2,15 +2,21 @@ var express = require('express');
 var fs = require('fs');
 var router = express.Router();
 var jwt = require('jsonwebtoken');
-router.get("/" , ( req, res) => {
+router.get("/" , async( req, res) => {
 
-    res.send('Get products');
+    res.header('Access-Control-Allow-Origin', '*')
+    res.header('Access-Control-Allow-Headers', '*')
+      var getAllProducts = await getCurrentProducts();
+
+
+    res.send(getAllProducts);
 })
 
 
+router.post('/create' ,    async( req, res) => {
 
-router.post('/create' , verifyUser ,   async( req, res) => {
 
+    
          var getAllProducts  =   await  getCurrentProducts();
 
         //  console.log(getAllProducts);
@@ -23,10 +29,43 @@ router.post('/create' , verifyUser ,   async( req, res) => {
             //  console.log(getUpdatedProducts);
 
 
-    res.send('Hello')
+    res.send(getUpdatedProducts);
 })
 
 
+router.put('/update/:email' , async( req , res) => {
+
+    const userEmail = req.params.email;
+
+    var user = req.body;
+    console.log(user);
+    const getAllProducts = await getCurrentProducts();
+
+      getAllProducts.forEach( ( usr , i) => {
+
+        if( usr.email === userEmail) 
+        {
+            getAllProducts[i] = user;
+        }
+      } )
+
+      var allProducts = await  writeLatestProducts(getAllProducts);
+      res.send(allProducts);
+
+
+      
+      res.send('Hello')
+})
+
+
+router.delete("/delete/:email",async (req,res)=>{
+    var userEmail = req.params.email
+    var users = await getCurrentProducts();
+    var deletedUsers = users.filter((usr)=> usr.email !== userEmail);
+    var allUsers = await writeLatestProducts(deletedUsers);
+    res.send(allUsers);
+  })
+  
 
 function verifyUser( req , res , next)
 { 
@@ -84,4 +123,8 @@ function writeLatestProducts( latestProducts) {
       })
 
 }
+
+
+
+
 module.exports = router;
