@@ -54,7 +54,7 @@ const Users = () => {
                 <td>
                     <button className="btn btn-danger" onClick={()=>{
                         dispatch(deleteUserAsyncAction(usr))
-                    }}>Deltete</button>
+                    }}>Delete</button>
                 </td>
             </tr> )}
         </tbody>

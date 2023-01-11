@@ -1,38 +1,19 @@
 var express = require("express");
 var router = express.Router();
 var fs = require("fs");
-var jwt = require('jsonwebtoken');
+const mysql = require('mysql2');
+
+// create the connection to database
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  database: 'incedoemployeedb'
+});
 
 /* GET users listing. */
 router.get("/", async function (req, res, next) {
   var users = await getLatestUsers();
   res.send(users);
-});
-
-router.post("/register", async (req, res) => {
-  var user = req.body;
-  var users = await getLatestUsers();
-  var checkUser = isUserExist(users, user);
-  if (checkUser) {
-    res.send("User Already Exists .. Please register with New Email ID !!");
-  } else {
-    users.push(req.body);
-    var allUsers = await addUsers(users);
-    res.status(200).json({ allUsers });
-  }
-});
-
-router.post("/login", async (req, res) => {
-  var user = req.body;
-  var users = await getLatestUsers();
-  var checkUser = isUserExist(users, user);
-  var token = jwt.sign(user, 'some secrete word');
- 
-  if (checkUser) {
-    res.status(200).json({ msg: "login Success !!",token });
-  } else {
-    res.send("Login Failure  . Please try Again !! ");
-  }
 });
 
 router.delete("/delete/:email",async (req,res)=>{
@@ -66,20 +47,6 @@ router.post('/createUser',async (req,res)=>{
   res.send(allUsers)
 })
 
-// fs.readFile("./data/users.json", (err, data) => {
-//   var users = JSON.parse(Buffer.from(data).toString());
-//   var checkUser = isUserExist(users, user);
-//   console.log(checkUser);
-//   if (checkUser) {
-//     res.send("User Already Exist .. Please register with New Email ID !!");
-//   } else {
-// users.push(req.body);
-// addUsers(users);
-// res.send("User Added Successfully !!");
-
-//   }
-// });
-// res.send("checking the Users !!");
 
 function addUsers(users) {
   return new Promise((resolve, reject) => {
@@ -99,8 +66,16 @@ function getLatestUsers() {
   });
 }
 
-function isUserExist(users, currentUser) {
-  return !!users.find((myUser) => myUser.email === currentUser.email);
-}
+router.get("/dbConnection", function(req,res,next){
+  console.log("API running");
+  res.send("msg")
+  connection.connect((err) => {
+    if (err) {
+      console.error('Error connecting: ' + err.stack);
+      return;
+    }
+    console.log('Connected as thread id: ' + connection.threadId);
+  });
+})
 
 module.exports = router;
