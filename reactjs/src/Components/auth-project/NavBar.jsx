@@ -4,9 +4,10 @@ import { useCustomAuth } from "./auth";
 
 const NavBar = () => {
     const {user,logout} = useCustomAuth();
-    console.log(user)
-    const handleLogout = ()=>{
-        logout()
+    console.log('navbar', user)
+    const handleLogout = ()=>{ 
+        logout();
+        
     }
   return (
     <div>

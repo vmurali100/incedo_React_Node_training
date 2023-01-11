@@ -33,7 +33,7 @@ render(){
         <div>
             <h1>{this.state.seconds}</h1>
             <button id='btn' onClick={this.timer}>Start</button>
-            <button onClick={this.onPause}>Pause</button>
+            {/* <button onClick={this.onPause}>Pause</button> */}
             <button onClick={this.onStop}>Stop</button>
             <button onClick={this.onReset}>Reset</button>
         </div>

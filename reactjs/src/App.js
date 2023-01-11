@@ -6,7 +6,6 @@ import Input from './Components/Input';
 import InputNew from './Components/InputNew';
 import RegistrationNew from './Components/RegistrationNew';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Navbar from './Components/Router_crud_axios/Navbar';
 import Prices from './Components/Prices'
 import Features from './Components/auth-project/Features';
 import Registration from './Components/Registration'
@@ -44,11 +43,11 @@ function App() {
       <Main/>
     </UseContextProvider> */}
 
-    
+     
       {/* <ClickCounter/>
       <HoverCounter/> */}
  
-    {/* <AuthProvider>
+     {/* <AuthProvider>
         <BrowserRouter>
           <NavBar />
           <Routes>
@@ -57,10 +56,8 @@ function App() {
             <Route path="/features" element={<RequiredAuth> <Features /> </RequiredAuth>} />
           </Routes>
         </BrowserRouter>
-    </AuthProvider> */}
-
-    < Timer/>
-
+    </AuthProvider>  */}
+<Timer/>
     </div>
   );
 }

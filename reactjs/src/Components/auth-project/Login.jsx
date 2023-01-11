@@ -7,6 +7,7 @@ const Login = () => {
   const [username, setUserName] = useState("");
   const auth = useCustomAuth();
   const navigate = useNavigate()
+  
   const handleLogin=()=>{
     auth.login(username);
     navigate('/features')
