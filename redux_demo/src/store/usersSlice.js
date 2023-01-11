@@ -2,6 +2,22 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { defaultState } from "./defaultState";
 import axios from "axios";
 
+
+const [editIndex,setEditIndex] = useState(null)
+
+const editUser = (user,i)=>{
+  setEditIndex(i)
+  setUser(user)
+}
+
+const updateUser = ()=>{
+  let newUsers = [...users]
+  newUsers[editIndex] = user;
+  setUsers(newUsers)
+  setEditIndex(null)
+  clearForm()
+}
+
 export const getUsersAsyncAction = createAsyncThunk(
   "users/getUsersAsyncAction",
   () => handleGetAllUsers()
@@ -29,6 +45,12 @@ export const usersSlice = createSlice({
     deleteUser: (state, action) => {
       state.users.splice(action, 1);
     },
+    editUser: (state, action) => {
+      let newUsers = [...users]
+      newUsers[editIndex] = user;
+      setUsers(newUsers)
+      setEditIndex(null)
+    }
   },
   extraReducers: (builder) => {
     builder.addCase(getUsersAsyncAction.fulfilled, (state, action) => {

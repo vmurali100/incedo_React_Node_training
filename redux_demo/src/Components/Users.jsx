@@ -51,7 +51,9 @@ const Users = () => {
               <td>{user.username}</td>
               <td>{user.password}</td>
               <td>
-                <button className="btn btn-warning">Edit User</button>
+                <button className="btn btn-warning"   onClick={() => {
+                    handleEdit(i);
+                  }}>Edit User</button>
               </td>
               <td>
                 <button
