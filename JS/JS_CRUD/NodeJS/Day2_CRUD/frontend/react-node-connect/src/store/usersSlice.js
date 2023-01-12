@@ -1,33 +1,80 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { defaultState } from "./defaultState";
-import axios from "axios";
+
+export const getAllUsersAsyncAction = createAsyncThunk(
+  "users/getAllUsersAsyncAction",
+  async () => {
+    const response = await (await fetch("http://localhost:3000/users")).json();
+    return response;
+  }
+);
+
+export const deleteUserAsyncAction = createAsyncThunk(
+  "users/deleteUserAsyncAction",
+  async (user) => {
+    const response = await (
+      await fetch("http://localhost:3000/users/delete/" + user.email, {
+        method: "DELETE",
+      })
+    ).json();
+    return response;
+  }
+);
+export const updateUserAsyncAction = createAsyncThunk(
+  "users/updateUserAsyncAction",
+  async (user) => {
+    const response = await (
+      await fetch("http://localhost:3000/users/update/" + user.email, {
+        method: "PUT",
+        body: JSON.stringify(user),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "cors",
+      })
+    ).json();
+    return response;
+  }
+);
 
 export const addUserAsyncAction = createAsyncThunk(
-    "users/addUserAsyncAction",
-    (user) => 
-       axios.post('http://localhost:3000/users/', user).then(async (res) => {
-            const finalPayload  = await handleGetAllUsers();
-            return finalPayload;
-       }
-)
-)
-const handleGetAllUsers = () =>
-  axios.get("http://localhost:3000/users").then((res) => res.data);
-export const userSlice  = createSlice({
-    name: "users",
-    initialState: defaultState,
-    reducers: {
-        addUserAction : (state, action) => {
-            state.users.push(action.payload);
-        }
-    },
+  "users/addUserAsyncAction",
+  async (user) => {
+    const response = await (
+      await fetch("http://localhost:3000/users/createUser/", {
+        method: "POST",
+        body: JSON.stringify(user),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "cors",
+      })
+    ).json();
+    return response;
+  }
+);
 
-    extraReducers: (builder) => {
-        builder.addCase(addUserAsyncAction.fulfilled, (state,action) => {
-            state.users = action.payload;
-        })
-    },
-})
+export const usersSlice = createSlice({
+  name: "users",
+  initialState: {
+    users: [],
+  },
+  reducers: {
+    addUser: () => {},
+    deleteUser: () => {},
+    updateUser: () => {},
+  },
+  extraReducers: (builder) => {
+    builder.addCase(getAllUsersAsyncAction.fulfilled, (state, action) => {
+      state.users = action.payload;
+    });
+    builder.addCase(deleteUserAsyncAction.fulfilled, (state, action) => {
+      state.users = action.payload;
+    });
+    builder.addCase(updateUserAsyncAction.fulfilled, (state, action) => {
+      state.users = action.payload;
+    });
+  },
+});
 
-export default userSlice.reducer;
-export const {addUserAction} = userSlice.actions;
+export default usersSlice.reducer;
+export const { addUser, deleteUser, updateUser } = usersSlice.actions;

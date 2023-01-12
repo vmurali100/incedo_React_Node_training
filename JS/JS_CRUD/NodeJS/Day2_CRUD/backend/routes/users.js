@@ -4,8 +4,13 @@ var fs = require("fs");
 var jwt = require('jsonwebtoken');
 
 /* GET users listing. */
-router.get("/", function (req, res, next) {
-  res.send("respond with a resource");
+router.get("/", async function (req, res, next) {
+  con.query("SELECT * FROM users", function (err, result, fields) {
+    if (err) throw err;
+    console.log(result);
+  });
+  var users = await getLatestUsers();
+  res.send(users);
 });
 
 router.post("/register", async (req, res) => {
@@ -34,7 +39,64 @@ router.post("/login", async (req, res) => {
   }
 });
 
+router.delete("/delete/:email",async (req,res)=>{
+  var userEmail = req.params.email
+  var users = await getLatestUsers();
+  var deletedUsers = users.filter((usr)=> usr.email !== userEmail);
+  var allUsers = await addUsers(deletedUsers);
+  res.send(allUsers)
+})
 
+router.put('/update/:email',async(req,res)=>{
+  var userEmail = req.params.email;
+  var user = req.body
+  var users = await getLatestUsers();
+  console.log(user);
+  users.forEach((usr,i)=>{
+    if(usr['email']==userEmail){
+      users[i]=user
+    }
+  })
+  var allUsers = await addUsers(users);
+  res.send(allUsers)
+
+})
+
+router.post('/createUser',async (req,res)=>{
+  var user = req.body
+  var users = await getLatestUsers();
+  users.push(user);
+  var allUsers = await addUsers(users);
+  res.send(allUsers)
+})
+
+router.post("/create",async(req,res)=>{
+  console.log("inside func")
+  let user = req.body
+  var sql = `INSERT INTO users (fname,lname,email,password,phone,subject,existingCustomer) 
+  VALUES ("${user.fname}","${user.lname}","${user.email}",${user.password},${user.phone},"${user.subject}",${user.existingCustomer})`;
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("1 record inserted");
+  });
+})
+router.put("/update",async(req,res)=>{
+  let newname = req.body.fname;
+  let user= req.query.name;
+  var sql = `UPDATE users SET fname="${newname}" where fname="${user}"`
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("Updated");
+  });
+})
+router.delete("/delete",async(req,res)=>{
+  let name = req.query.name
+  var sql = `DELETE from users where fname="${name}"`
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("deleted");
+  });
+})
 // fs.readFile("./data/users.json", (err, data) => {
 //   var users = JSON.parse(Buffer.from(data).toString());
 //   var checkUser = isUserExist(users, user);
@@ -71,5 +133,6 @@ function getLatestUsers() {
 function isUserExist(users, currentUser) {
   return !!users.find((myUser) => myUser.email === currentUser.email);
 }
+
 
 module.exports = router;
