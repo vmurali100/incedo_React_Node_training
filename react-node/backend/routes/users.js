@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var fs = require("fs");
+
 /* GET users listing. */
 router.get("/", (req, res) => {
   fs.readFile("./data/usersdata.json", (err, data) => {
