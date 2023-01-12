@@ -10,10 +10,10 @@ fs.createReadStream(students)
 
   .pipe(parse({ delimiter: ":" }))
 
-  .on("data", function (csvrow) {
-    console.log(csvrow);
+  .on("data", function (row) {
+    console.log(row);
 
-    data.push(csvrow);
+    data.push(row);
   })
 
   .on("end", function () {
