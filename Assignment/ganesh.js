@@ -1,37 +1,34 @@
-var fs = require('fs');
+var fs = require("fs");
 
-var parse = require('csv-parser');
+var parse = require("csv-parser");
 
+var data = [];
 
-
-var csvData=[];
-
-var students  = './data/File.csv'
+var students = "./data/File.csv";
 
 fs.createReadStream(students)
 
-    .pipe(parse({delimiter: ':'}))
+  .pipe(parse({ delimiter: ":" }))
 
-    .on('data', function(csvrow) {
+  .on("data", function (csvrow) {
+    console.log(csvrow);
 
-        console.log(csvrow);
+    data.push(csvrow);
+  })
 
-        csvData.push(csvrow);        
+  .on("end", function () {
+    data.sort((a, b) => a.Age - b.Age);
 
-    })
+    const totalgrade = data.reduce(
+      (acc, student) => acc + parseInt(student.Grade),
+      0
+    );
 
-    .on('end',function() {
+    const avggrade = totalgrade / data.length;
 
-      csvData.sort((a, b) => a.Age - b.Age);
+    console.log(avggrade);
 
-      const totalGrade = csvData.reduce((acc, student) => acc + parseInt(student.Grade), 0);
+    console.log(totalgrade);
 
-      const averageGrade = totalGrade / csvData.length;
-
-      console.log(averageGrade);
-
-      console.log(totalGrade);
-
-      console.log(csvData);
-
-    });
+    console.log(data);
+  });
