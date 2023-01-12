@@ -1,20 +1,33 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { getUsersAsync } from '../store/dataSlice';
+import { deleteUserAsync, getUsersAsync } from '../store/dataSlice';
+import { useNavigate } from 'react-router-dom';
 
 const Table = () => {
-    
+  var users = useSelector((state)=>state.user.users);
+  console.log("users:",users);
+    const navigate = useNavigate()
     const dispatch = useDispatch();
     useEffect(()=>{
-        dispatch(getUsersAsync());
-    },[dispatch])
-    var users = useSelector((state)=>state.users);
-    console.log(users);
+       dispatch(getUsersAsync());
+    },[dispatch]);
+    
+    const handleAddUser = () =>{
+      navigate("/adduser");
+    }
+
+    const handleDelete = (user)=>{
+      dispatch(deleteUserAsync(user));
+    }
+
+    const handleEdit = (user)=>{
+      navigate("/edituser",{state:user})
+    }
 
   return (
     <div>
-      {/* <table>
+      <table>
         <thead>
             <tr>
                 <th>Id</th>
@@ -34,12 +47,13 @@ const Table = () => {
                 <td>{user.lname}</td>
                 <td>{user.username}</td>
                 <td>{user.email}</td>
-                <td><button>edit</button></td>
-                <td><button>delete</button></td>
+                <td><button type='button' onClick={()=>handleEdit(user)}>edit</button></td>
+                <td><button type='button' onClick={()=>handleDelete(user)}>delete</button></td>
             </tr>
             )}
         </tbody>
-      </table> */}
+      </table>
+      <button type='button' onClick={()=>handleAddUser()}>Add User</button>
     </div>
   )
 }
