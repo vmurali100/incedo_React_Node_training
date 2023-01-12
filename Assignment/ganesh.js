@@ -1,15 +1,37 @@
-const fs = require("fs");
-const csv = require("csv-parser");
-var results = [];
-function readCSV(req, res) {
-  fs.createReadStream("./data/File.csv")
-    .pipe(csv())
-    .on("data", (data) => results.push(data))
-    .on("end", () => {});
-  results.sort(function (a, b) {
-    return a.age - b.age;
-  });
-  console.log("sorted array of students", results);
-  res.send(results);
-}
-exports.readCSV = readCSV;
+var fs = require('fs');
+
+var parse = require('csv-parser');
+
+
+
+var csvData=[];
+
+var students  = './data/File.csv'
+
+fs.createReadStream(students)
+
+    .pipe(parse({delimiter: ':'}))
+
+    .on('data', function(csvrow) {
+
+        console.log(csvrow);
+
+        csvData.push(csvrow);        
+
+    })
+
+    .on('end',function() {
+
+      csvData.sort((a, b) => a.Age - b.Age);
+
+      const totalGrade = csvData.reduce((acc, student) => acc + parseInt(student.Grade), 0);
+
+      const averageGrade = totalGrade / csvData.length;
+
+      console.log(averageGrade);
+
+      console.log(totalGrade);
+
+      console.log(csvData);
+
+    });
