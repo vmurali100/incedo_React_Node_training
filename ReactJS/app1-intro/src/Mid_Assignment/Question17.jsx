@@ -13,9 +13,9 @@ function Question17() {
     <div>
         <label>Enter item to be search</label> <br></br>
         <input type="text" onChange={(e)=>{handleChange(e)}} value={search}/>
-        
-      {names.filter(name => name.includes(search)).map(filteredName => (
-              {filteredName}
+       
+      {names.filter(name => name.includes(search)).map((filteredName)=> (
+              filteredName
         ))}
     </div>
 

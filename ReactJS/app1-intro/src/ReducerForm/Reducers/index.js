@@ -1,8 +1,7 @@
 import { ADD_EMPLOYEE,DELETE_EMP,UPDATE_EMP } from "../Actions/actionType";
   
   const defaultState = {
-    employees: [
-    ]
+    employees: []
   };
   
 

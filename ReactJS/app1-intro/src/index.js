@@ -7,15 +7,13 @@ import { Provider } from "react-redux";
 import reducers from "./book/reducers"
 import reportWebVitals from './reportWebVitals';
 import reducer from './ReducerForm/Reducers'
-
+import Question17 from './Mid_Assignment/Question17';
 const store = createStore(reducer);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 console.log(store)
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-    <App />
-    </Provider>
+    <Question17/>
   </React.StrictMode>
 );
 
