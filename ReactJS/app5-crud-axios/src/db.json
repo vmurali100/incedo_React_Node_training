@@ -1,3 +1,24 @@
 {
-  "users": []
+  "users": [
+    {
+      "fname": "yerra",
+      "lname": "shree sai pragathi",
+      "email": "yss.pragathi@incedoinc.com",
+      "confirmemail": "yss.pragathi@incedoinc.com",
+      "username": "222003115@sastra.ac.in",
+      "password": "123",
+      "confirmpassword": "123",
+      "id": 1
+    },
+    {
+      "fname": "yerra",
+      "lname": "shree sai pragathi",
+      "email": "yss.pragathi@incedoinc.com",
+      "confirmemail": "yss.pragathi@incedoinc.com",
+      "username": "222003115@sastra.ac.in",
+      "password": "123",
+      "confirmpassword": "123",
+      "id": 2
+    }
+  ]
 }
