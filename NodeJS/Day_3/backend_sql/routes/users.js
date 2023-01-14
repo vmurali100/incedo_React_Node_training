@@ -29,6 +29,7 @@ router.get("/dbconn/getusers", async(req,res) => {
     'select * from tblemployees',
     function(err, results, fields) {
       console.log(results); // results contains rows returned by server
+     // console.log(fields); // fields contains extra meta data about results, if available
       res.send(results);
     });
 });
