@@ -18,7 +18,7 @@ const RequiredAuth = ({children}) => {
 
     </>;
   }
-
+  else
   return children;
 };
 

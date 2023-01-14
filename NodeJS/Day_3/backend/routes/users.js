@@ -3,7 +3,6 @@ var router = express.Router();
 var fs = require("fs");
 const mysql = require('mysql2');
 
-
 // create the connection to database
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -13,7 +12,6 @@ const connection = mysql.createConnection({
 });
 
 // open the MySQL connection
-
 router.get("/dbconn", async(req,res) => {
    console.log("API running");
    res.send("API running");

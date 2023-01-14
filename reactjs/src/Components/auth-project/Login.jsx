@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useCustomAuth } from "./auth";
 
 const Login = () => {
-  const [username, setUserName] = useState("");
+  const [username, setUserName] = useState(""); 
   const auth = useCustomAuth();
   const navigate = useNavigate()
   

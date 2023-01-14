@@ -47,7 +47,7 @@ function App() {
       {/* <ClickCounter/>
       <HoverCounter/> */}
  
-     {/* <AuthProvider>
+     <AuthProvider>
         <BrowserRouter>
           <NavBar />
           <Routes>
@@ -56,8 +56,8 @@ function App() {
             <Route path="/features" element={<RequiredAuth> <Features /> </RequiredAuth>} />
           </Routes>
         </BrowserRouter>
-    </AuthProvider>  */}
-<Timer/>
+    </AuthProvider>  
+
     </div>
   );
 }
