@@ -5,11 +5,10 @@ class HoverCounter extends Component {
   render() {
     return (
       <div>
-        <h2 onMouseOver={this.props.handleIncrement}>Hover On Me !!</h2>
-        <h2>You Hovered {this.props.count} Times !!!</h2>
+        <h1 onMouseOver={this.props.handleIncrement}>Hover on me</h1>
+        <h1>You hovered {this.props.count}times!</h1>
       </div>
     )
   }
 }
-
-export default HOCComp(HoverCounter)
+export default HOCComp(HoverCounter);

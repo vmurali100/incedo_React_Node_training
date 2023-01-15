@@ -1,6 +1,7 @@
 import './App.css';
-import ClickCounter from './Components/ClickCounter';
-import HoverCounter from './Components/HoverCounter';
+import ClickCounter from './components/ClickCounter';
+import HoverCounter from './components/HoverCounter';
+
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <ClickCounter/>
       <hr/>
       <HoverCounter/>
+     
     </div>
   );
 }

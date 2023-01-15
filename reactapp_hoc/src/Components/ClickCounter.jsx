@@ -1,16 +1,14 @@
-import React, { Component } from "react";
-import HOCComp from "./HOCComp";
+import React, { Component } from 'react'
+import HOCComp from './HOCComp'
 
-class ClickCounter extends Component {
- 
+ class ClickCounter extends Component {
   render() {
     return (
       <div>
+        <h1>You clicked {this.props.count}times!</h1>
         <button onClick={this.props.handleIncrement}>Click</button>
-        <h2>You Clicked {this.props.count} Times !!</h2>
       </div>
-    );
+    )
   }
 }
-
-export default HOCComp(ClickCounter)
+export default HOCComp(ClickCounter);

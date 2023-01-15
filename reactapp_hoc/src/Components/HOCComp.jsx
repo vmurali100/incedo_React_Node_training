@@ -1,31 +1,29 @@
-import React from "react";
-import { Component } from "react";
 
-const HOCComp = (OriginalComponen) => {
-  class NewComp extends Component {
-    constructor(props) {
-      super(props);
+import React, { Component } from 'react';
 
-      this.state = {
-        count: 0,
-      };
-      console.log(props);
+
+export const HOCComp = (OriginalComponent) => {
+    class NewComp extends Component {
+        constructor(props) {
+          super(props)
+        
+          this.state = {
+             count : 0
+          }
+        }
+        handleIncrement =()=>{
+            this.setState({count:this.state.count+1})
+        }
+        render() { 
+            return ( <OriginalComponent count={this.state.count} handleIncrement={this.handleIncrement}/>
+            )
+        }
     }
-
-    handleIncrement = () => {
-      this.setState({ count: this.state.count + 1 });
-    };
-    render() {
-      return (
-        <OriginalComponen
-          count={this.state.count}
-          handleIncrement={this.handleIncrement}
-        />
-      );
-    }
-  }
-
+     
+   
   return NewComp;
+
+  
 };
 
 export default HOCComp;
