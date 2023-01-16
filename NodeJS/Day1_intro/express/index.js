@@ -36,3 +36,4 @@ app.put("/update/:usr", (req, res) => {
 app.listen(3000, () => {
   console.log("Server is Running at http://localhost:3000/");
 });
+

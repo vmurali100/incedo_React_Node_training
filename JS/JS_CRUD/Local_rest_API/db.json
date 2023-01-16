@@ -1,14 +1,34 @@
 {
-  "users": [
+  "user": [
     {
       "fname": "Elakkiyaa",
       "lname": "M S",
-      "id": 3
+      "email": "elakkiyaa.ms@incedoinc.com",
+      "id": 1
     },
     {
-      "fname": "HAREESH",
-      "lname": "S",
-      "id": 4
+      "fname": "aravindhan",
+      "lname": "m r",
+      "email": "aravindhan02@gmail.com",
+      "id": 2
+    },
+    {
+      "fname": "prathu",
+      "lname": "kalai",
+      "email": "prathu@yahoo.in",
+      "id": 12
+    },
+    {
+      "fname": "mohan",
+      "lname": "g",
+      "email": "mohang@gmail.in",
+      "id": 14
+    },
+    {
+      "fname": "lalith",
+      "lname": "kumar",
+      "email": "h@gmail.in",
+      "id": 16
     }
   ]
 }

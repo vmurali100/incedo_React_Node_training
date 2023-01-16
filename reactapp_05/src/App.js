@@ -7,12 +7,14 @@ import { Funcform } from './Components/Funcform';
 import Registration from './Components/Registration';
 import Assclass from './Components/Assclass';
 import Form from './Components/Form';
+import { AssTable } from './Components/AssTable';
+import { Assreg } from './Components/Assreg';
 
 function App() {
   return (
     <div className="App container">
       
-      <Registration/>
+      <Assreg/>
       {/* <Form/> */}
       {/* <FunctionForm/> */}
      
