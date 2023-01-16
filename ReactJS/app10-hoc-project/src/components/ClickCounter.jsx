@@ -5,8 +5,8 @@ class ClickCounter extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.props.handleIncrement}>Click</button>
-        <h2>You Clicked {this.props.count} Times !!</h2>
+        <h1>Click Counter {this.props.count}</h1>
+        <button onClick={this.props.handleIncrement}>Increment</button>
       </div>
     );
   }
