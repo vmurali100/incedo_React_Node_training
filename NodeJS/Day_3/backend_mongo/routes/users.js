@@ -1,7 +1,8 @@
 var express = require("express");
 var router = express.Router();
 const { MongoClient, ServerApiVersion } = require("mongodb");
-const uri ="mongodb+srv://dbUser1:Incedo12345@cluster0.3nptx2z.mongodb.net/?retryWrites=true&w=majority"
+//const uri ="mongodb+srv://dbUser1:Incedo12345@cluster0.3nptx2z.mongodb.net/?retryWrites=true&w=majority"
+const uri ="mongodb://localhost:27017"
 
  const client = new MongoClient(uri, {
   useNewUrlParser: true,
@@ -9,7 +10,8 @@ const uri ="mongodb+srv://dbUser1:Incedo12345@cluster0.3nptx2z.mongodb.net/?retr
   serverApi: ServerApiVersion.v1,
 });
 
-const collection = client.db("login_data").collection("users");
+//const collection = client.db("login_data").collection("users");
+const collection = client.db("Database_Incedo").collection("Users");
 
 router.get("/getUsers",async(req,res)=>
 {
@@ -27,7 +29,8 @@ router.post("/create",async(req,res,next)=>
 {
    collection.insertOne(req.body,(err,data)=>
    {
-    if(err) next(err);
+    if(err) 
+    next(err);
     res.json(data);
    })
 })

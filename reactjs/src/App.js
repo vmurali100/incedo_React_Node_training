@@ -23,6 +23,10 @@ import Login from './Components/auth-project/Login'
 import RequiredAuth from './Components/auth-project/RequiredAuth'
 import SampleTask from './Components/SampleTask';
 import Timer from './Components/Timer';
+import SearchComp from './Components/SearchComp';
+import Counter from './Components/Counter';
+import Todo from './Components/Todo';
+import Dropdown from './Components/Dropdown';
 
 function App() {
   return (
@@ -47,7 +51,7 @@ function App() {
       {/* <ClickCounter/>
       <HoverCounter/> */}
  
-     <AuthProvider>
+     {/* <AuthProvider>
         <BrowserRouter>
           <NavBar />
           <Routes>
@@ -56,7 +60,9 @@ function App() {
             <Route path="/features" element={<RequiredAuth> <Features /> </RequiredAuth>} />
           </Routes>
         </BrowserRouter>
-    </AuthProvider>  
+    </AuthProvider>   */}
+
+    <SearchComp/>
 
     </div>
   );
