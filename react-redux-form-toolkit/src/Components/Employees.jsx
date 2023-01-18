@@ -9,7 +9,7 @@ const Employees = () => {
 
 const [employee, setEmployee] = useState({username:'',name:'',email:'',stack:''})
 const[isEdit, setIsEdit] = useState(false);
-const employeeDetails = useSelector((state)=> state.employees);
+const employeeDetails = useSelector((state)=> state.employees.employees);
 const dispatch = useDispatch();
 
 useEffect(()=>{
@@ -77,7 +77,7 @@ return (
                 </tr>
             </thead>
             <tbody>
-                {employeeDetails.employees.map((usr,i)=>(
+                {employeeDetails.map((usr,i)=>(
                 <tr key={i}>
                 <td>{usr.id}</td>
                 <td>{usr.username}</td>

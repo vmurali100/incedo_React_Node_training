@@ -20,6 +20,7 @@ export const deleteUserAsyncAction = createAsyncThunk(
     return response;
   }
 );
+
 export const updateUserAsyncAction = createAsyncThunk(
   "users/updateUserAsyncAction",
   async (user) => {
@@ -58,7 +59,7 @@ export const usersSlice = createSlice({
   name: "users",
   initialState: {
     users: [],
-  },
+  }, 
   reducers: {
     addUser: () => {},
     deleteUser: () => {},

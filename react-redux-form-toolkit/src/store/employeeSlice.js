@@ -9,7 +9,7 @@ const getUsers = () => (
     )
 
 export const addUsersAsyncAction = createAsyncThunk("employeeslice/addUsersAsyncAction", (emp) => (
-    axios.post("http://localhost:3000/users/",emp).then(async(res)=>{
+    axios.post("http://localhost:3000/users",emp).then(async(res)=>{
         const finalPayload = await getUsers();
         return finalPayload;
     })
@@ -35,9 +35,6 @@ export const employeeSlice = createSlice({
          setEmployee: (state,action) => {
           state.employees=action.payload
          }
-        // addUsers : (state, action) => {
-        // state.employees.push(action.payload);
-        // },
    },
    extraReducers: (builder) => {
         builder.addCase(getUsersAsyncAction.fulfilled, (state,action) => {
@@ -49,11 +46,7 @@ export const employeeSlice = createSlice({
         builder.addCase(deleteUsersAsyncAction.fulfilled,(state,action)=>{
         state.employees = action.payload;
         });
-        // builder.addCase(updateUsersAsyncAction.fulfilled,(state,action)=>{
-        // state.employees = action.payload;
-        // });
         },
 });
 
 export default employeeSlice.reducer;
-// export const {addUsers} = employeeSlice.actions;

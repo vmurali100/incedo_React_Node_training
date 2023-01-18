@@ -53,3 +53,4 @@ const checkProduct = (products, product) => {
   return !!products.find((myProduct) => myProduct.productName === product.productName);
 };
 module.exports = router;
+

@@ -9,7 +9,7 @@ const Employees = () =>{
 const [employee, setEmployee] = useState({username:'',name:'',email:'',stack:''})
 const[isEdit, setIsEdit] = useState(false);
 
-const empDetails = useSelector((state=>state.employees))
+const empDetails = useSelector((state)=>state.employees)
 const dispatch = useDispatch();
 
 console.log("Details:", empDetails);

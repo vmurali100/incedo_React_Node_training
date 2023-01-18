@@ -69,7 +69,7 @@ class Employees extends Component {
             }} 
           />{" "}
           <br />
-          <label htmlFor="fname">Email : </label>
+          <label htmlFor="email">Email : </label>
           <input
             type="text"
             name="email"
@@ -127,13 +127,13 @@ class Employees extends Component {
 function mapStateToProps(state) {
   console.log("Store is : ", state);
   return {
-    employeeDetails: state.employees,
+    employeeDetails: state.employees, //empdet = props
   };
 }
 // This function will receive an dispatch Method and help to trigger the actions
 function mapDispatchToProps(dispatch) {
   return {
-    deleteEmployee: (emp) => dispatch(deleteEmpAction(emp)),
+    deleteEmployee: (emp) => dispatch(deleteEmpAction(emp)), //deleteemployee = prop
     addEmp: (emp) => dispatch(addEmpAction(emp)),
     udpateEmpFunc: (emp) => dispatch(updateEmpAction(emp)),
   };

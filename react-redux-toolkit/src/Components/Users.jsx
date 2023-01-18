@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {addUserAsyncAction,deleteUser,getUsersAsyncAction} from "../store/usersSlice";
 
 const Users = () => {
-  const usersDetails = useSelector((state) => state.users);
+  const usersDetails = useSelector((state) => state.users.users);
   console.log("user details are: ", usersDetails)
   const dispatch = useDispatch();
  
@@ -43,7 +43,7 @@ const Users = () => {
           </tr>
         </thead>
         <tbody>
-          {usersDetails.users.map((user, i) => (
+          {usersDetails.map((user, i) => (
             <tr key={i}>
               <td>{user.id}</td>
               <td>{user.email}</td>

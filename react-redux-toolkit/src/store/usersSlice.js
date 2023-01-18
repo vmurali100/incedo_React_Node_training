@@ -19,7 +19,7 @@ const handleGetAllUsers = () =>
   
 export const usersSlice = createSlice({
   name: "users",
-  initialState: defaultState,
+  initialState: defaultState, 
   reducers: {
     addUserAction: (state, action) => {
       state.users.push(action.payload);

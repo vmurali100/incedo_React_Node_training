@@ -1,1 +1,14 @@
-[{"productName":"product2","des":"Some"},{"productName":"ball","des":"hole"},{"productName":"bat","des":"hole"}]
+[
+    {
+        "productName": "product2",
+        "des": "Some"
+    },
+    {
+        "productName": "ball",
+        "des": "hole"
+    },
+    {
+        "productName": "bat",
+        "des": "hole"
+    }
+]

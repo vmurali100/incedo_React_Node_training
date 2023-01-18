@@ -27,7 +27,8 @@ export const deleteUserAction =(id)=>{
 
 export const updateUserAction = (employee) => {
    return (dispatch) => {
-    axios.put("http://localhost:3000/users/"+employee.id,employee).then(()=>{getUsersAPI(dispatch)})
+    axios.put("http://localhost:3000/users/"+employee.id,employee).then(()=>{
+        getUsersAPI(dispatch)})
    }
 }
 

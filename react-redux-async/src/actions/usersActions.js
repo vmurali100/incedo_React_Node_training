@@ -5,7 +5,7 @@ export const getAllUsersAction = () => {
     return (dispatch)=>{
         handleUsersApiCall(dispatch)
     }
-};
+}; //cannot handle axios inside this return
 
 export const deleteUserAction=(id)=>{
     return (dispatch)=>{

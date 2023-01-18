@@ -7,7 +7,7 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import { reducer } from "./reducers"; 
 
-// Default State should availble Across the Application
+// Default State should be availble Across the Application
 
 const store = createStore(reducer);
 const root = ReactDOM.createRoot(document.getElementById("root"));
