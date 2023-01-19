@@ -8,11 +8,6 @@ export default class Child extends Component {
       <div>
         <button onClick={this.props.handleChange}>change Message</button>
         <h1>{welcome}</h1>
-        {/* <ul>
-          {topics.map((sub, i) => {
-            return <li key={i}>{sub}</li>;
-          })}
-        </ul> */}
       </div>
     );
   }
