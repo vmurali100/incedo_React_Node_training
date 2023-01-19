@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { deleteUserAsyncAction, getAllUsersAsyncAction } from "../store/usersSlice";
 
 const Users = () => {
-  const {users}  = useSelector((state) => state.users);
+  const {users}  = useSelector((state) => state.users); // const users = useSelector((state)=>state.users.users)
   const navigate = useNavigate()
   console.log(users)
   const dispatch = useDispatch();
@@ -25,7 +25,7 @@ const Users = () => {
 
   return (
     <div>
-      <table class="table">
+      <table className="table">
         <thead>
           <tr>
             <th>First</th>
@@ -39,7 +39,7 @@ const Users = () => {
           </tr>
         </thead>
         <tbody>
-          {users.map((usr)=> <tr>
+          {users.map((usr,i)=> <tr key={i}>
                 <td>{usr.fname}</td>
                 <td>{usr.lname}</td>
                 <td>{usr.email}</td>

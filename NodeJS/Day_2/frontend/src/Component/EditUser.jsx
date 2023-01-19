@@ -8,6 +8,7 @@ import { updateUserAsyncAction } from "../store/usersSlice";
 const EditUser = () => {
   const params = useParams();
   const { state } = useLocation();
+  console.log("uselocation", state)
   const dispatch = useDispatch();
   const navigate=useNavigate()
   const [user, setUser] = useState({

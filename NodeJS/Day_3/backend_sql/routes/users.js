@@ -1,3 +1,4 @@
+const { getRandomValues } = require("crypto");
 var express = require("express");
 var router = express.Router();
 var fs = require("fs");
@@ -38,10 +39,10 @@ router.post("/dbconn/adduser",async(req,res) => {
   var user = req.body;
   console.log(user);
   connection.query(
-    `INSERT INTO  tblemployees(id, ename,job,salary) VALUES(${user.id},'${user.ename}','${user.job}',${user.salary});`,
+    `INSERT INTO  tblemployees(id, ename,job,salary) VALUES('${user.id}','${user.ename}','${user.job}','${user.salary}');`,
     function(err, results, fields) {
-      console.log(err); // results contains rows returned by server
-      res.send(results);
+      console.log(err); 
+      res.send(results);// results contains rows returned by server
     });
 });
 
@@ -57,6 +58,7 @@ router.delete("/dbconn/deluser/:ename",async(req,res) => {
     });
     
 });
+
 
 router.put("/dbconn/updateuser/:ename", async(req,res) =>{
   var user = req.params.ename;

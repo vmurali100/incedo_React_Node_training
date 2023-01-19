@@ -49,18 +49,18 @@
       "id": 7
     },
     {
-      "username": "n",
-      "name": "Bob",
-      "email": "bob@h.com",
-      "stack": "nodejs",
-      "id": 8
-    },
-    {
-      "username": "axax",
+      "username": "axa",
       "name": "ajax",
       "email": "ajax@gmail",
       "stack": "reactjs",
       "id": 9
+    },
+    {
+      "username": "n",
+      "name": "",
+      "email": "",
+      "stack": "",
+      "id": 10
     }
   ]
 }
