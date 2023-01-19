@@ -18,9 +18,10 @@ export const addUserAsyncAction = createAsyncThunk(
 export const editUserAsyncAction = createAsyncThunk(
     "users/editUserAsyncAction",
     (user)=>
-    axios.put("http://localhost:3000/users/"+user.id,user).then(async(res)=>{
-        const finalPayload =await handleGetAllUsers();
-        return finalPayload;
+    axios.put("http://localhost:3000/users/"+user.id,user).then(async (res)=>{
+        //const finalPayload =await handleGetAllUsers();
+        //return finalPayload;
+        return await handleGetAllUsers();
     })
 )
 export const deleteUserAsyncAction = createAsyncThunk(

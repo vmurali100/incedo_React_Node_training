@@ -8,12 +8,13 @@ import reducers from "./book/reducers"
 import reportWebVitals from './reportWebVitals';
 import reducer from './ReducerForm/Reducers'
 import Question17 from './Mid_Assignment/Question17';
+import ApI from './Mid_Assignment/Question20';
 const store = createStore(reducer);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 console.log(store)
 root.render(
   <React.StrictMode>
-    <Question17/>
+    <ApI/>
   </React.StrictMode>
 );
 
@@ -27,7 +28,7 @@ import UserForm from './Assignment_Day3/Form1/q1.function';
 import User1 from './Assignment_Day3/Form2/q2';
 import Question17 from './Mid_Assignment/Question17';
 import Question19 from './Mid_Assignment/Question19';
-import SampleTask from './Mid_Assignment/Question20';
+
 import Counter from './Mid_Assignment/Counter';
 import Registration from './Form2/Registration';
 import EmpRegistration from './Form3/EmpRegistration';

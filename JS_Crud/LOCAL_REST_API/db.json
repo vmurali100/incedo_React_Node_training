@@ -1,20 +1,34 @@
 {
   "users": [
     {
-      "username": "bhsc",
-      "fname": "bhargav",
-      "email": "bhargavbhavirisetty2000@gmail.com",
-      "password": "bhbhb",
-      "programinglang": "java",
-      "id": 1
+      "id": 6,
+      "email": "murali@magna.orghdh",
+      "username": "murali1234",
+      "password": "12345678"
     },
     {
-      "username": "bhscbhvhv",
-      "fname": "bhhv",
+      "id": 7,
+      "email": "cxb h  ",
+      "username": "xc  cx cx ",
+      "password": "cc"
+    },
+    {
+      "id": 8,
+      "email": "bhargavbhavirisetty20@gmail.com",
+      "username": "bhargav",
+      "password": "bhar"
+    },
+    {
+      "id": 9,
       "email": "bhargavbhavirisetty2000@gmail.com",
-      "password": "bhbhb",
-      "programinglang": "java",
-      "id": 2
+      "username": "bhargav",
+      "password": "bhargav"
+    },
+    {
+      "email": "jnsd ",
+      "username": "b.bhargav@incedoinc.com",
+      "password": "jfdnjng",
+      "id": 10
     }
   ]
 }

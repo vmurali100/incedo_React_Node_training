@@ -9,7 +9,7 @@ var Students = [];
     fs.createReadStream('./students1.csv')
     .pipe(parse({ delimiter: ",", from_line: 1 }))
     .on("data", (row) =>{
-      for(let i=0;i<row.length;i=i+row.length/3)
+      for(let i=1;i<row.length;i=i+row.length/3)
       {
          let student = {};
          student[row[i]] = row[i+1];

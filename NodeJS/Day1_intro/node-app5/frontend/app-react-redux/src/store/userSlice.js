@@ -74,7 +74,7 @@ export const usersSlice = createSlice({
       console.log("delete action :",action.payload);
       state.users = action.payload;
     });
-
+    
   },
 });
 
