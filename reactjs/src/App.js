@@ -27,6 +27,7 @@ import SearchComp from './Components/SearchComp';
 import Counter from './Components/Counter';
 import Todo from './Components/Todo';
 import Dropdown from './Components/Dropdown';
+import LifeCycleAComp from './Components/lifecycle-hooks/LifeCycleAComp';
 
 function App() {
   return (
@@ -62,10 +63,11 @@ function App() {
         </BrowserRouter>
     </AuthProvider>   */}
 
-    <SearchComp/>
+    <LifeCycleAComp/>
 
     </div>
   );
 }
-
 export default App;
+
+

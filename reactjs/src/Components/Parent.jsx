@@ -25,3 +25,4 @@ export default class Parent extends Component {
     </div>
   }
 }
+

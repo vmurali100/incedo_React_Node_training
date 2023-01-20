@@ -10,7 +10,6 @@ const Dropdown = () => {
             <option>{data}</option>
             <option value='1'>Apple</option>
             <option value='2'>Mango</option>
-
         </select>
     </div>
   )

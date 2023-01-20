@@ -1,3 +1,4 @@
+
 import React, {Component} from "react";
 
 
@@ -20,13 +21,13 @@ class Person extends Component {
             subjects : ["ReactJS " ," Spring", " Angular"],
             
             Person: {
-                "fname": "Wenjie",
-                "lname": "Cummins",
-                "tel": "(758)273-9014",
-                "address": "4402 Tortor Rd",
-                "city": "Mystic",
-                "state": "ND",
-                "zip": 85584
+                fname: "Wenjie",
+                lname: "Cummins",
+                tel: "(758)273-9014",
+                address: "4402 Tortor Rd",
+                city: "Mystic",
+                state: "ND",
+                zip: 85584
             },
         
         };
@@ -54,7 +55,7 @@ class Person extends Component {
 
                <ul>
                 {Object.keys(this.state.Person).map((val,i)=>{
-                    return <li>{this.state.Person[val]}</li>
+                    return <li key={i}>{this.state.Person[val]}</li>
                 })}
                </ul>
 
@@ -67,3 +68,6 @@ class Person extends Component {
 }
 
 export default Person;
+
+
+
