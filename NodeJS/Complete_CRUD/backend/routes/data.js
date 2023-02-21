@@ -11,7 +11,7 @@ var connection = mysql.createConnection({
   });
 
 router.get("/users", async (req,res)=>{
-    connection.query("select * from capstoneStudent.datatable",(error,results,fields)=>{
+    connection.query("select * from datatable",(error,results,fields)=>{
         if (error) {
             return console.error(error.message);
           }
@@ -32,7 +32,7 @@ router.post("/create", async (req,res)=>{
             return console.error(error.message);
           }
           res.send(results);
-    })
+    });
     // var users = await readData();
     // users.push(user);
     // users = await writeData(users);

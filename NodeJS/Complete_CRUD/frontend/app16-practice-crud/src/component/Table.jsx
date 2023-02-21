@@ -5,8 +5,9 @@ import { deleteUserAsync, getUsersAsync } from '../store/dataSlice';
 import { useNavigate } from 'react-router-dom';
 
 const Table = () => {
-  var users = useSelector((state)=>state.user.users);
-  console.log("users:",users);
+  var users = useSelector((state)=>state.user);
+  var state = useSelector(state=>state);
+  console.log("users:",state);
     const navigate = useNavigate()
     const dispatch = useDispatch();
     useEffect(()=>{
@@ -40,7 +41,7 @@ const Table = () => {
             </tr>
         </thead>
         <tbody>
-            {users.map((user,i)=>
+            {users.users.map((user,i)=>
             <tr key={i}>
                 <td>{i+1}</td>
                 <td>{user.fname}</td>
